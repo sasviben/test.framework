@@ -1,6 +1,6 @@
 # web.test.UI
 **Ime paketa:** web.test.UI
-Test aplikacija je razvijena koristeći BDD metodologiju. Tehnologije koje se koriste su Spacflow i Selenium.
+Test aplikacija je razvijena koristeći BDD metodologiju. Tehnologije koje se koriste su Specflow i Selenium.
 Aplikacija sadrži UI testove koji pokrivaju sistemsku i sistem integracijsku razinu testiranja.
 
 ### Aplikacija je više-platformska
