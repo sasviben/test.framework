@@ -1,8 +1,9 @@
-# Test Framework
-Package name: test.framework
-Framework is written in BDD methodology using Selenium and main purpuse is to test UI on two diferent levels: system integration and system testing. 
+# web.test.UI
+Package name: web.test.UI
+Test aplikacija je razvijena koristeći BDD metodologiju. Tehnologije koje se koriste su Spacflow i Selenium.
+Aplikacija sadrži UI testove koji pokrivaju sistemsku i sistem integracijsku razinu testiranja.
 
-### Framework is cross-platform
-Written in .Net Core technology that allows to be run on Windows or multiple distributions of Linux.
-### Framework is dockerinized
-Building into docker image
+### Aplikacija je više-platformska
+Napisana je u .NET 5 razvojnom okviru i kao takva se može isporučiti na bilo koju platformu (Widnows, Linux...).
+### Aplikacija je zapakirana u Docker kontejner
+Aplikacija se builda u docker kontejner te se kao takva lako može isporučiti na razne platforme. 
