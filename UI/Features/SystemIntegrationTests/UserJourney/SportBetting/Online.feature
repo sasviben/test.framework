@@ -1,7 +1,7 @@
 Feature: Online
 
 
-  Scenario: the online player should see the same data on the purchased mix simple ticket (Prematch and Inplay) as on the Betslip (uid:26191d71-2c14-41e6-9eaa-d9b4abaeda8d)
+  Scenario: the online player should see the same data on the purchased mix simple ticket (Prematch and Inplay) as on the Betslip (uid:d88847a5-593c-470b-8fba-f7559b52f8e0)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" events to the Betslip
     And the player has added "1" random "INPLAY" events to the Betslip
@@ -10,7 +10,7 @@ Feature: Online
     And the data on the "WIDGET" is the same as data on the "SPORT" Betslip
     And the data on the "DETAILS" is the same as data on the "SPORT" Betslip
 
-  Scenario: the online player should see the same data on the purchased mix system ticket (Prematch and Inplay) as on the Betslip (uid:7904074b-2161-47ea-9c5a-d7b0c3b0b2b3)
+  Scenario: the online player should see the same data on the purchased mix system ticket (Prematch and Inplay) as on the Betslip (uid:b093b256-a0f8-401c-8686-00c07e444683)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" events to the Betslip
     And the player has added "1" random "INPLAY" events to the Betslip
@@ -20,7 +20,7 @@ Feature: Online
     And the data on the "WIDGET" is the same as data on the "SPORT" Betslip
     And the data on the "DETAILS" is the same as data on the "SPORT" Betslip
 
-  Scenario: the online player should see the same data on the purchased mix simple ticket (Prematch and Special) as on the Betslip (uid:2d2f33dc-0fe3-4ad3-845a-6d287c12c739)
+  Scenario: the online player should see the same data on the purchased mix simple ticket (Prematch and Special) as on the Betslip (uid:db20457d-40ce-486c-97c6-2b2572b275de)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" events to the Betslip
     And the player has added "1" random "SPECIAL" events to the Betslip
@@ -29,7 +29,7 @@ Feature: Online
     And the data on the "WIDGET" is the same as data on the "SPORT" Betslip
     And the data on the "DETAILS" is the same as data on the "SPORT" Betslip
 
-  Scenario: the online player should see the same data on the purchased mix system ticket (Prematch and Special) as on the Betslip (uid:baa3fd63-cbfb-46e3-8503-38d4c75d2b16)
+  Scenario: the online player should see the same data on the purchased mix system ticket (Prematch and Special) as on the Betslip (uid:1500d6d4-e8ba-4fff-a2fb-3a86c23533f2)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" events to the Betslip
     And the player has added "1" random "SPECIAL" events to the Betslip
@@ -39,7 +39,7 @@ Feature: Online
     And the data on the "WIDGET" is the same as data on the "SPORT" Betslip
     And the data on the "DETAILS" is the same as data on the "SPORT" Betslip
 
-  Scenario: the online player should see the same data on the purchased mix simple ticket (Prematch, Inplay and Special) as on the Betslip (uid:ab7ea004-1e19-4926-9b82-763320f2585d)
+  Scenario: the online player should see the same data on the purchased mix simple ticket (Prematch, Inplay and Special) as on the Betslip (uid:60c6af50-2293-47b8-88f4-36589be8b3d1)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" events to the Betslip
     And the player has added "1" random "SPECIAL" events to the Betslip
@@ -50,7 +50,7 @@ Feature: Online
     And the data on the "DETAILS" is the same as data on the "SPORT" Betslip
     And the player balance amount is subtracted by the "SPORT" ticket stake
 
-  Scenario: the online player should see the same data on the purchased mix system ticket (Prematch, Inplay and Special) as on the Betslip (uid:62b4880a-4ae2-46e1-a060-d53d4e048bb2)
+  Scenario: the online player should see the same data on the purchased mix system ticket (Prematch, Inplay and Special) as on the Betslip (uid:411be173-04fd-4205-b535-954b3377fe22)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" events to the Betslip
     And the player has added "1" random "SPECIAL" events to the Betslip
@@ -61,14 +61,14 @@ Feature: Online
     And the data on the "WIDGET" is the same as data on the "SPORT" Betslip
     And the data on the "DETAILS" is the same as data on the "SPORT" Betslip
 
-  Scenario: the online player should be able to purchase a Prematch simple ticket (uid:702fa351-1eec-4f31-9462-6681ce503ec9)
+  Scenario: the online player should be able to purchase a Prematch simple ticket (uid:5a13ad1d-9608-4eed-867e-5c590fb0b4f2)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" events to the Betslip
     When the player purchases an "ONLINE" "SPORT" "SIMPLE" ticket
     Then the "ONLINE" "SPORT" "SIMPLE" ticket is purchased
     And the player balance amount is subtracted by the "SPORT" ticket stake
 
-  Scenario: the online player should be able to purchase a Prematch system ticket (uid:b209f182-aa48-4216-b94c-ba99938b3039)
+  Scenario: the online player should be able to purchase a Prematch system ticket (uid:c0221903-cf4b-435c-9e5a-642606cd64b6)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" events to the Betslip
     When the player selects "1/3,3/3" combinations on the Betslip
@@ -76,14 +76,14 @@ Feature: Online
     Then the "ONLINE" "SPORT" "SYSTEM" ticket is purchased
     And the player balance amount is subtracted by the "SPORT" ticket stake
 
-  Scenario: the online player should be able to purchase a Inplay simple ticket (uid:fd9acb02-c293-4bdc-a815-ab39bebfe329)
+  Scenario: the online player should be able to purchase a Inplay simple ticket (uid:1eb732f8-58ed-4ae5-9091-4db297f4f6bb)
     Given the player is logged in
     And the player has added "1" random "INPLAY" events to the Betslip
     When the player purchases an "ONLINE" "SPORT" "SIMPLE" ticket
     Then the "ONLINE" "SPORT" "SIMPLE" ticket is purchased
     And the player balance amount is subtracted by the "SPORT" ticket stake
 
-  Scenario: the online player should be able to purchase a Inplay system ticket (uid:bfc8dcc2-e047-4f67-9d66-3534edf38404)
+  Scenario: the online player should be able to purchase a Inplay system ticket (uid:3d79ad5a-a9f0-4b2a-97fe-f6866dfde54e)
     Given the player is logged in
     And the player has added "3" random "INPLAY" events to the Betslip
     When the player selects "1/3,3/3" combinations on the Betslip
@@ -91,7 +91,7 @@ Feature: Online
     Then the "ONLINE" "SPORT" "SYSTEM" ticket is purchased
     And the player balance amount is subtracted by the "SPORT" ticket stake
 
-  Scenario: the online player should be able to purchase a mix Prematch, Inplay and Special simple ticket (uid:0d465d5b-0288-4161-afad-54fe9077b487)
+  Scenario: the online player should be able to purchase a mix Prematch, Inplay and Special simple ticket (uid:7166a812-cd5a-4d99-b732-02c223d99f32)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" events to the Betslip
     And the player has added "1" random "SPECIAL" events to the Betslip
@@ -100,7 +100,7 @@ Feature: Online
     Then the "ONLINE" "SPORT" "SIMPLE" ticket is purchased
     And the player balance amount is subtracted by the "SPORT" ticket stake
 
-  Scenario: the online player should be able to purchase a mix Prematch, Inplay and Special system ticket (uid:515fbc3b-d92e-4e4e-8139-bf6f39911203)
+  Scenario: the online player should be able to purchase a mix Prematch, Inplay and Special system ticket (uid:c946596a-9c00-4570-a418-74b97e105e08)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" events to the Betslip
     And the player has added "1" random "SPECIAL" events to the Betslip

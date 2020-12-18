@@ -1,7 +1,7 @@
 Feature: Online
 
 
-  Scenario: the online player should be able to place a Lotto simple ticket (uid:2509a801-ed00-4105-a580-502222afb043)
+  Scenario: the online player should be able to place a Lotto simple ticket (uid:64af0544-d31b-415f-b0a1-98db5517234a)
     Given the player is logged in
     And the player has added "1" random "LOTTO" events to the Betslip
     When the player purchases an "ONLINE" "LOTTO" "SIMPLE" ticket
@@ -10,7 +10,7 @@ Feature: Online
     And the data on the "DETAILS" is the same as data on the "LOTTO" Betslip
     And the player balance amount is subtracted by the "LOTTO" ticket stake
 
-  Scenario: the online player should be able to place a Lotto system ticket (uid:ef51b301-07e3-4104-9155-87bb22c2c9f9)
+  Scenario: the online player should be able to place a Lotto system ticket (uid:26c42fbe-f085-4ffe-96c8-edc5bdcfe67a)
     Given the player is logged in
     And the player has added "1" random "LOTTO" events to the Betslip
     When the player selects "RANDOM" combinations on the Betslip
