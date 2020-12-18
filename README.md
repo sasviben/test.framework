@@ -7,3 +7,7 @@ Aplikacija sadrži UI testove koji pokrivaju sistemsku i sistem integracijsku ra
 Napisana je u .NET 5 razvojnom okviru i kao takva se može isporučiti na bilo koju platformu (Widnows, Linux...).
 ### Aplikacija je zapakirana u Docker kontejner
 Aplikacija se builda u docker kontejner te se kao takva lako može isporučiti na razne platforme. 
+## Upute za instalaciju i pokretanje aplikacije
+###### Integracija sa Cucumber Studiom
+Naredba koju je potrebno izvršiti kako bi se povukli testovi iz željenog test paketa:
+```hiptest-publisher --config-file .\hiptest-publisher.conf --test-run-id {test run id} --only features ```
