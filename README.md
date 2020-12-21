@@ -26,3 +26,4 @@ Konfiguracija aplikacije:
 - `seleniumHubPort` - port od Selenium Hub Docker kontejnera
 - `browser` - internet preglednik na kojem želimo ozvršiti testove (Chrome, Firefox, Internet Explorer)
 - `environment` - okolina nad kojoj želimo izvršavati testove (QA, Stage, Silent)
+- `filter` - kategorija testova koje želimo pokrenuti (Regression, Smoke ili Acceptance)
