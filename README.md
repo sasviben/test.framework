@@ -10,4 +10,19 @@ Aplikacija se builda u docker kontejner te se kao takva lako može isporučiti n
 ## Upute za instalaciju i pokretanje aplikacije
 ###### Integracija sa Cucumber Studiom
 Naredba koju je potrebno izvršiti kako bi se povukli testovi iz željenog test paketa:
-```hiptest-publisher --config-file .\hiptest-publisher.conf --test-run-id {test run id} --only features ```
+```
+hiptest-publisher --config-file .\hiptest-publisher.conf --test-run-id {test run id} --only features
+```
+Naredba koju je potrebno izvršiti kako bi se pokrenuli željeni testovi:
+```
+$env:seleniumHubHost="localhost"
+>> $env:seleniumHubPort="4446"
+>> $env:browser="chrome"
+>> $env:environment="Production"
+>> dotnet test --configuration Release --filter 'TestCategory=regression' --logger "trx;LogFileName=TESTRESULTS.xml"
+```
+Konfiguracija aplikacije:
+- `seleniumHubHost` - host adresa od Selenium Hub Docker kontejnera
+- `seleniumHubPort` - port od Selenium Hub Docker kontejnera
+- `browser` - internet preglednik na kojem želimo ozvršiti testove (Chrome, Firefox, Internet Explorer)
+- `environment` - okolina nad kojoj želimo izvršavati testove (QA, Stage, Silent)
