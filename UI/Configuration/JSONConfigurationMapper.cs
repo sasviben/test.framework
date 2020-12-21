@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UI.Configuration
 {
-    class Configuration
+    class JSONConfigurationMapper
     {
         public string HomepageUrl { get; set; }
         public string HomepageUrlFF { get; set; }
