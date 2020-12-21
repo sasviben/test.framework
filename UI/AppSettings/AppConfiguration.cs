@@ -7,7 +7,6 @@ namespace UI.Configuration
         public string Hostname { get; set; }
         public string Port { get; set; }
         public string Browser { get; set; }
-        public string Country { get; set; }
         public string ExecutionEnvironment { get; set; }
         public string SeleniumHubUri { get; set; }
 
@@ -28,8 +27,6 @@ namespace UI.Configuration
             Browser = Environment.GetEnvironmentVariable("browser");
             if (Browser == null)
                 throw new Exception("Environment variable 'browser' is null! You should enter browser type when running a tests. For example: Chrome");
-
-            Country = Environment.GetEnvironmentVariable("country");
         }
     }
 }
