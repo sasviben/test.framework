@@ -12,6 +12,6 @@ namespace UI.AppSettings
         public string PlayerBalanceAPI { get; set; }
         public string Domain { get; set; }
         public string ClientSourceType { get; set; }
-        public List<Credentials> CustomerCredentials { get; set; }
+        public List<Credentials> PlayerCredentials { get; set; }
     }
 }

@@ -94,5 +94,31 @@ namespace UI.Configuration
 
             return configuration;
         }
+        /// <summary>
+        ///     Sets desirable user credentials depending on the passed parameters.
+        /// </summary>
+        /// 
+        /// <param name="userType">
+        ///     User whose credentials need to be set.
+        /// </param>
+        /// 
+        /// <exception cref="ArgumentNullException">
+        ///     PlayerUsername is null.
+        /// </exception>
+        /// 
+        public static void SetUserCredentials(UserType userType)
+        {
+            foreach (var player in Settings.Configuration.PlayerCredentials)
+            {
+                if (player.Username.ToUpper().Contains(userType.ToString()))
+                {
+                    Settings.PlayerUsername = player.Username;
+                    Settings.PlayerPassword = Settings.PlayerUsername + "123";
+                }
+            }
+
+            if (Settings.PlayerUsername == null)
+                throw new ArgumentNullException($"Configuration doesn't contains user {userType}! Please check configuration.");
+        }
     }
 }
