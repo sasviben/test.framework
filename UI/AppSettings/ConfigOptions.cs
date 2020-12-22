@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using UI.Configuration;
 
-namespace UI.Configuration
+namespace UI.AppSettings
 {
-    class JSONConfigurationMapper
+    class ConfigOptions
     {
         public string HomepageUrl { get; set; }
         public string HomepageUrlFF { get; set; }
@@ -11,6 +12,6 @@ namespace UI.Configuration
         public string PlayerBalanceAPI { get; set; }
         public string Domain { get; set; }
         public string ClientSourceType { get; set; }
-        public List<Credentials> CustomerCredentials { get; set; }
+        public List<Credentials> PlayerCredentials { get; set; }
     }
 }
