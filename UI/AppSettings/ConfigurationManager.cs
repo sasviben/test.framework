@@ -69,7 +69,7 @@ namespace UI.Configuration
         ///         executionEnvironment is a zero-length string, contains only white space, contains one or more
         ///         invalid characters, or is not the same as a comparing Enum.
         /// </exception>
-        public static string GetConfiguration(string executionEnvironment)
+        public string GetConfiguration(string executionEnvironment)
         {
             if (executionEnvironment == null)
                 throw new ArgumentNullException("Environment variable 'environment' is null! You should enter execution environment when running a tests. For example: Stage");
@@ -106,7 +106,7 @@ namespace UI.Configuration
         ///     PlayerUsername is null.
         /// </exception>
         /// 
-        public static void SetUserCredentials(UserType userType)
+        public void SetUserCredentials(UserType userType)
         {
             foreach (var player in Settings.Configuration.PlayerCredentials)
             {

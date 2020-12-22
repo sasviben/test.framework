@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using System;
+using System.Linq;
 using TechTalk.SpecFlow;
 using UI.Configuration;
 using static UI.Helpers.Enums;
@@ -77,7 +78,38 @@ namespace UI.Hooks
                 default:
                     throw new PlatformNotSupportedException(Settings.Browser + " is not a supported browser!");
             }
-            #endregion
+        }
+        #endregion
+
+        /// <summary>
+        ///     Initialize test scenario specific prerequisites before running scenario.
+        /// </summary>
+        [BeforeScenario]
+        public void Initialize()
+        {
+            var scenarioTags = _scenarioContext.ScenarioInfo.Tags.ToList();
+
+            if (scenarioTags.Contains(UserType.SPORT.ToString()))
+                _configurationManager.SetUserCredentials(UserType.SPORT);
+            else if (scenarioTags.Contains(UserType.LOTTO.ToString()))
+                _configurationManager.SetUserCredentials(UserType.LOTTO);
+            else if (scenarioTags.Contains(UserType.GAMES.ToString()))
+                _configurationManager.SetUserCredentials(UserType.GAMES);
+            else
+                _configurationManager.SetUserCredentials(UserType.RETAIL_BETTING);
+
+            LoadBrowser();
+        }
+
+        /// <summary>
+        ///     Clean up all objects in memory and processes after the test scenario is finished.
+        /// </summary>
+        [AfterScenario]
+        public void CleanUp()
+        {
+            _objectContainer.Dispose();
+            _driver.Quit();
+            _driver.Dispose();
         }
     }
 }

@@ -13,7 +13,7 @@
             SPORT,
             LOTTO,
             GAMES,
-            NONBETTING
+            RETAIL_BETTING
         }
 
         public enum BrowserType
