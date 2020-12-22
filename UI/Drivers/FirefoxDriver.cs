@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 using System;
 using System.IO;
@@ -7,10 +7,10 @@ using System.Reflection;
 
 namespace UI.Drivers
 {
-    class ChromeDriver
+    class FirefoxDriver
     {
         /// <summary>
-        ///     Loads Chrome driver with desired options.
+        ///     Loads Firefox driver with desired options.
         /// </summary>
         /// <param name="headless">
         ///     Flag to run in headless mode.
@@ -19,12 +19,12 @@ namespace UI.Drivers
         /// <returns>
         ///     IWebDriver with desired arguments set.
         /// </returns>
-        public IWebDriver LoadChromeDriver(bool headless = false)
+        public IWebDriver LoadFirefoxDriver(bool headless = false)
         {
-            var driverService = ChromeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            var driverService = FirefoxDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             driverService.HideCommandPromptWindow = true;
 
-            var options = new ChromeOptions();
+            var options = new FirefoxOptions();
             options.AddArgument("--disable-extensions");
             options.AddArgument("--disable-popup-blocking");
             options.AddArgument("--window-size=1920,1080");
@@ -32,14 +32,14 @@ namespace UI.Drivers
             if (headless == true)
                 options.AddArgument("--headless");
 
-            var driver = new OpenQA.Selenium.Chrome.ChromeDriver(driverService, options);
+            var driver = new OpenQA.Selenium.Firefox.FirefoxDriver(driverService, options);
             return driver;
         }
         /// <summary>
-        ///     Loads remote Chrome driver with desired options.
+        ///     Loads remote Firefox driver with desired options.
         /// </summary>
         /// <param name="remoteUri">
-        ///     Remote Chrome driver uri. 
+        ///     Remote Firefox driver uri. 
         /// </param>
         /// <param name="headless">
         ///     Flag to run in headless mode.
@@ -48,9 +48,9 @@ namespace UI.Drivers
         /// <returns>
         ///     IWebDriver with desired arguments set.
         /// </returns>
-        public IWebDriver LoadRemoteChromeDriver(Uri remoteUri, bool headless = true)
+        public IWebDriver LoadRemoteFirefoxDriver(Uri remoteUri, bool headless = true)
         {
-            var options = new ChromeOptions();
+            var options = new FirefoxOptions();
             options.AddArgument("--disable-extensions");
             options.AddArgument("--disable-popup-blocking");
             options.AddArgument("--window-size=1920,1080");
