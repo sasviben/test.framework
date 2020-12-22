@@ -1,3 +1,4 @@
+@LOTTO
 Feature: Online
 
 
