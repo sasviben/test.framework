@@ -21,10 +21,10 @@ namespace UI.Configuration
 
 
         ///<summary>
-        ///     Loads JSON configuration
+        ///     Loads JSON configuration.
         ///</summary>
         ///<param name="objectContainer">
-        ///     IObjectContainer type used for configuration instance registration configuration
+        ///     IObjectContainer type used for configuration instance registration configuration.
         /// </param>
         public void LoadConfiguration(BoDi.IObjectContainer objectContainer)
         {
@@ -55,7 +55,7 @@ namespace UI.Configuration
         /// </summary>
         /// 
         /// <param name="executionEnvironment">
-        ///     Name of the desired execution environment
+        ///     Name of the desired execution environment.
         ///</param>
         ///
         /// <returns>
@@ -66,8 +66,7 @@ namespace UI.Configuration
         ///         executionEnvironment is null.
         /// </exception>
         /// <exception cref="ArgumentException">
-        ///         executionEnvironment is a zero-length string, contains only white space, contains one or more
-        ///         invalid characters, or is not the same as a comparing Enum.
+        ///         executionEnvironment is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
         /// </exception>
         public string GetConfiguration(string executionEnvironment)
         {

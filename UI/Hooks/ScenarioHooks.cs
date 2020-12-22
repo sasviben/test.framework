@@ -16,10 +16,12 @@ namespace UI.Hooks
         private readonly IObjectContainer _objectContainer;
         private readonly ScenarioContext _scenarioContext;
         private readonly ConfigurationManager _configurationManager;
+        private readonly AppConfiguration _appConfiguration;
         private IWebDriver _driver;
 
-        public ScenarioHooks(IObjectContainer objectContainer, ScenarioContext scenarioContext, IWebDriver webDriver)
+        public ScenarioHooks(AppConfiguration appConfig, IObjectContainer objectContainer, ScenarioContext scenarioContext, IWebDriver webDriver)
         {
+            _appConfiguration = appConfig;
             _objectContainer = objectContainer;
             _scenarioContext = scenarioContext;
             _driver = webDriver;
@@ -51,7 +53,7 @@ namespace UI.Hooks
 #if DEBUG
                         _driver = chromeDriver.LoadChromeDriver();
 #else
-                        _driver = chromeDriver.LoadRemoteChromeDriver(new Uri(_environmentConfig.SeleniumHubUri), true);
+                        _driver = chromeDriver.LoadRemoteChromeDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
 #endif
                         break;
                     }
@@ -61,7 +63,7 @@ namespace UI.Hooks
 #if DEBUG
                         _driver = firefoxDriver.LoadFirefoxDriver();
 #else
-                        _driver = firefoxDriver.LoadRemoteFirefoxDriver(new Uri(_environmentConfig.SeleniumHubUri), true);
+                        _driver = firefoxDriver.LoadRemoteFirefoxDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
 #endif
                         break;
                     }
@@ -71,7 +73,7 @@ namespace UI.Hooks
 #if DEBUG
                         _driver = internetExplorerDriver.LoadFirefoxDriver();
 #else
-                        _driver = internetExplorerDriver.LoadRemoteFirefoxDriver(new Uri(_environmentConfig.SeleniumHubUri), true);
+                        _driver = internetExplorerDriver.LoadRemoteFirefoxDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
 #endif
                         break;
                     }

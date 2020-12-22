@@ -11,10 +11,10 @@ namespace UI.Configuration
         public string SeleniumHubUri { get; set; }
 
         /// <summary>
-        ///         Initializes all AppConfiguration properties
+        ///         Initializes all AppConfiguration properties.
         /// </summary>
         /// 
-        /// <exception cref="System.ArgumentNullException">
+        /// <exception cref="ArgumentNullException">
         ///         Hostname, Port or Browser is null.
         /// </exception>
         public void Initialize()
