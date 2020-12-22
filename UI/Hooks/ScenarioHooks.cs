@@ -1,12 +1,10 @@
 ﻿using BoDi;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.IE;
 using System;
 using System.Linq;
 using TechTalk.SpecFlow;
 using UI.Configuration;
+using UI.Drivers;
 using static UI.Helpers.Enums;
 
 namespace UI.Hooks
@@ -64,16 +62,6 @@ namespace UI.Hooks
                         _driver = firefoxDriver.LoadFirefoxDriver();
 #else
                         _driver = firefoxDriver.LoadRemoteFirefoxDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
-#endif
-                        break;
-                    }
-                case BrowserType.IE:
-                    {
-                        var internetExplorerDriver = new InternetExplorerDriver();
-#if DEBUG
-                        _driver = internetExplorerDriver.LoadFirefoxDriver();
-#else
-                        _driver = internetExplorerDriver.LoadRemoteFirefoxDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
 #endif
                         break;
                     }
