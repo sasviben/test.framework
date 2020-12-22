@@ -48,7 +48,25 @@
 
   <ItemGroup>
     <Folder Include="Features\" />
-    <Folder Include="Steps\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppSettings\appsettings.Silent.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AppSettings\appsettings.QA.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+     <None Update="AppSettings\appsettings.Stage.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>    
+  </ItemGroup>
+
+  <Target Name="AfterUpdateFeatureFilesInProject">
+    <!-- include any generated SpecFlow files in the compilation of the project if not included yet -->
+    <ItemGroup>
+      <Compile Include="**\*.feature.cs" Exclude="@(Compile)" />
+    </ItemGroup>
+  </Target>
 
 </Project>

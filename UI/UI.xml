@@ -110,6 +110,24 @@
                 IWebDriver with desired arguments set.
             </returns>
         </member>
+        <member name="M:UI.Helpers.Waiters.WaitUntilElementIsVisible(OpenQA.Selenium.By,OpenQA.Selenium.IWebDriver,System.Int32)">
+            <summary>
+                Wait until element is visible in DOM by its locator.
+            </summary>
+            <param name="locator">
+                Locator pointing to the web element.
+            </param>
+            <param name="driver">
+                Instance of Selenium IWebDriver.
+            </param>
+            <param name="seconds">
+                Time in seconds to wait for element become visible.
+                Default: 10 seconds
+            </param>
+            <returns>
+                IWebElement. 
+            </returns>
+        </member>
         <member name="M:UI.Hooks.ScenarioHooks.LoadBrowser">
             <summary>
                 Loads defined browser.
@@ -130,6 +148,19 @@
             <summary>
                 Clean up all objects in memory and processes after the test scenario is finished.
             </summary>
+        </member>
+        <member name="M:UI.Objects.NavigationObject.NavigateToHomePage">
+            <summary>
+               Opens homepage
+            </summary>
+        </member>
+        <member name="M:UI.Steps.NavigationSteps.GivenThePlayerIsOnThePage(System.String)">
+            <summary>
+                Step for player web navigation.
+            </summary>
+            <param name="pageName">
+                Name of page to navigate.
+            </param>
         </member>
     </members>
 </doc>
