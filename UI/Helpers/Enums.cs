@@ -15,5 +15,12 @@
             GAMES,
             NONBETTING
         }
+
+        public enum BrowserType
+        {
+            CHROME,
+            FIREFOX,
+            IE
+        }
     }
 }

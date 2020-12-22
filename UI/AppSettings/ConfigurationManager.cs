@@ -14,7 +14,7 @@ namespace UI.Configuration
             _configOptions = new ConfigOptions();
         }
 
-        private readonly string configPath = "/AppSettings";
+        private readonly string _configPath = "/AppSettings";
         private readonly AppConfiguration _appConfig;
         private string _configurationName;
         private ConfigOptions _configOptions;
@@ -36,7 +36,7 @@ namespace UI.Configuration
             _appConfig.Initialize();
             _configurationName = GetConfiguration(_appConfig.ExecutionEnvironment);
 #endif
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory() + configPath).AddJsonFile(_configurationName);
+            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory() + _configPath).AddJsonFile(_configurationName);
             var config = builder.Build();
 
             _configOptions = config.GetSection("ConfigOptions").Get<ConfigOptions>();
@@ -62,10 +62,10 @@ namespace UI.Configuration
         ///     Returns the configuration name specified by executionEnvironment parameter.
         ///</returns>
         ///
-        /// <exception cref="System.ArgumentNullException">
+        /// <exception cref="ArgumentNullException">
         ///         executionEnvironment is null.
         /// </exception>
-        /// <exception cref="System.ArgumentException">
+        /// <exception cref="ArgumentException">
         ///         executionEnvironment is a zero-length string, contains only white space, contains one or more
         ///         invalid characters, or is not the same as a comparing Enum.
         /// </exception>

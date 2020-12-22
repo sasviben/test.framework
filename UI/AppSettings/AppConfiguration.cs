@@ -13,6 +13,7 @@ namespace UI.Configuration
         /// <summary>
         ///         Initializes all AppConfiguration properties
         /// </summary>
+        /// 
         /// <exception cref="System.ArgumentNullException">
         ///         Hostname, Port or Browser is null.
         /// </exception>
