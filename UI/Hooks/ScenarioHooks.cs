@@ -1,12 +1,10 @@
 ﻿using BoDi;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.IE;
 using System;
 using System.Linq;
 using TechTalk.SpecFlow;
 using UI.Configuration;
+using UI.Drivers;
 using static UI.Helpers.Enums;
 
 namespace UI.Hooks

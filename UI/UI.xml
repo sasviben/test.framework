@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UI</name>
+    </assembly>
+    <members>
+        <member name="M:UI.Configuration.AppConfiguration.Initialize">
+            <summary>
+                    Initializes all AppConfiguration properties.
+            </summary>
+            
+            <exception cref="T:System.ArgumentNullException">
+                    Hostname, Port or Browser is null.
+            </exception>
+        </member>
+        <member name="M:UI.Configuration.ConfigurationManager.LoadConfiguration(BoDi.IObjectContainer)">
+            <summary>
+                 Loads JSON configuration.
+            </summary>
+            <param name="objectContainer">
+                 IObjectContainer type used for configuration instance registration configuration.
+             </param>
+        </member>
+        <member name="M:UI.Configuration.ConfigurationManager.GetConfiguration(System.String)">
+             <summary>
+                 Gets the configuration depending on the passed parameters.
+                 This method is used only in Release configuration mode.
+             </summary>
+             
+             <param name="executionEnvironment">
+                 Name of the desired execution environment.
+            </param>
+            
+             <returns>
+                 Returns the configuration name specified by executionEnvironment parameter.
+            </returns>
+            
+             <exception cref="T:System.ArgumentNullException">
+                     executionEnvironment is null.
+             </exception>
+             <exception cref="T:System.ArgumentException">
+                     executionEnvironment is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
+             </exception>
+        </member>
+        <member name="M:UI.Configuration.ConfigurationManager.SetUserCredentials(UI.Helpers.Enums.UserType)">
+            <summary>
+                Sets desirable user credentials depending on the passed parameters.
+            </summary>
+            
+            <param name="userType">
+                User whose credentials need to be set.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+                PlayerUsername is null.
+            </exception>
+            
+        </member>
+        <member name="M:UI.Drivers.ChromeDriver.LoadChromeDriver(System.Boolean)">
+            <summary>
+                Loads Chrome driver with desired options.
+            </summary>
+            <param name="headless">
+                Flag to run in headless mode.
+                Default: false
+            </param>
+            <returns>
+                IWebDriver with desired arguments set.
+            </returns>
+        </member>
+        <member name="M:UI.Drivers.ChromeDriver.LoadRemoteChromeDriver(System.Uri,System.Boolean)">
+            <summary>
+                Loads remote Chrome driver with desired options.
+            </summary>
+            <param name="remoteUri">
+                Remote Chrome driver uri. 
+            </param>
+            <param name="headless">
+                Flag to run in headless mode.
+                Default: true
+            </param>
+            <returns>
+                IWebDriver with desired arguments set.
+            </returns>
+        </member>
+        <member name="M:UI.Drivers.FirefoxDriver.LoadFirefoxDriver(System.Boolean)">
+            <summary>
+                Loads Firefox driver with desired options.
+            </summary>
+            <param name="headless">
+                Flag to run in headless mode.
+                Default: false
+            </param>
+            <returns>
+                IWebDriver with desired arguments set.
+            </returns>
+        </member>
+        <member name="M:UI.Drivers.FirefoxDriver.LoadRemoteFirefoxDriver(System.Uri,System.Boolean)">
+            <summary>
+                Loads remote Firefox driver with desired options.
+            </summary>
+            <param name="remoteUri">
+                Remote Firefox driver uri. 
+            </param>
+            <param name="headless">
+                Flag to run in headless mode.
+                Default: true
+            </param>
+            <returns>
+                IWebDriver with desired arguments set.
+            </returns>
+        </member>
+        <member name="M:UI.Hooks.ScenarioHooks.LoadBrowser">
+            <summary>
+                Loads defined browser.
+            </summary>
+            <exception cref="T:System.ArgumentException">
+                browserName is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
+            </exception>
+            <exception cref="T:System.PlatformNotSupportedException">
+                Defined internet browser is not supported.
+            </exception>
+        </member>
+        <member name="M:UI.Hooks.ScenarioHooks.Initialize">
+            <summary>
+                Initialize test scenario specific prerequisites before running scenario.
+            </summary>
+        </member>
+        <member name="M:UI.Hooks.ScenarioHooks.CleanUp">
+            <summary>
+                Clean up all objects in memory and processes after the test scenario is finished.
+            </summary>
+        </member>
+    </members>
+</doc>
