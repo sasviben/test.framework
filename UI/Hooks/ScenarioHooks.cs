@@ -67,16 +67,6 @@ namespace UI.Hooks
 #endif
                         break;
                     }
-                case BrowserType.IE:
-                    {
-                        var internetExplorerDriver = new InternetExplorerDriver();
-#if DEBUG
-                        _driver = internetExplorerDriver.LoadFirefoxDriver();
-#else
-                        _driver = internetExplorerDriver.LoadRemoteFirefoxDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
-#endif
-                        break;
-                    }
                 default:
                     throw new PlatformNotSupportedException(Settings.Browser + " is not a supported browser!");
             }
