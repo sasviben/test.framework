@@ -69,9 +69,10 @@ namespace UI.Hooks
                     throw new PlatformNotSupportedException(Settings.Browser + " is not a supported browser!");
             }
 
-            _objectContainer.RegisterInstanceAs(_driver);
+            if (_driver != null)
+                _objectContainer.RegisterInstanceAs(_driver);
         }
-#endregion
+        #endregion
 
         /// <summary>
         ///     Initialize test scenario specific prerequisites before running scenario.
@@ -97,15 +98,17 @@ namespace UI.Hooks
         ///     Clean up all objects in memory and processes after the test scenario is finished.
         /// </summary>
         [AfterScenario]
-        public void CleanUp()
+        public void AfterScenario()
         {
-            _objectContainer.Dispose();
-            
-            if(_driver != null)
+            if (_objectContainer != null)
+                _objectContainer.Dispose();
+
+            if (_driver != null)
             {
                 _driver.Quit();
                 _driver.Dispose();
             }
         }
+
     }
 }

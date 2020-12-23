@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using System;
 using UI.Configuration;
 using UI.Helpers;
 using UI.Locators;
