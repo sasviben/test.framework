@@ -27,10 +27,11 @@ namespace UI.Drivers
                 driverService.HideCommandPromptWindow = true;
 
                 var options = new ChromeOptions();
+
+                options.AddArgument("--start-maximized");
                 options.AddArgument("--disable-extensions");
                 options.AddArgument("--disable-popup-blocking");
-                options.AddArgument("--window-size=1920,1080");
-                options.AddArgument("--start-maximized");
+                
                 if (headless == true)
                     options.AddArgument("--headless");
 
@@ -63,7 +64,6 @@ namespace UI.Drivers
                 var options = new ChromeOptions();
                 options.AddArgument("--disable-extensions");
                 options.AddArgument("--disable-popup-blocking");
-                options.AddArgument("--window-size=1920,1080");
                 options.AddArgument("--start-maximized");
                 options.AddArgument("--disable-dev-shm-usage");
                 if (headless == true)
