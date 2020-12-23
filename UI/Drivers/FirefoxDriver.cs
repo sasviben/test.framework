@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 using System;
@@ -22,9 +21,10 @@ namespace UI.Drivers
         /// </returns>
         public IWebDriver LoadFirefoxDriver(bool headless = false)
         {
+            var driverService = FirefoxDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             try
             {
-                var driverService = FirefoxDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+
                 driverService.HideCommandPromptWindow = true;
 
                 var options = new FirefoxOptions();
@@ -40,8 +40,9 @@ namespace UI.Drivers
             }
             catch (Exception e)
             {
-                Assert.Fail(e.Message);
-                return null;
+                if (driverService != null)
+                    driverService.Dispose();
+                throw new Exception(e.Message);
             }
 
         }
@@ -76,8 +77,7 @@ namespace UI.Drivers
             }
             catch (Exception e)
             {
-                Assert.Fail(e.Message);
-                return null;
+                throw new Exception(e.Message);
             }
 
         }

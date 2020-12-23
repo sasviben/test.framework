@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System;
@@ -22,9 +21,9 @@ namespace UI.Drivers
         /// </returns>
         public IWebDriver LoadChromeDriver(bool headless = false)
         {
+            var driverService = ChromeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             try
             {
-                var driverService = ChromeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                 driverService.HideCommandPromptWindow = true;
 
                 var options = new ChromeOptions();
@@ -39,8 +38,9 @@ namespace UI.Drivers
             }
             catch (Exception e)
             {
-                Assert.Fail(e.Message);
-                return null;
+                if (driverService != null)
+                    driverService.Dispose();
+                throw new Exception(e.Message);
             }
         }
         /// <summary>
@@ -74,8 +74,7 @@ namespace UI.Drivers
             }
             catch (Exception e)
             {
-                Assert.Fail(e.Message);
-                return null;
+                throw new Exception(e.Message);
             }
 
         }
