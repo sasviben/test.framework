@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Sandro Sviben</Authors>
+    <RepositoryUrl>https://github.com/sasviben/web.test.UI</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
