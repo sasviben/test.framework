@@ -16,8 +16,9 @@ namespace UI.Objects
             _driver = driver;
         }
 
+        #region Actions
         /// <summary>
-        ///    Opens homepage
+        ///   Opens homepage
         /// </summary>
         public void NavigateToHomePage()
         {
@@ -29,5 +30,6 @@ namespace UI.Objects
             Assert.IsTrue(Waiters.WaitUntilElementIsVisible(NavigationHeaderLOC.SuperbetLogo, _driver, 30),
                         "Accessing Superbet's homepage timeout after 30 seconds!");
         }
+        #endregion
     }
 }
