@@ -20,6 +20,9 @@ namespace UI.Objects
         /// <summary>
         ///   Opens homepage
         /// </summary>
+        /// <exception cref="WebDriverTimeoutException">
+        ///    Fail the test if the SUPERBET logo is not visible within a specified time.
+        /// </exception>
         public void NavigateToHomePage()
         {
             if (Settings.Browser.ToUpper().Equals(BrowserType.FIREFOX.ToString()))
@@ -27,8 +30,15 @@ namespace UI.Objects
             else
                 _driver.Navigate().GoToUrl(Settings.HomePageUrl);
 
-            Assert.IsTrue(Waiters.WaitUntilElementIsVisible(NavigationHeaderLOC.SuperbetLogo, _driver, 30),
-                        "Accessing Superbet's homepage timeout after 30 seconds!");
+            try
+            {
+                _driver.WdFindElement(NavigationHeaderLOC.SuperbetLogo, 30);
+            }
+            catch (WebDriverTimeoutException te)
+            {
+                Assert.Fail(te.Message);
+            }
+
         }
         #endregion
     }
