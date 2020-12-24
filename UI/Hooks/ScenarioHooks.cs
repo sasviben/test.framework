@@ -78,7 +78,7 @@ namespace UI.Hooks
         ///     Initialize test scenario specific prerequisites before running scenario.
         /// </summary>
         [BeforeScenario]
-        public void Initialize()
+        public void BeforeScenario()
         {
             var scenarioTags = _scenarioContext.ScenarioInfo.Tags.ToList();
 
