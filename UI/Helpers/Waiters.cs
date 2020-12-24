@@ -20,7 +20,7 @@ namespace UI.Helpers
         ///     Default: 10 seconds
         /// </param>
         /// <returns>
-        ///     IWebElement. 
+        ///     True if elemen is displayed, false if isn't. 
         /// </returns>
         public static bool WaitUntilElementIsVisible(By locator, IWebDriver driver, int seconds = 10)
         {

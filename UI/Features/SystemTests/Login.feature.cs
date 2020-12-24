@@ -103,16 +103,13 @@ namespace UI.Features.SystemTests
             {
                 this.ScenarioStart();
 #line 5
-    testRunner.Given("the player is on the page \"Superbet\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
     testRunner.When("the player tries to log in with valid credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
     testRunner.Then("the player should be logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 8
-    testRunner.And("the player balance is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

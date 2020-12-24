@@ -26,7 +26,7 @@ namespace UI.Objects
             else
                 _driver.Navigate().GoToUrl(Settings.HomePageUrl);
 
-            Assert.True(Waiters.WaitUntilElementIsVisible(NavigationHeaderLOC.SuperbetLogo, _driver, 30),
+            Assert.IsTrue(Waiters.WaitUntilElementIsVisible(NavigationHeaderLOC.SuperbetLogo, _driver, 30),
                         "Accessing Superbet's homepage timeout after 30 seconds!");
         }
     }

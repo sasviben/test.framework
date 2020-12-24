@@ -100,9 +100,6 @@ namespace UI.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            if (_objectContainer != null)
-                _objectContainer.Dispose();
-
             if (_driver != null)
             {
                 _driver.Quit();
