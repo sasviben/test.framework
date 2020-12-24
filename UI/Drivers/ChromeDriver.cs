@@ -22,18 +22,27 @@ namespace UI.Drivers
         public IWebDriver LoadChromeDriver(bool headless = false)
         {
             var driverService = ChromeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            driverService.HideCommandPromptWindow = true;
+            try
+            {
+                driverService.HideCommandPromptWindow = true;
 
-            var options = new ChromeOptions();
-            options.AddArgument("--disable-extensions");
-            options.AddArgument("--disable-popup-blocking");
-            options.AddArgument("--window-size=1920,1080");
-            options.AddArgument("--start-maximized");
-            if (headless == true)
-                options.AddArgument("--headless");
+                var options = new ChromeOptions();
 
-            var driver = new OpenQA.Selenium.Chrome.ChromeDriver(driverService, options);
-            return driver;
+                options.AddArgument("--start-maximized");
+                options.AddArgument("--disable-extensions");
+                options.AddArgument("--disable-popup-blocking");
+                
+                if (headless == true)
+                    options.AddArgument("--headless");
+
+                return new OpenQA.Selenium.Chrome.ChromeDriver(driverService, options);
+            }
+            catch (Exception e)
+            {
+                if (driverService != null)
+                    driverService.Dispose();
+                throw new Exception(e.Message);
+            }
         }
         /// <summary>
         ///     Loads remote Chrome driver with desired options.
@@ -50,17 +59,24 @@ namespace UI.Drivers
         /// </returns>
         public IWebDriver LoadRemoteChromeDriver(Uri remoteUri, bool headless = true)
         {
-            var options = new ChromeOptions();
-            options.AddArgument("--disable-extensions");
-            options.AddArgument("--disable-popup-blocking");
-            options.AddArgument("--window-size=1920,1080");
-            options.AddArgument("--start-maximized");
-            options.AddArgument("--disable-dev-shm-usage");
-            if (headless == true)
-                options.AddArgument("--headless");
+            try
+            {
+                var options = new ChromeOptions();
+                options.AddArgument("--disable-extensions");
+                options.AddArgument("--disable-popup-blocking");
+                options.AddArgument("--start-maximized");
+                options.AddArgument("--disable-dev-shm-usage");
+                if (headless == true)
+                    options.AddArgument("--headless");
 
-            var driver = new RemoteWebDriver(remoteUri, options);
-            return driver;
+                var driver = new RemoteWebDriver(remoteUri, options);
+                return driver;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
         }
     }
 }

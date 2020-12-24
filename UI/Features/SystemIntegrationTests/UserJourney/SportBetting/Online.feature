@@ -1,3 +1,4 @@
+@SPORT
 Feature: Online
 
 
@@ -109,3 +110,10 @@ Feature: Online
     And the player purchases an "ONLINE" "SPORT" "SYSTEM" ticket
     Then the "ONLINE" "SPORT" "SYSTEM" ticket is purchased
     And the player balance amount is subtracted by the "SPORT" ticket stake
+
+  Scenario: the online player should be able to purchase a simple ticket with the "16/16" combination option selected (uid:6eb0f5e0-b15b-41c9-a969-878169b95a2f)
+    Given the player is logged in
+    And the player has added "16" random "PREMATCH" events to the Betslip
+    When the player selects "16/16" combinations on the Betslip
+    And the player purchases an "ONLINE" "SPORT" "SIMPLE" ticket
+    Then the "ONLINE" "SPORT" "SIMPLE" ticket is purchased

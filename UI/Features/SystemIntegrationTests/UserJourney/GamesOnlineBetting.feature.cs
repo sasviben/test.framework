@@ -21,12 +21,14 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Games Online Betting")]
+    [NUnit.Framework.CategoryAttribute("GAMES")]
     public partial class GamesOnlineBettingFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = ((string[])(null));
+        private string[] _featureTags = new string[] {
+                "GAMES"};
         
 #line 1 "GamesOnlineBetting.feature"
 #line hidden
@@ -35,7 +37,8 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/SystemIntegrationTests/UserJourney", "Games Online Betting", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/SystemIntegrationTests/UserJourney", "Games Online Betting", null, ProgrammingLanguage.CSharp, new string[] {
+                        "GAMES"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -82,7 +85,7 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to play the Jocuri game (uid:a1be29b4-1ee5-47ed-" +
                     "9580-96c6cb1d70a4)", null, tagsOfScenario, argumentsOfScenario);
-#line 4
+#line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -102,16 +105,16 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
             else
             {
                 this.ScenarioStart();
-#line 5
+#line 6
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 6
+#line 7
     testRunner.And("the player is on the page \"GAMES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 7
+#line 8
     testRunner.When("the player plays \"Sweet Bonanza\" game", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 8
+#line 9
     testRunner.Then("the game is played", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

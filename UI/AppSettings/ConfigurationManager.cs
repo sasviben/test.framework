@@ -26,7 +26,7 @@ namespace UI.Configuration
         ///<param name="objectContainer">
         ///     IObjectContainer type used for configuration instance registration configuration.
         /// </param>
-        public void LoadConfiguration(BoDi.IObjectContainer objectContainer)
+        public void LoadConfiguration(BoDi.IObjectContainer _objectContainer)
         {
 #if DEBUG
             _configurationName = "appsettings.QA.json";
@@ -46,7 +46,7 @@ namespace UI.Configuration
 
             new Settings(_configOptions);
 
-            objectContainer.RegisterInstanceAs(_configOptions);
+            _objectContainer.RegisterInstanceAs(_configOptions);
         }
 
         /// <summary>
@@ -105,10 +105,13 @@ namespace UI.Configuration
         ///     PlayerUsername is null.
         /// </exception>
         /// 
-        public void SetUserCredentials(UserType userType)
+        public void SetUserCredentials(string userType)
         {
             foreach (var player in Settings.Configuration.PlayerCredentials)
             {
+                if (userType.Equals("RETAIL_BETTING"))
+                    userType = "NONBETTING";
+
                 if (player.Username.ToUpper().Contains(userType.ToString()))
                 {
                     Settings.PlayerUsername = player.Username;

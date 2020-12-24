@@ -22,5 +22,25 @@
             FIREFOX,
             IE
         }
+
+        public enum PageType
+        {
+            PREMATCH,
+            INPLAY,
+            GAMES,
+            CASINO,
+            LOTTO,
+            VIRTUAL,
+            NEWS,
+            RESULTS,
+            SHOPS,
+            PROMOTIONS,
+            HELP,
+            SUPERBET,
+            PLAYER_ACCOUNT,
+            HOMEPAGE,
+            PLAYER_TICKETS,
+            PLAYER_HISTORY
+        }
     }
 }

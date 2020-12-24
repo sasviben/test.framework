@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace UI.Features.SystemIntegrationTests
+namespace UI.Features.SystemTests
 {
     using TechTalk.SpecFlow;
     using System;
@@ -35,7 +35,7 @@ namespace UI.Features.SystemIntegrationTests
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/SystemIntegrationTests", "Ticket", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/SystemTests", "Ticket", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,14 +74,14 @@ namespace UI.Features.SystemIntegrationTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a simple ticket with the \"16/16\" com" +
-            "bination option selected (uid:6eb0f5e0-b15b-41c9-a969-878169b95a2f)")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseASimpleTicketWithThe1616CombinationOptionSelectedUid6Eb0F5E0_B15B_41C9_A969_878169B95A2F()
+        [NUnit.Framework.DescriptionAttribute("the agency ticket shouldn\'t be displayed on the ticket widget (uid:0bfc98e4-6f44-" +
+            "4ccb-9118-1fbed882fe93)")]
+        public virtual void TheAgencyTicketShouldntBeDisplayedOnTheTicketWidgetUid0Bfc98E4_6F44_4Ccb_9118_1Fbed882Fe93()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a simple ticket with the \"16/16\" com" +
-                    "bination option selected (uid:6eb0f5e0-b15b-41c9-a969-878169b95a2f)", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the agency ticket shouldn\'t be displayed on the ticket widget (uid:0bfc98e4-6f44-" +
+                    "4ccb-9118-1fbed882fe93)", null, tagsOfScenario, argumentsOfScenario);
 #line 4
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -106,66 +106,18 @@ namespace UI.Features.SystemIntegrationTests
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
-    testRunner.And("the player has added \"16\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 7
-    testRunner.When("the player selects \"16/16\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 8
-    testRunner.And("the player purchases an \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 9
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the agency ticket shouldn\'t be displayed on the ticket widget (uid:0bfc98e4-6f44-" +
-            "4ccb-9118-1fbed882fe93)")]
-        public virtual void TheAgencyTicketShouldntBeDisplayedOnTheTicketWidgetUid0Bfc98E4_6F44_4Ccb_9118_1Fbed882Fe93()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the agency ticket shouldn\'t be displayed on the ticket widget (uid:0bfc98e4-6f44-" +
-                    "4ccb-9118-1fbed882fe93)", null, tagsOfScenario, argumentsOfScenario);
-#line 11
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 12
-    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 13
     testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 7
     testRunner.When("the player purchases an \"AGENCY\" \"SPORT\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
+#line 8
     testRunner.Then("the \"AGENCY\" \"SPORT\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 16
+#line 9
     testRunner.But("the ticket isn\'t displayed on the ticket widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line hidden
-#line 17
+#line 10
     testRunner.And("the player balance isn\'t changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -181,7 +133,7 @@ namespace UI.Features.SystemIntegrationTests
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to purchase a simple ticket with the \"16/16\" combinatio" +
                     "n option selected (uid:dd499551-2375-4a6e-83fa-47e2fc845708)", null, tagsOfScenario, argumentsOfScenario);
-#line 19
+#line 12
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -201,16 +153,16 @@ namespace UI.Features.SystemIntegrationTests
             else
             {
                 this.ScenarioStart();
-#line 20
+#line 13
     testRunner.Given("the player has added \"16\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 21
+#line 14
     testRunner.When("the player selects \"16/16\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 15
     testRunner.And("the player purchases an \"AGENCY\" \"SPORT\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 23
+#line 16
     testRunner.Then("the \"AGENCY\" \"SPORT\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

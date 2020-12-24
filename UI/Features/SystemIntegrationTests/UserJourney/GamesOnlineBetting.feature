@@ -1,3 +1,4 @@
+@GAMES
 Feature: Games Online Betting
 
 

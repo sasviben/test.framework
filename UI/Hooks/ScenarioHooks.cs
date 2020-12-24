@@ -9,23 +9,23 @@ using static UI.Helpers.Enums;
 
 namespace UI.Hooks
 {
+    [Binding]
     class ScenarioHooks
     {
+        public ScenarioHooks(AppConfiguration appConfig, IObjectContainer objectContainer, ScenarioContext scenarioContext)
+        {
+            _objectContainer = objectContainer;
+            _appConfiguration = appConfig;
+            _scenarioContext = scenarioContext;
+            _configurationManager = new ConfigurationManager();
+            _configurationManager.LoadConfiguration(_objectContainer);
+        }
+
         private readonly IObjectContainer _objectContainer;
         private readonly ScenarioContext _scenarioContext;
         private readonly ConfigurationManager _configurationManager;
         private readonly AppConfiguration _appConfiguration;
         private IWebDriver _driver;
-
-        public ScenarioHooks(AppConfiguration appConfig, IObjectContainer objectContainer, ScenarioContext scenarioContext, IWebDriver webDriver)
-        {
-            _appConfiguration = appConfig;
-            _objectContainer = objectContainer;
-            _scenarioContext = scenarioContext;
-            _driver = webDriver;
-            _configurationManager = new ConfigurationManager();
-            _configurationManager.LoadConfiguration(_objectContainer);
-        }
 
         #region Helpers
         /// <summary>
@@ -52,7 +52,7 @@ namespace UI.Hooks
                         _driver = chromeDriver.LoadChromeDriver();
 #else
                         _driver = chromeDriver.LoadRemoteChromeDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
-#endif
+# endif
                         break;
                     }
                 case BrowserType.FIREFOX:
@@ -68,6 +68,9 @@ namespace UI.Hooks
                 default:
                     throw new PlatformNotSupportedException(Settings.Browser + " is not a supported browser!");
             }
+
+            if (_driver != null)
+                _objectContainer.RegisterInstanceAs(_driver);
         }
         #endregion
 
@@ -75,18 +78,18 @@ namespace UI.Hooks
         ///     Initialize test scenario specific prerequisites before running scenario.
         /// </summary>
         [BeforeScenario]
-        public void Initialize()
+        public void BeforeScenario()
         {
             var scenarioTags = _scenarioContext.ScenarioInfo.Tags.ToList();
 
             if (scenarioTags.Contains(UserType.SPORT.ToString()))
-                _configurationManager.SetUserCredentials(UserType.SPORT);
+                _configurationManager.SetUserCredentials(UserType.SPORT.ToString());
             else if (scenarioTags.Contains(UserType.LOTTO.ToString()))
-                _configurationManager.SetUserCredentials(UserType.LOTTO);
+                _configurationManager.SetUserCredentials(UserType.LOTTO.ToString());
             else if (scenarioTags.Contains(UserType.GAMES.ToString()))
-                _configurationManager.SetUserCredentials(UserType.GAMES);
+                _configurationManager.SetUserCredentials(UserType.GAMES.ToString());
             else
-                _configurationManager.SetUserCredentials(UserType.RETAIL_BETTING);
+                _configurationManager.SetUserCredentials(UserType.RETAIL_BETTING.ToString());
 
             LoadBrowser();
         }
@@ -95,11 +98,14 @@ namespace UI.Hooks
         ///     Clean up all objects in memory and processes after the test scenario is finished.
         /// </summary>
         [AfterScenario]
-        public void CleanUp()
+        public void AfterScenario()
         {
-            _objectContainer.Dispose();
-            _driver.Quit();
-            _driver.Dispose();
+            if (_driver != null)
+            {
+                _driver.Quit();
+                _driver.Dispose();
+            }
         }
+
     }
 }

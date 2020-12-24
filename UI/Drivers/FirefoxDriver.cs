@@ -22,18 +22,28 @@ namespace UI.Drivers
         public IWebDriver LoadFirefoxDriver(bool headless = false)
         {
             var driverService = FirefoxDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            driverService.HideCommandPromptWindow = true;
+            try
+            {
 
-            var options = new FirefoxOptions();
-            options.AddArgument("--disable-extensions");
-            options.AddArgument("--disable-popup-blocking");
-            options.AddArgument("--window-size=1920,1080");
-            options.AddArgument("--start-maximized");
-            if (headless == true)
-                options.AddArgument("--headless");
+                driverService.HideCommandPromptWindow = true;
 
-            var driver = new OpenQA.Selenium.Firefox.FirefoxDriver(driverService, options);
-            return driver;
+                var options = new FirefoxOptions();
+                options.AddArgument("--disable-extensions");
+                options.AddArgument("--disable-popup-blocking");
+                options.AddArgument("--start-maximized");
+                if (headless == true)
+                    options.AddArgument("--headless");
+
+                var driver = new OpenQA.Selenium.Firefox.FirefoxDriver(driverService, options);
+                return driver;
+            }
+            catch (Exception e)
+            {
+                if (driverService != null)
+                    driverService.Dispose();
+                throw new Exception(e.Message);
+            }
+
         }
         /// <summary>
         ///     Loads remote Firefox driver with desired options.
@@ -50,17 +60,24 @@ namespace UI.Drivers
         /// </returns>
         public IWebDriver LoadRemoteFirefoxDriver(Uri remoteUri, bool headless = true)
         {
-            var options = new FirefoxOptions();
-            options.AddArgument("--disable-extensions");
-            options.AddArgument("--disable-popup-blocking");
-            options.AddArgument("--window-size=1920,1080");
-            options.AddArgument("--start-maximized");
-            options.AddArgument("--disable-dev-shm-usage");
-            if (headless == true)
-                options.AddArgument("--headless");
+            try
+            {
+                var options = new FirefoxOptions();
+                options.AddArgument("--disable-extensions");
+                options.AddArgument("--disable-popup-blocking");
+                options.AddArgument("--start-maximized");
+                options.AddArgument("--disable-dev-shm-usage");
+                if (headless == true)
+                    options.AddArgument("--headless");
 
-            var driver = new RemoteWebDriver(remoteUri, options);
-            return driver;
+                var driver = new RemoteWebDriver(remoteUri, options);
+                return driver;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
         }
     }
 }
