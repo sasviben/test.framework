@@ -9,12 +9,12 @@ namespace UI.Objects
 {
     class NavigationObject
     {
-        private readonly IWebDriver _driver;
-
         public NavigationObject(IWebDriver driver)
         {
             _driver = driver;
         }
+
+        private readonly IWebDriver _driver;
 
         #region Actions
         /// <summary>

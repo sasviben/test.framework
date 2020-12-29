@@ -17,12 +17,6 @@ namespace UI.Steps
         private readonly NavigationObject _navigationObject;
 
         #region Actions
-        /// <summary>
-        ///     Step for player web navigation.
-        /// </summary>
-        /// <param name="pageName">
-        ///     Name of page to navigate.
-        /// </param>
         [Given(@"the player is on the page ""(.*)""")]
         public void GivenThePlayerIsOnThePage(string pageName)
         {

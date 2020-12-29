@@ -7,6 +7,25 @@ namespace UI.Helpers
 {
     static class WebDriverExtensions
     {
+        /// <summary>
+        ///    Finds web element with driver in the DOM.
+        /// </summary>
+        /// <param name="driver">
+        ///    IWebDriver driver instance.
+        /// </param>
+        /// <param name="by">
+        ///    Locator of the web element.
+        /// </param>
+        /// <param name="sec">
+        ///    Time to wait for driver to find the web element.
+        ///    Default time is 10 seconds.
+        /// </param>
+        /// <returns>
+        ///    Web element specified by locator.
+        /// </returns>
+        /// <exception cref="WebDriverTimeoutException">
+        ///    Driver finding the web element timeouts after the specified time.
+        /// </exception>
         public static IWebElement WdFindElement(this IWebDriver driver, By by, int sec = 10)
         {
             try
@@ -33,6 +52,25 @@ namespace UI.Helpers
 
         }
 
+        /// <summary>
+        ///    Finds web elements with driver in the DOM.
+        /// </summary>
+        /// <param name="driver">
+        ///    IWebDriver driver instance.
+        /// </param>
+        /// <param name="by">
+        ///    Locator of the web element.
+        /// </param>
+        /// <param name="sec">
+        ///    Time to wait for driver to find the web element.
+        ///    Default time is 10 seconds.
+        /// </param>
+        /// <returns>
+        ///    List of web elements specified by locator.
+        /// </returns>
+        /// <exception cref="WebDriverTimeoutException">
+        ///    Driver finding the web element timeouts after the specified time.
+        /// </exception>
         public static IList<IWebElement> WdFindElements(this IWebDriver driver, By by, int sec = 10)
         {
             try
@@ -57,7 +95,23 @@ namespace UI.Helpers
             }
         }
 
-        public static object WdHighlight(this By by, IWebDriver driver, int sec)
+        /// <summary>
+        ///    Highlights founded element in the DOM.
+        /// </summary>
+        /// <param name="by">
+        ///    Locator of the web element.
+        ///  </param>
+        /// <param name="driver">
+        ///    IWebDriver driver instance.
+        /// </param>
+        /// <param name="sec">
+        ///    Time to wait for driver to find the web element.
+        ///    Default time is 10 seconds.
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException">
+        ///    Driver finding the web element timeouts after the specified time.
+        /// </exception>
+        public static void WdHighlight(this By by, IWebDriver driver, int sec)
         {
             try
             {
@@ -76,7 +130,7 @@ namespace UI.Helpers
                 });
 
                 var js = (IJavaScriptExecutor)driver;
-                return js.ExecuteScript(HighlightSettings.WdHighlightedColor, myLocator);
+                js.ExecuteScript(HighlightSettings.WdHighlightedColor, myLocator);
             }
             catch (WebDriverTimeoutException te)
             {
