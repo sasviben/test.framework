@@ -23,10 +23,25 @@ namespace UI.Steps
         {
             string currentUrl = _driver.Url;
 
-            if (pageName.ToUpper().Equals(PageType.SUPERBET.ToString()) && !currentUrl.Contains(pageName.ToLower()))
+            if (!currentUrl.Contains(PageType.SUPERBET.ToString().ToLower()))
                 _navigationObject.NavigateToHomePage();
-            else
+
+            if (!pageName.ToUpper().Equals(PageType.SUPERBET.ToString()))
                 _navigationObject.NavigateToPage(pageName);
+        }
+
+        [When(@"the player clicks on the page ""(.*)""")]
+        public void WhenThePlayerClicksOnThePage(string pageName)
+        {
+            _navigationObject.NavigateToPage(pageName);
+        }
+
+        #endregion
+        #region Assertions
+        [Then(@"the ""(.*)"" page is displayed")]
+        public void ThenThePageIsDisplayed(string pageName)
+        {
+            _navigationObject.IsThePageDisplayed(pageName);
         }
 
         #endregion
