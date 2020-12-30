@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,7 @@ namespace UI.Helpers
             }
             catch (WebDriverTimeoutException te)
             {
-                throw new WebDriverTimeoutException($"Method WdFindElement can not find element with locator: {by} in the DOM.\n {te.Message}");
+                throw new WebDriverTimeoutException($"Method WdFindElement can not find element with locator: {by}. \n {te.Message}");
             }
 
         }
@@ -91,8 +92,9 @@ namespace UI.Helpers
             }
             catch (WebDriverTimeoutException te)
             {
-                throw new WebDriverTimeoutException($"Method WdFindElements can not find element with locator: {by} in the DOM.\n{te.Message}");
+                throw new WebDriverTimeoutException($"Method WdFindElements can not find element with locator: {by}. \n{te.Message}");
             }
+
         }
 
         /// <summary>
@@ -134,8 +136,38 @@ namespace UI.Helpers
             }
             catch (WebDriverTimeoutException te)
             {
-                throw new WebDriverTimeoutException($"Method WdHighlight can not find element with locator: {by} in the DOM. \n {te.Message}");
+                throw new WebDriverTimeoutException($"Method WdHighlight can not find and highlight element with locator: {by}. \n {te.Message}");
             }
+
+        }
+
+        /// <summary>
+        ///    Hovers founded element in the DOM.
+        /// </summary>
+        /// <param name="driver">
+        ///    IWebDriver driver instance.
+        /// </param>
+        /// <param name="by">
+        ///    Locator of the web element.
+        ///  </param>
+        /// <exception cref="WebDriverTimeoutException">
+        ///    Driver finding the web element timeouts after the specified time.
+        /// </exception>
+        public static void MoveToElement(this IWebDriver driver, By by)
+        {
+            try
+            {
+                var webElement = driver.WdFindElement(by);
+
+                Actions action = new Actions(driver);
+                action.MoveToElement(webElement);
+                action.Perform();
+            }
+            catch (WebDriverTimeoutException te)
+            {
+                throw new WebDriverTimeoutException($"Method MoveToElement can not find and hover element with locator: {by}. \n {te.Message}");
+            }
+
         }
     }
 }
