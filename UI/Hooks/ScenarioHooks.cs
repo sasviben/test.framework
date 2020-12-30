@@ -1,8 +1,10 @@
 ﻿using BoDi;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Linq;
 using TechTalk.SpecFlow;
+using UI.Backend.Clients;
 using UI.Configuration;
 using UI.Drivers;
 using static UI.Helpers.Enums;
@@ -22,10 +24,10 @@ namespace UI.Hooks
         }
 
         private readonly IObjectContainer _objectContainer;
+        private IWebDriver _driver;
         private readonly ScenarioContext _scenarioContext;
         private readonly ConfigurationManager _configurationManager;
         private readonly AppConfiguration _appConfiguration;
-        private IWebDriver _driver;
 
         #region Helpers
         /// <summary>
@@ -92,6 +94,16 @@ namespace UI.Hooks
                 _configurationManager.SetUserCredentials(UserType.RETAIL_BETTING.ToString());
 
             LoadBrowser();
+
+            try
+            {
+                CookieManager.ConvertHTTPCookieToSeleniumCookie();
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+
         }
 
         /// <summary>
