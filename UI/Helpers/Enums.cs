@@ -25,8 +25,8 @@
 
         public enum PageType
         {
-            PREMATCH,
-            INPLAY,
+            SPORT,
+            LIVE,
             GAMES,
             CASINO,
             LOTTO,
