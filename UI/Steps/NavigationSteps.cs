@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using UI.Objects;
+using static UI.Helpers.Enums;
 
 namespace UI.Steps
 {
@@ -21,8 +22,11 @@ namespace UI.Steps
         public void GivenThePlayerIsOnThePage(string pageName)
         {
             string currentUrl = _driver.Url;
-            if (!currentUrl.Contains(pageName.ToLower()))
+
+            if (pageName.ToUpper().Equals(PageType.SUPERBET.ToString()) && !currentUrl.Contains(pageName.ToLower()))
                 _navigationObject.NavigateToHomePage();
+            else
+                _navigationObject.NavigateToPage(pageName);
         }
 
         #endregion
