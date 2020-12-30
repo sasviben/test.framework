@@ -7,8 +7,8 @@ namespace UI.Locators
         public static By UserBar { get; } = By.CssSelector(".user-bar");
         public static By ButtonLogin { get; } = By.CssSelector("#nav-login");
         public static By SuperbetLogo { get; } = By.CssSelector("#sb-logo");
-        public static By Prematch { get; } = By.CssSelector("#nav-desktop-sport");
-        public static By Inplay { get; } = By.CssSelector("#nav-desktop-live");
+        public static By Sport { get; } = By.CssSelector("#nav-desktop-sport");
+        public static By Live { get; } = By.CssSelector("#nav-desktop-live");
         public static By Games { get; } = By.CssSelector("#nav-desktop-games");
         public static By Casino { get; } = By.CssSelector("#nav-desktop-casino");
         public static By Lotto { get; } = By.CssSelector("#nav-desktop-lotto");
