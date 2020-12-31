@@ -103,7 +103,7 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.LottoBetting
             {
                 this.ScenarioStart();
 #line 5
-    testRunner.Given("the player has added \"1\" random \"LOTTO\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("the player has added \"1\" random \"LOTTO\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
     testRunner.When("the player purchases an \"AGENCY\" \"LOTTO\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -148,10 +148,10 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.LottoBetting
             {
                 this.ScenarioStart();
 #line 11
-    testRunner.Given("the player has added \"1\" random \"LOTTO\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("the player has added \"1\" random \"LOTTO\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 12
-    testRunner.And("the player has added \"1\" random \"LOTTO\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"1\" random \"LOTTO\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
     testRunner.When("the player selects \"RANDOM\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
