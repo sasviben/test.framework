@@ -43,7 +43,7 @@ namespace UI.Objects
         }
 
         /// <summary>
-        ///    Navigates to the desired page.
+        ///    Navigates to the desired page from main header navigation (Sport, Live, Games, ...).
         /// </summary>
         /// <param name="pageName">
         ///    pageName represents the name of the page to navigate.
@@ -54,7 +54,7 @@ namespace UI.Objects
         /// <exception cref="WebDriverTimeoutException">
         ///    Fail the test if the one or more elements are not visible in navigation header within a specified time.
         /// </exception>
-        public void NavigateToPage(string pageName)
+        public void NavigateToMainPage(string pageName)
         {
             if (Enum.TryParse(pageName.Replace(" ", "_").ToUpper(), out PageType pageTypeParsed) == false)
                 throw new ArgumentException($"String {pageName} can't be parsed to enum PageType!");
@@ -139,9 +139,95 @@ namespace UI.Objects
                             _driver.WdFindElement(PlayerMenuLOC.NavigationTransactionsHistory).Click();
                             break;
                         }
+                    
                 }
 
                 _driver.WaitUntilElementIsInvisible(NavigationHeaderLOC.Spinner, 20);
+            }
+            catch (WebDriverTimeoutException te)
+            {
+                Assert.Fail(te.Message);
+            }
+        }
+
+        /// <summary>
+        ///    Navigates to the Sport betting type page (Prematch, Inplay, Special).
+        /// </summary>
+        /// <param name="sportPageName">
+        ///    sportPageName represents the name of the Sport's page to navigate.
+        /// </param>
+        /// <exception cref="ArgumentException">
+        ///    sportPageName is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
+        /// </exception>
+        /// <exception cref="WebDriverTimeoutException">
+        ///    Fail the test if the one or more elements are not visible in navigation within a specified time.
+        /// </exception>
+        public void NavigateToSportPage(string sportPageName)
+        {
+            if (Enum.TryParse(sportPageName.ToUpper(), out SportBettingType sportBettingType) == false)
+                throw new ArgumentException($"String {sportPageName} can't be parsed to enum SportBettingType!");
+
+            try
+            {
+                switch (sportBettingType)
+                {
+                   
+                    case SportBettingType.PREMATCH:
+                        {
+                            _driver.WdFindElement(NavigationHeaderLOC.Sport).Click();
+                            break;
+                        }
+                    case SportBettingType.INPLAY:
+                        {
+                            _driver.WdFindElement(NavigationHeaderLOC.Live).Click();
+                            break;
+                        }
+                    case SportBettingType.SPECIAL:
+                        {
+                            _driver.WdFindElement(SportOfferLOC.NavigationSpecial);
+                            break;
+                        }
+
+                }
+
+                _driver.WaitUntilElementIsInvisible(NavigationHeaderLOC.Spinner, 20);
+            }
+            catch (WebDriverTimeoutException te)
+            {
+                Assert.Fail(te.Message);
+            }
+        }
+
+        /// <summary>
+        ///    Navigates to the Sport betting game (Footbal, Basketball, Tennis, ...).
+        /// </summary>
+        /// <param name="sportGameType">
+        ///    sportGameType represents the name of the Sport's game to navigate.
+        /// </param>
+        /// <exception cref="ArgumentException">
+        ///    sportGameType is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
+        /// </exception>
+        /// <exception cref="WebDriverTimeoutException">
+        ///    Fail the test if the one or more elements are not visible in navigation within a specified time.
+        /// </exception>
+        public void NavigateToSportGame(string sportGameType)
+        {
+            if (Enum.TryParse(sportGameType.ToUpper(), out SportGameType sportGameTypeParsed) == false)
+                throw new ArgumentException($"String {sportGameType} can't be parsed to enum SportGameType!");
+
+            try
+            {
+                switch (sportGameTypeParsed)
+                {
+
+                    case SportGameType.FOOTBALL:
+                        {
+                            _driver.WdFindElement(SportOfferLOC.NavigationFootball).Click();
+                            break;
+                        }
+
+                }
+
             }
             catch (WebDriverTimeoutException te)
             {
@@ -175,17 +261,17 @@ namespace UI.Objects
                     case PageType.HOMEPAGE:
                         {
                             ;
-                            Assert.True(_driver.WdFindElement(PrematchOfferLOC.Offer).Displayed, $"Homepage could not be opened. The element is not visible! Web element locator: {PrematchOfferLOC.Offer}.");
+                            Assert.True(_driver.WdFindElement(SportOfferLOC.Prematch).Displayed, $"Homepage could not be opened. The element is not visible! Web element locator: {SportOfferLOC.Prematch}.");
                             break;
                         }
                     case PageType.SPORT:
                         {
-                            Assert.True(_driver.WdFindElement(PrematchOfferLOC.Offer).Displayed, $"Sport page could not be opened. The element is not visible! Web element locator: {PrematchOfferLOC.Offer}.");
+                            Assert.True(_driver.WdFindElement(SportOfferLOC.Prematch).Displayed, $"Sport page could not be opened. The element is not visible! Web element locator: {SportOfferLOC.Prematch}.");
                             break;
                         }
                     case PageType.LIVE:
                         {
-                            Assert.True(_driver.WdFindElement(InplayOfferLOC.Offer).Displayed, $"Live page could not be opened. The element is not visible! Web element locator: {InplayOfferLOC.Offer}.");
+                            Assert.True(_driver.WdFindElement(SportOfferLOC.Inplay).Displayed, $"Live page could not be opened. The element is not visible! Web element locator: {SportOfferLOC.Inplay}.");
                             break;
                         }
                     case PageType.GAMES:
@@ -195,7 +281,7 @@ namespace UI.Objects
                         }
                     case PageType.CASINO:
                         {
-                            Assert.True(_driver.WdFindElement(CasinoLOC.Wrapper).Displayed, $"Casino page could not be opened. The element is not visible! Web element locator: {CasinoLOC.Wrapper}.");
+                            Assert.True(_driver.WdFindElement(CasinoLOC.WrapperGames).Displayed, $"Casino page could not be opened. The element is not visible! Web element locator: {CasinoLOC.WrapperGames}.");
                             break;
                         }
                     case PageType.LOTTO:

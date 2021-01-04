@@ -8,6 +8,7 @@ namespace UI.Locators
         public static By NavigationSpecial { get; } = By.CssSelector(".nav-sidebar-superbets");
         public static By Prematch { get; } = By.CssSelector(".offer--prematch");
         public static By Inplay { get; } = By.CssSelector(".offer--live");
-       
+        public static By Matches { get; } = By.CssSelector(".items .event-row-container");
+
     }
 }
