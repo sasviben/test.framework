@@ -27,13 +27,13 @@ namespace UI.Steps
                 _navigationObject.NavigateToHomePage();
 
             if (!pageName.ToUpper().Equals(PageType.SUPERBET.ToString()))
-                _navigationObject.NavigateToPage(pageName);
+                _navigationObject.NavigateToMainPage(pageName);
         }
 
         [When(@"the player clicks on the page ""(.*)""")]
         public void WhenThePlayerClicksOnThePage(string pageName)
         {
-            _navigationObject.NavigateToPage(pageName);
+            _navigationObject.NavigateToMainPage(pageName);
         }
 
         #endregion
