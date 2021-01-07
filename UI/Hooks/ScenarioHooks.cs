@@ -41,9 +41,8 @@ namespace UI.Hooks
         /// </exception>
         private void LoadBrowser()
         {
-            var browserName = Settings.Browser.ToUpper();
-            if (!Enum.TryParse(browserName, out BrowserType browserTypeParsed))
-                throw new ArgumentException("String " + browserName + " can't be parsed to enum!");
+            if (!Enum.TryParse(Settings.Browser, true, out BrowserType browserTypeParsed))
+                throw new ArgumentException($"String {Settings.Browser} can't be parsed to BrowserType enum!");
 
             switch (browserTypeParsed)
             {
@@ -68,7 +67,7 @@ namespace UI.Hooks
                         break;
                     }
                 default:
-                    throw new PlatformNotSupportedException(Settings.Browser + " is not a supported browser!");
+                    throw new PlatformNotSupportedException($"{Settings.Browser} is not a supported browser!");
             }
 
             if (_driver != null)
@@ -94,20 +93,12 @@ namespace UI.Hooks
                 _configurationManager.SetUserCredentials(UserType.RETAIL_BETTING.ToString());
 
             LoadBrowser();
-
-            try
-            {
-                CookieManager.ConvertHTTPCookieToSeleniumCookie();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            CookieManager.ConvertHTTPCookieToSeleniumCookie();
 
         }
 
         /// <summary>
-        ///     Clean up all objects in memory and processes after the test scenario is finished.
+        ///     Cleans all objects in memory and processes after the test scenario is finished.
         /// </summary>
         [AfterScenario]
         public void AfterScenario()

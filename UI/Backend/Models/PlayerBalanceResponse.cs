@@ -9,6 +9,7 @@ namespace UI.Backend.Models
         public string Notice { get; set; }
         [JsonProperty(PropertyName = "Data")]
         public PlayerRecord PlayerRecord { get; set; }
+
     }
 
     public class Account
@@ -22,6 +23,7 @@ namespace UI.Backend.Models
         public string WagerType { get; set; }
         public string Wagered { get; set; }
         public string WageringRequirement { get; set; }
+
     }
 
     public class PlayerRecord
@@ -30,5 +32,6 @@ namespace UI.Backend.Models
         public string StatusCode { get; set; }
         public List<Account> Accounts { get; set; }
         public int RecordCount { get; set; }
+
     }
 }

@@ -11,7 +11,7 @@ namespace UI.Helpers
         ///    stringValue represents string that should be converted.
         /// </param>
         /// <returns>
-        ///    Returns double value of a string value rounded to two decimal points
+        ///    Returns double value of a string value rounded to two decimal points.
         /// </returns>
         /// <exception cref="ArgumentException">
         ///    stringValue is a zero-length string, contains only white space, contains one or more invalid characters.

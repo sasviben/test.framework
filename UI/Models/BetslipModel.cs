@@ -12,5 +12,6 @@ namespace UI.Models
         public static string PotentialWin { get; set; }
         public static string BonusPotential { get; set; }
         public static string ValidationMessage { get; set; }
+
     }
 }

@@ -46,10 +46,7 @@ namespace UI.Helpers
                 }
                 );
             }
-            catch (WebDriverTimeoutException te)
-            {
-                throw new WebDriverTimeoutException($"Method WdFindElement can not find element. Web element locator: {by}. Timeout in seconds: {sec}. \n {te.Message}");
-            }
+            catch (WebDriverTimeoutException te) { throw new WebDriverTimeoutException($"Method WdFindElement can not find element with locator: {by}.\n{te.Message}."); }
 
         }
 
@@ -90,10 +87,7 @@ namespace UI.Helpers
                     }
                 });
             }
-            catch (WebDriverTimeoutException te)
-            {
-                throw new WebDriverTimeoutException($"Method WdFindElements can not find element. Web element locator: {by}. Timeout in seconds: {sec}. \n{te.Message}");
-            }
+            catch (WebDriverTimeoutException te) { throw new WebDriverTimeoutException($"Method WdFindElements can not find element with locator: {by}.\n{te.Message}"); }
 
         }
 
@@ -134,10 +128,7 @@ namespace UI.Helpers
                 var js = (IJavaScriptExecutor)driver;
                 js.ExecuteScript(HighlightSettings.WdHighlightedColor, myLocator);
             }
-            catch (WebDriverTimeoutException te)
-            {
-                throw new WebDriverTimeoutException($"Method WdHighlight can not find and highlight element. Web element locator: {by}. Timeout in seconds: {sec}. \n {te.Message}");
-            }
+            catch (WebDriverTimeoutException te) { throw new WebDriverTimeoutException($"Method WdHighlight can not find and highlight element with locator: {by}.\n{te.Message}"); }
 
         }
 
@@ -163,10 +154,7 @@ namespace UI.Helpers
                 action.MoveToElement(webElement);
                 action.Perform();
             }
-            catch (WebDriverTimeoutException te)
-            {
-                throw new WebDriverTimeoutException($"Method WdMoveToElement can not find and hover element. Web element locator: {by}. \n {te.Message}");
-            }
+            catch (WebDriverTimeoutException te) { throw new WebDriverTimeoutException($"Method WdMoveToElement can not find and hover element with locator: {by}.\n{te.Message}"); }
 
         }
 
@@ -193,9 +181,9 @@ namespace UI.Helpers
             var browserWait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
 
             if (!browserWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.InvisibilityOfElementLocated(by)))
-                throw new WebDriverTimeoutException($"Element is not invisible after specified time to wait. Web element locator: {by}. Timeout in seconds: {sec}.");
-
+                throw new WebDriverTimeoutException($"Element with locator: {by} is not invisible after specified time to wait!");
         }
+
     }
 }
 

@@ -4,5 +4,6 @@
     {
         public static double BalanceAfterLogin { get; set; }
         public static double BalanceAfterPurchase { get; set; }
+
     }
 }

@@ -1,10 +1,9 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using System;
+﻿using OpenQA.Selenium;
 using UI.Backend.Clients;
 using UI.Configuration;
 using UI.Helpers;
 using UI.Locators;
+using UI.Models;
 
 namespace UI.Objects
 {
@@ -19,21 +18,11 @@ namespace UI.Objects
 
         #region Actions
         /// <summary>
-        ///     Opens login modal.
+        ///    Opens login modal.
         /// </summary>
-        /// <exception cref="WebDriverTimeoutException">
-        ///     Fail the test if the login modal is not visible within a specified time.
-        /// </exception>
         public void OpenLoginModal()
         {
-            try
-            {
-                _driver.WdFindElement(NavigationHeaderLOC.ButtonLogin).Click();
-            }
-            catch (WebDriverTimeoutException te)
-            {
-                Assert.Fail(te.Message);
-            }
+            _driver.WdFindElement(NavigationHeaderLOC.ButtonLogin).Click();
 
         }
 
@@ -42,42 +31,25 @@ namespace UI.Objects
         /// </summary>
         public void ExecuteLoginRequest()
         {
-            try
+            foreach (var cookie in CookieManager.SeleniumCookies)
             {
-                foreach (var cookie in CookieManager.SeleniumCookies)
-                {
-                    _driver.Manage().Cookies.AddCookie(cookie);
-                }
-
-                _driver.Navigate().Refresh();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
+                _driver.Manage().Cookies.AddCookie(cookie);
             }
 
-            IsTheUserLoggedIn();
+            _driver.Navigate().Refresh();
 
         }
 
         /// <summary>
-        ///     Enters player credentials and triggers login action by pressing the login button.
+        ///    Enters player credentials and triggers login action by pressing the login button.
         /// </summary>
-        /// <exception cref="WebDriverTimeoutException">
-        ///     Fail the test if the one or more elements are not visible in login web form within a specified time.
-        /// </exception>
         public void Login()
         {
-            try
-            {
-                _driver.WdFindElement(LoginFormLOC.FieldUsername).SendKeys(Settings.PlayerUsername);
-                _driver.WdFindElement(LoginFormLOC.FieldPassword).SendKeys(Settings.PlayerPassword);
-                _driver.WdFindElement(LoginFormLOC.ButtonSubmit).Click();
-            }
-            catch (WebDriverTimeoutException te)
-            {
-                Assert.Fail(te.Message);
-            }
+            _driver.WdFindElement(LoginFormLOC.FieldUsername).SendKeys(Settings.PlayerUsername);
+            _driver.WdFindElement(LoginFormLOC.FieldPassword).SendKeys(Settings.PlayerPassword);
+            _driver.WdFindElement(LoginFormLOC.ButtonSubmit).Click();
+
+            PlayerProfileModel.BalanceAfterLogin = CookieManager.GetPlayerBalance();
 
         }
 
@@ -86,19 +58,12 @@ namespace UI.Objects
         /// </summary>
         public void Logout()
         {
-            try
-            {
-                var action = new OpenQA.Selenium.Interactions.Actions(_driver);
+            var action = new OpenQA.Selenium.Interactions.Actions(_driver);
 
-                var accountMenu = _driver.WdFindElement(NavigationHeaderLOC.PlayerAccount);
-                action.MoveToElement(accountMenu).Build().Perform();
+            var accountMenu = _driver.WdFindElement(NavigationHeaderLOC.PlayerAccount);
+            action.MoveToElement(accountMenu).Build().Perform();
 
-                _driver.WdFindElement(PlayerMenuLOC.ButtonLogout).Click();
-            }
-            catch (WebDriverTimeoutException te)
-            {
-                Assert.Fail(te.Message);
-            }
+            _driver.WdFindElement(PlayerMenuLOC.ButtonLogout).Click();
 
         }
 
@@ -106,39 +71,26 @@ namespace UI.Objects
 
         #region Assertions
         /// <summary>
-        ///     Checks if the player's balance element is visible in the DOM. If true player is logged in.
+        ///     Checks if the player's balance element is visible in the DOM.
         /// </summary>
-        /// <exception cref="WebDriverTimeoutException">
-        ///     Fail the test if the player balance is not visible within a specified time.
-        /// </exception>
-        public void IsTheUserLoggedIn()
+        /// <returns>
+        ///    True if player is logged in, else false.
+        /// </returns>
+        public bool IsThePlayerLoggedIn()
         {
-            try
-            {
-                _driver.WdFindElement(PlayerMenuLOC.Balance, 20);
-            }
-            catch (WebDriverTimeoutException te)
-            {
-                Assert.Fail(te.Message);
-            }
+            return _driver.WdFindElement(PlayerMenuLOC.Balance, 20).Displayed;
 
         }
         /// <summary>
-        ///    Checks if the user bar navigation element is visible in the DOM. If true player is logged out.
+        ///    Checks if the user bar navigation element is visible in the DOM.
         /// </summary>
-        /// <exception cref="WebDriverTimeoutException">
-        ///     Fail the test if the user bar navigation element is not visible within a specified time.
-        /// </exception>
-        public void IsTheUserLoggedOut()
+        /// <returns>
+        ///    True if player is logged out, else false.
+        /// </returns>
+        public bool IsThePlayerLoggedOut()
         {
-            try
-            {
-                _driver.WdFindElement(NavigationHeaderLOC.UserBar, 20);
-            }
-            catch (WebDriverTimeoutException te)
-            {
-                Assert.Fail(te.Message);
-            }
+            return _driver.WdFindElement(NavigationHeaderLOC.UserBar, 20).Displayed;
+
         }
 
         #endregion

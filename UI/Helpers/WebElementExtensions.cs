@@ -68,7 +68,7 @@ namespace UI.Helpers
             }
             catch (WebDriverTimeoutException te)
             {
-                throw new WebDriverTimeoutException($"Method WeFindElement can not find element. Web element locator: {by}. Timeout in seconds: {sec}. \n {te.Message}");
+                throw new WebDriverTimeoutException($"Method WeFindElement can not find element with locator: {by}.\n{te.Message}");
             }
         }
 
@@ -116,7 +116,7 @@ namespace UI.Helpers
             }
             catch (WebDriverTimeoutException te)
             {
-                throw new WebDriverTimeoutException($"Method WeFindElements can not find element. Web element locator: {by}. Timeout in seconds: {sec}. \n {te.Message}");
+                throw new WebDriverTimeoutException($"Method WeFindElements can not find element with locator: {by}.\n{te.Message}");
             }
         }
 
@@ -166,7 +166,7 @@ namespace UI.Helpers
             }
             catch (WebDriverTimeoutException te)
             {
-                throw new WebDriverTimeoutException($"Method WeMoveToElement can not find and hover element. \n {te.Message}");
+                throw new WebDriverTimeoutException($"Method WeMoveToElement can not find and hover element.\n{te.Message}");
             }
 
         }

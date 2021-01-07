@@ -10,15 +10,18 @@ namespace UI.Drivers
     class ChromeDriver
     {
         /// <summary>
-        ///     Loads Chrome driver with desired options.
+        ///    Loads Chrome driver with desired options.
         /// </summary>
         /// <param name="headless">
-        ///     Flag to run in headless mode.
-        ///     Default: false
+        ///    Flag to run in headless mode.
+        ///    Default: false
         /// </param>
         /// <returns>
-        ///     IWebDriver with desired arguments set.
+        ///    IWebDriver with desired arguments set.
         /// </returns>
+        /// <exception cref="WebDriverException">
+        ///    Problem with loading Chrome Driver.
+        /// </exception>
         public IWebDriver LoadChromeDriver(bool headless = false)
         {
             var driverService = ChromeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
@@ -37,26 +40,29 @@ namespace UI.Drivers
 
                 return new OpenQA.Selenium.Chrome.ChromeDriver(driverService, options);
             }
-            catch (Exception e)
+            catch (WebDriverException we)
             {
                 if (driverService != null)
                     driverService.Dispose();
-                throw new Exception(e.Message);
+                throw new WebDriverException(we.Message);
             }
         }
         /// <summary>
-        ///     Loads remote Chrome driver with desired options.
+        ///    Loads remote Chrome driver with desired options.
         /// </summary>
         /// <param name="remoteUri">
-        ///     Remote Chrome driver uri. 
+        ///    Remote Chrome driver uri. 
         /// </param>
         /// <param name="headless">
-        ///     Flag to run in headless mode.
-        ///     Default: true
+        ///    Flag to run in headless mode.
+        ///    Default: true
         /// </param>
         /// <returns>
-        ///     IWebDriver with desired arguments set.
+        ///    IWebDriver with desired arguments set.
         /// </returns>
+        /// <exception cref="WebDriverException">
+        ///    Problem with loading remote Chrome driver.
+        /// </exception>
         public IWebDriver LoadRemoteChromeDriver(Uri remoteUri, bool headless = true)
         {
             try
@@ -72,9 +78,9 @@ namespace UI.Drivers
                 var driver = new RemoteWebDriver(remoteUri, options);
                 return driver;
             }
-            catch (Exception e)
+            catch (WebDriverException we)
             {
-                throw new Exception(e.Message);
+                throw new WebDriverException(we.Message);
             }
 
         }
