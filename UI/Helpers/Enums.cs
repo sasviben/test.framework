@@ -54,5 +54,13 @@
         {
             FOOTBALL
         }
+
+        public enum BetslipType
+        {
+            ONLINE,
+            AGENCY,
+            SIMPLE,
+            SYSTEM
+        }
     }
 }

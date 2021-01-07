@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -138,6 +139,36 @@ namespace UI.Helpers
         {
             element.WeHighlightElement(driver);
             return element.GetAttribute(propertyName);
+        }
+
+        /// <summary>
+        ///    Hovers founded element in the DOM.
+        /// </summary>
+        /// <param name="element">
+        ///    IWebElement element instance.
+        /// </param>
+        /// <param name="driver">
+        ///    IWebDriver driver instance.
+        /// </param>
+        /// <param name="by">
+        ///    Locator pointing to the web element to find.
+        ///  </param>
+        /// <exception cref="WebDriverTimeoutException">
+        ///    Driver finding the web element timeouts after the specified time.
+        /// </exception>
+        public static void WeMoveToElement(this IWebElement element, IWebDriver driver)
+        {
+            try
+            {
+                Actions action = new Actions(driver);
+                action.MoveToElement(element);
+                action.Perform();
+            }
+            catch (WebDriverTimeoutException te)
+            {
+                throw new WebDriverTimeoutException($"Method WeMoveToElement can not find and hover element. \n {te.Message}");
+            }
+
         }
     }
 }

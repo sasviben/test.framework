@@ -153,7 +153,7 @@ namespace UI.Helpers
         /// <exception cref="WebDriverTimeoutException">
         ///    Driver finding the web element timeouts after the specified time.
         /// </exception>
-        public static void MoveToElement(this IWebDriver driver, By by, int sec = 10)
+        public static void WdMoveToElement(this IWebDriver driver, By by)
         {
             try
             {
@@ -165,7 +165,7 @@ namespace UI.Helpers
             }
             catch (WebDriverTimeoutException te)
             {
-                throw new WebDriverTimeoutException($"Method MoveToElement can not find and hover element. Web element locator: {by}. Timeout in seconds: {sec}. \n {te.Message}");
+                throw new WebDriverTimeoutException($"Method WdMoveToElement can not find and hover element. Web element locator: {by}. \n {te.Message}");
             }
 
         }
@@ -188,10 +188,12 @@ namespace UI.Helpers
         /// </exception>
         public static void WaitUntilElementIsInvisible(this IWebDriver driver, By by, int sec = 10)
         {
+            by.WdHighlight(driver, sec);
+
             var browserWait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
 
             if (!browserWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.InvisibilityOfElementLocated(by)))
-                throw new WebDriverTimeoutException($"Method WaitUntilElementIsInvisible can not find a element to wait. Web element locator: {by}. Timeout in seconds: {sec}.");
+                throw new WebDriverTimeoutException($"Element is not invisible after specified time to wait. Web element locator: {by}. Timeout in seconds: {sec}.");
 
         }
     }
