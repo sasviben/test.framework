@@ -57,7 +57,9 @@ namespace UI.Backend.Clients
         {
             var client = new RestClient(Settings.PlayerBalanceAPI);
             var request = new RestRequest(Method.GET);
-            request.AddHeader("Cookie", SeleniumCookies.ToString());
+
+            request.AddHeader("Cookie", SeleniumCookies[1].ToString());
+            
             var response = client.Execute(request);
 
             var balanceResponse = JsonConvert.DeserializeObject<PlayerBalanceResponse>(response.Content);
