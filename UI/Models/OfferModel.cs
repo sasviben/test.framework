@@ -5,7 +5,7 @@ namespace UI.Models
 {
     class OfferModel
     {
-        public List<EventModel> Offer { get; set; }
+        public static List<EventModel> Offer { get; set; }
 
     }
 }
