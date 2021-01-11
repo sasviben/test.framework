@@ -176,12 +176,38 @@ namespace UI.Helpers
         /// </exception>
         public static void WaitUntilElementIsInvisible(this IWebDriver driver, By by, int sec = 10)
         {
-            by.WdHighlight(driver, sec);
-
             var browserWait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
 
             if (!browserWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.InvisibilityOfElementLocated(by)))
                 throw new WebDriverTimeoutException($"Element with locator: {by} is not invisible after specified time to wait!");
+        }
+
+        /// <summary>
+        ///    Checks if element is visible in DOM by its locator.
+        /// </summary>
+        /// <param name="by">
+        ///    Locator pointing to the web element.
+        /// </param>
+        /// <param name="driver">
+        ///    Instance of Selenium IWebDriver.
+        /// </param>
+        /// <param name="sec">
+        ///     Time in seconds to wait for element become invisible.
+        ///     Default: 10 seconds
+        /// </param>
+        /// <returns>
+        ///    True if element is visible or false if element is not visible.
+        /// </returns>
+        public static bool WdIsElementVisible(this IWebDriver driver, By by, int sec = 10)
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
+            try
+            {
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(by));
+                driver.WdFindElement(by).WeHighlightElement(driver);
+                return true;
+            }
+            catch { return false; }
         }
 
     }
