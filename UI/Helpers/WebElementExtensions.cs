@@ -170,5 +170,36 @@ namespace UI.Helpers
             }
 
         }
+
+        /// <summary>
+        ///    Checks if element is visible in DOM by its locator.
+        /// </summary>
+        /// <param name="element">
+        ///    IWebElement element instance.
+        /// </param>
+        /// <param name="driver">
+        ///    Instance of Selenium IWebDriver.
+        /// </param>
+        /// <param name="by">
+        ///    Locator pointing to the web element to find.
+        /// </param>
+        /// <param name="sec">
+        ///     Time in seconds to wait for element become invisible.
+        ///     Default: 10 seconds
+        /// </param>
+        /// <returns>
+        ///    True if element is visible or false if element is not visible.
+        /// </returns>
+        public static bool WeIsElementVisible(this IWebElement element, IWebDriver driver, By by, int sec = 10)
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
+            try
+            {
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(by));
+                element.WeHighlightElement(driver);
+                return true;
+            }
+            catch { return false; }
+        }
     }
 }

@@ -213,7 +213,7 @@ namespace UI.Objects
         /// </exception>
         public void IsThePageDisplayed(string pageName)
         {
-            if (!Enum.TryParse(pageName.Replace(" ", "_").ToUpper(), out PageType pageTypeParsed))
+            if (!Enum.TryParse(pageName.Replace(" ", "_"), true, out PageType pageTypeParsed))
                 throw new ArgumentException($"String {pageName} page can't be parsed to enum PageType!");
 
             switch (pageTypeParsed)

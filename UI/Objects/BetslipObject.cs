@@ -33,9 +33,9 @@ namespace UI.Objects
 
             foreach (var dirtyEvent in betslipEvents)
             {
-                if (dirtyEvent.WeFindElement(_driver, BetslipLOC.EventValidationMessage).Displayed)
+                if (dirtyEvent.WeIsElementVisible(_driver, BetslipLOC.EventValidationMessage))
                 {
-                    if (dirtyEvent.WeFindElement(_driver, SportEventLOC.LiveIndicator).Displayed)
+                    if (dirtyEvent.WeIsElementVisible(_driver, SportEventLOC.LiveIndicator))
                     {
                         dirtyEvent.WeFindElement(_driver, BetslipLOC.ButtonDeleteEvent).Click();
                         if (!_driver.Url.Contains(URL_INPLAY))
@@ -121,12 +121,13 @@ namespace UI.Objects
 
             while (currentTime < exceedTime)
             {
-                if (_driver.WdFindElement(BetslipLOC.EventValidationMessage, 1).Displayed)
+                if (_driver.WdIsElementVisible(BetslipLOC.EventValidationMessage, 1))
                     ReplaceDirtyEvent();
+                
 
                 _driver.WdFindElement(BetslipLOC.ButtonPurchase).Click();
 
-                if (_driver.WdFindElement(BetslipLOC.Spinner, 1).Displayed)
+                if (_driver.WdIsElementVisible(BetslipLOC.Spinner, 1))
                 {
                     _driver.WaitUntilElementIsInvisible(BetslipLOC.Spinner, 30);
                     break;
@@ -134,7 +135,7 @@ namespace UI.Objects
 
                 currentTime = DateTime.Now;
             }
-            if (_driver.WdFindElement(BetslipLOC.ValidationMessage).Displayed)
+            if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 1))
                 BetslipModel.ValidationMessage = _driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText");
 
             if (PlayerProfileModel.BalanceAfterLogin > 0)

@@ -1,7 +1,10 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using System;
 using TechTalk.SpecFlow;
+using UI.Helpers;
+using UI.Locators;
 using UI.Objects;
 
 namespace UI.Steps
@@ -40,6 +43,7 @@ namespace UI.Steps
             {
                 _navigationObject.NavigateToHomePage();
                 _playerSessionObject.ExecuteLoginRequest();
+                _driver.WdFindElement(NavigationHeaderLOC.SuperbetLogo, 30);
 
                 Assert.IsTrue(_playerSessionObject.IsThePlayerLoggedOut(), "Player logout failed!");
             }
