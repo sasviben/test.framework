@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
+namespace UI.Features.SystemIntegrationTests.UserJourney
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,25 +20,22 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Online")]
-    [NUnit.Framework.CategoryAttribute("SPORT")]
-    public partial class OnlineFeature
+    [NUnit.Framework.DescriptionAttribute("Sport Online Betting")]
+    public partial class SportOnlineBettingFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = new string[] {
-                "SPORT"};
+        private string[] _featureTags = ((string[])(null));
         
-#line 1 "Online.feature"
+#line 1 "SportOnlineBetting.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/SystemIntegrationTests/UserJourney/SportBetting", "Online", null, ProgrammingLanguage.CSharp, new string[] {
-                        "SPORT"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/SystemIntegrationTests/UserJourney", "Sport Online Betting", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -78,13 +75,17 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("the online player should see the same data on the purchased mix simple ticket (Pr" +
-            "ematch and Inplay) as on the Betslip (uid:d88847a5-593c-470b-8fba-f7559b52f8e0)")]
-        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSimpleTicketPrematchAndInplayAsOnTheBetslipUidD88847A5_593C_470B_8Fba_F7559B52F8E0()
+            "ematch and Inplay) as on the Betslip (uid:34b47b8a-f6f0-47f2-8fc7-e273e3e44508)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSimpleTicketPrematchAndInplayAsOnTheBetslipUid34B47B8A_F6F0_47F2_8Fc7_E273E3E44508()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should see the same data on the purchased mix simple ticket (Pr" +
-                    "ematch and Inplay) as on the Betslip (uid:d88847a5-593c-470b-8fba-f7559b52f8e0)", null, tagsOfScenario, argumentsOfScenario);
+                    "ematch and Inplay) as on the Betslip (uid:34b47b8a-f6f0-47f2-8fc7-e273e3e44508)", null, tagsOfScenario, argumentsOfScenario);
 #line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -109,22 +110,22 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
-    testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"3\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
-    testRunner.And("the player has added \"1\" random \"INPLAY\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"1\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-    testRunner.When("the player purchases an \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("the player purchases an \"ONLINE\" sport \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("the \"ONLINE\" sport \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 11
-    testRunner.And("the data on the \"WIDGET\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the data on the \"WIDGET\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
-    testRunner.And("the data on the \"DETAILS\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the data on the \"DETAILS\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -132,14 +133,18 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("the online player should see the same data on the purchased mix system ticket (Pr" +
-            "ematch and Inplay) as on the Betslip (uid:b093b256-a0f8-401c-8686-00c07e444683)")]
-        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSystemTicketPrematchAndInplayAsOnTheBetslipUidB093B256_A0F8_401C_8686_00C07E444683()
+            "ematch and Inplay) as on the Betslip (uid:8fd1e660-04d9-4065-8ec6-475471c91032)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSystemTicketPrematchAndInplayAsOnTheBetslipUid8Fd1E660_04D9_4065_8Ec6_475471C91032()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should see the same data on the purchased mix system ticket (Pr" +
-                    "ematch and Inplay) as on the Betslip (uid:b093b256-a0f8-401c-8686-00c07e444683)", null, tagsOfScenario, argumentsOfScenario);
-#line 14
+                    "ematch and Inplay) as on the Betslip (uid:8fd1e660-04d9-4065-8ec6-475471c91032)", null, tagsOfScenario, argumentsOfScenario);
+#line 15
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -159,144 +164,29 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
             else
             {
                 this.ScenarioStart();
-#line 15
-    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 16
-    testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 17
-    testRunner.And("the player has added \"1\" random \"INPLAY\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"3\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
-    testRunner.When("the player selects \"1/4,4/4\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.And("the player has added \"1\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 19
-    testRunner.And("the player purchases an \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 20
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 21
-    testRunner.And("the data on the \"WIDGET\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 22
-    testRunner.And("the data on the \"DETAILS\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should see the same data on the purchased mix simple ticket (Pr" +
-            "ematch and Special) as on the Betslip (uid:db20457d-40ce-486c-97c6-2b2572b275de)" +
-            "")]
-        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSimpleTicketPrematchAndSpecialAsOnTheBetslipUidDb20457D_40Ce_486C_97C6_2B2572B275De()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should see the same data on the purchased mix simple ticket (Pr" +
-                    "ematch and Special) as on the Betslip (uid:db20457d-40ce-486c-97c6-2b2572b275de)" +
-                    "", null, tagsOfScenario, argumentsOfScenario);
-#line 24
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 25
-    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 26
-    testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 27
-    testRunner.And("the player has added \"1\" random \"SPECIAL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 28
-    testRunner.When("the player purchases an \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 29
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 30
-    testRunner.And("the data on the \"WIDGET\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 31
-    testRunner.And("the data on the \"DETAILS\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should see the same data on the purchased mix system ticket (Pr" +
-            "ematch and Special) as on the Betslip (uid:1500d6d4-e8ba-4fff-a2fb-3a86c23533f2)" +
-            "")]
-        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSystemTicketPrematchAndSpecialAsOnTheBetslipUid1500D6D4_E8Ba_4Fff_A2Fb_3A86C23533F2()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should see the same data on the purchased mix system ticket (Pr" +
-                    "ematch and Special) as on the Betslip (uid:1500d6d4-e8ba-4fff-a2fb-3a86c23533f2)" +
-                    "", null, tagsOfScenario, argumentsOfScenario);
-#line 33
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 34
-    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 35
-    testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 36
-    testRunner.And("the player has added \"1\" random \"SPECIAL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 37
     testRunner.When("the player selects \"1/4,4/4\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 38
-    testRunner.And("the player purchases an \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+    testRunner.And("the player purchases an \"ONLINE\" sport \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 21
+    testRunner.Then("the \"ONLINE\" sport \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 40
-    testRunner.And("the data on the \"WIDGET\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+    testRunner.And("the data on the \"WIDGET\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 41
-    testRunner.And("the data on the \"DETAILS\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+    testRunner.And("the data on the \"DETAILS\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -304,16 +194,20 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("the online player should see the same data on the purchased mix simple ticket (Pr" +
-            "ematch, Inplay and Special) as on the Betslip (uid:60c6af50-2293-47b8-88f4-36589" +
-            "be8b3d1)")]
-        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSimpleTicketPrematchInplayAndSpecialAsOnTheBetslipUid60C6Af50_2293_47B8_88F4_36589Be8B3D1()
+            "ematch and Special) as on the Betslip (uid:30cdb3a4-1470-440e-a1e5-d92fb5db8d14)" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSimpleTicketPrematchAndSpecialAsOnTheBetslipUid30Cdb3A4_1470_440E_A1E5_D92Fb5Db8D14()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should see the same data on the purchased mix simple ticket (Pr" +
-                    "ematch, Inplay and Special) as on the Betslip (uid:60c6af50-2293-47b8-88f4-36589" +
-                    "be8b3d1)", null, tagsOfScenario, argumentsOfScenario);
-#line 43
+                    "ematch and Special) as on the Betslip (uid:30cdb3a4-1470-440e-a1e5-d92fb5db8d14)" +
+                    "", null, tagsOfScenario, argumentsOfScenario);
+#line 26
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -333,32 +227,26 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
             else
             {
                 this.ScenarioStart();
-#line 44
+#line 27
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 45
-    testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+    testRunner.And("the player has added \"3\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 46
-    testRunner.And("the player has added \"1\" random \"SPECIAL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+    testRunner.And("the player has added \"1\" random \"SPECIAL\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 47
-    testRunner.And("the player has added \"1\" random \"INPLAY\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+    testRunner.When("the player purchases an \"ONLINE\" sport \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 48
-    testRunner.When("the player purchases an \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
+    testRunner.Then("the \"ONLINE\" sport \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 49
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 32
+    testRunner.And("the data on the \"WIDGET\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 50
-    testRunner.And("the data on the \"WIDGET\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 51
-    testRunner.And("the data on the \"DETAILS\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 52
-    testRunner.And("the player balance amount is subtracted by the \"SPORT\" ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+    testRunner.And("the data on the \"DETAILS\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -366,16 +254,20 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("the online player should see the same data on the purchased mix system ticket (Pr" +
-            "ematch, Inplay and Special) as on the Betslip (uid:411be173-04fd-4205-b535-954b3" +
-            "377fe22)")]
-        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSystemTicketPrematchInplayAndSpecialAsOnTheBetslipUid411Be173_04Fd_4205_B535_954B3377Fe22()
+            "ematch and Special) as on the Betslip (uid:5432fdd4-44d9-4726-b537-504427b24fe8)" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSystemTicketPrematchAndSpecialAsOnTheBetslipUid5432Fdd4_44D9_4726_B537_504427B24Fe8()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should see the same data on the purchased mix system ticket (Pr" +
-                    "ematch, Inplay and Special) as on the Betslip (uid:411be173-04fd-4205-b535-954b3" +
-                    "377fe22)", null, tagsOfScenario, argumentsOfScenario);
-#line 54
+                    "ematch and Special) as on the Betslip (uid:5432fdd4-44d9-4726-b537-504427b24fe8)" +
+                    "", null, tagsOfScenario, argumentsOfScenario);
+#line 36
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -395,95 +287,181 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
             else
             {
                 this.ScenarioStart();
-#line 55
+#line 37
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 56
-    testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+    testRunner.And("the player has added \"3\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 57
-    testRunner.And("the player has added \"1\" random \"SPECIAL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+    testRunner.And("the player has added \"1\" random \"SPECIAL\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 40
+    testRunner.When("the player selects \"1/4,4/4\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 41
+    testRunner.And("the player purchases an \"ONLINE\" sport \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 42
+    testRunner.Then("the \"ONLINE\" sport \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 43
+    testRunner.And("the data on the \"WIDGET\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 44
+    testRunner.And("the data on the \"DETAILS\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("the online player should see the same data on the purchased mix simple ticket (Pr" +
+            "ematch, Inplay and Special) as on the Betslip (uid:e917e222-8068-4a44-b2f1-8bf3a" +
+            "7cabf2b)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSimpleTicketPrematchInplayAndSpecialAsOnTheBetslipUidE917E222_8068_4A44_B2F1_8Bf3A7Cabf2B()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should see the same data on the purchased mix simple ticket (Pr" +
+                    "ematch, Inplay and Special) as on the Betslip (uid:e917e222-8068-4a44-b2f1-8bf3a" +
+                    "7cabf2b)", null, tagsOfScenario, argumentsOfScenario);
+#line 47
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 48
+    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 49
+    testRunner.And("the player has added \"3\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 50
+    testRunner.And("the player has added \"1\" random \"SPECIAL\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 51
+    testRunner.And("the player has added \"1\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 52
+    testRunner.When("the player purchases an \"ONLINE\" sport \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 53
+    testRunner.Then("the \"ONLINE\" sport \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 54
+    testRunner.And("the data on the \"WIDGET\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 55
+    testRunner.And("the data on the \"DETAILS\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("the online player should see the same data on the purchased mix system ticket (Pr" +
+            "ematch, Inplay and Special) as on the Betslip (uid:e3b36d8e-699c-42b8-971d-2ced1" +
+            "f58fc01)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedMixSystemTicketPrematchInplayAndSpecialAsOnTheBetslipUidE3B36D8E_699C_42B8_971D_2Ced1F58Fc01()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression",
+                    "acceptance"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should see the same data on the purchased mix system ticket (Pr" +
+                    "ematch, Inplay and Special) as on the Betslip (uid:e3b36d8e-699c-42b8-971d-2ced1" +
+                    "f58fc01)", null, tagsOfScenario, argumentsOfScenario);
 #line 58
-    testRunner.And("the player has added \"1\" random \"INPLAY\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 59
-    testRunner.When("the player selects \"1/5,5/5\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 60
-    testRunner.And("the player purchases an \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"3\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 61
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("the player has added \"1\" random \"SPECIAL\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 62
-    testRunner.And("the data on the \"WIDGET\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"1\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 63
-    testRunner.And("the data on the \"DETAILS\" is the same as data on the \"SPORT\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.When("the player selects \"1/5,5/5\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Prematch simple ticket (uid:5a13ad" +
-            "1d-9608-4eed-867e-5c590fb0b4f2)")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAPrematchSimpleTicketUid5A13Ad1D_9608_4Eed_867E_5C590Fb0B4F2()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Prematch simple ticket (uid:5a13ad" +
-                    "1d-9608-4eed-867e-5c590fb0b4f2)", null, tagsOfScenario, argumentsOfScenario);
+#line 64
+    testRunner.And("the player purchases an \"ONLINE\" sport \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 65
-  this.ScenarioInitialize(scenarioInfo);
+    testRunner.Then("the \"ONLINE\" sport \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
 #line 66
-    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.And("the data on the \"WIDGET\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 67
-    testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 68
-    testRunner.When("the player purchases an \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 69
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 70
-    testRunner.And("the player balance amount is subtracted by the \"SPORT\" ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the data on the \"DETAILS\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Prematch system ticket (uid:c02219" +
-            "03-cf4b-435c-9e5a-642606cd64b6)")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAPrematchSystemTicketUidC0221903_Cf4B_435C_9E5A_642606Cd64B6()
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Prematch simple ticket (uid:1358b0" +
+            "0e-c0ce-4fd9-8fa0-0c496626f5c6)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAPrematchSimpleTicketUid1358B00E_C0Ce_4Fd9_8Fa0_0C496626F5C6()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Prematch system ticket (uid:c02219" +
-                    "03-cf4b-435c-9e5a-642606cd64b6)", null, tagsOfScenario, argumentsOfScenario);
-#line 72
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Prematch simple ticket (uid:1358b0" +
+                    "0e-c0ce-4fd9-8fa0-0c496626f5c6)", null, tagsOfScenario, argumentsOfScenario);
+#line 70
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -503,38 +481,41 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
             else
             {
                 this.ScenarioStart();
-#line 73
+#line 71
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 72
+    testRunner.And("the player has added \"3\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 73
+    testRunner.When("the player purchases an \"ONLINE\" sport \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 74
-    testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Then("the \"ONLINE\" sport \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 75
-    testRunner.When("the player selects \"1/3,3/3\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 76
-    testRunner.And("the player purchases an \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 77
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 78
-    testRunner.And("the player balance amount is subtracted by the \"SPORT\" ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Inplay simple ticket (uid:1eb732f8" +
-            "-58ed-4ae5-9091-4db297f4f6bb)")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAInplaySimpleTicketUid1Eb732F8_58Ed_4Ae5_9091_4Db297F4F6Bb()
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Prematch system ticket (uid:fc6e49" +
+            "d4-5e1c-45f6-979a-e3ffcc64a63d)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAPrematchSystemTicketUidFc6E49D4_5E1C_45F6_979A_E3Ffcc64A63D()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Inplay simple ticket (uid:1eb732f8" +
-                    "-58ed-4ae5-9091-4db297f4f6bb)", null, tagsOfScenario, argumentsOfScenario);
-#line 80
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Prematch system ticket (uid:fc6e49" +
+                    "d4-5e1c-45f6-979a-e3ffcc64a63d)", null, tagsOfScenario, argumentsOfScenario);
+#line 78
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -554,34 +535,43 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
             else
             {
                 this.ScenarioStart();
-#line 81
+#line 79
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+#line 80
+    testRunner.And("the player has added \"3\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 81
+    testRunner.When("the player selects \"1/3,3/3\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 82
-    testRunner.And("the player has added \"1\" random \"INPLAY\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player purchases an \"ONLINE\" sport \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 83
-    testRunner.When("the player purchases an \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Then("the \"ONLINE\" sport \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 84
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 85
-    testRunner.And("the player balance amount is subtracted by the \"SPORT\" ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Inplay system ticket (uid:3d79ad5a" +
-            "-a9f0-4b2a-97fe-f6866dfde54e)")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAInplaySystemTicketUid3D79Ad5A_A9F0_4B2A_97Fe_F6866Dfde54E()
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Inplay simple ticket (uid:6da48565" +
+            "-61fc-407a-8f86-5435fa3edc4a)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAInplaySimpleTicketUid6Da48565_61Fc_407A_8F86_5435Fa3Edc4A()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Inplay system ticket (uid:3d79ad5a" +
-                    "-a9f0-4b2a-97fe-f6866dfde54e)", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Inplay simple ticket (uid:6da48565" +
+                    "-61fc-407a-8f86-5435fa3edc4a)", null, tagsOfScenario, argumentsOfScenario);
 #line 87
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -606,33 +596,36 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 89
-    testRunner.And("the player has added \"3\" random \"INPLAY\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"1\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 90
-    testRunner.When("the player selects \"1/3,3/3\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("the player purchases an \"ONLINE\" sport \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 91
-    testRunner.And("the player purchases an \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Then("the \"ONLINE\" sport \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 92
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 93
-    testRunner.And("the player balance amount is subtracted by the \"SPORT\" ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a mix Prematch, Inplay and Special s" +
-            "imple ticket (uid:7166a812-cd5a-4d99-b732-02c223d99f32)")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAMixPrematchInplayAndSpecialSimpleTicketUid7166A812_Cd5A_4D99_B732_02C223D99F32()
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Inplay system ticket (uid:d44c5ec1" +
+            "-f64d-4aaa-a288-2f2b7bd83830)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAInplaySystemTicketUidD44C5Ec1_F64D_4Aaa_A288_2F2B7Bd83830()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a mix Prematch, Inplay and Special s" +
-                    "imple ticket (uid:7166a812-cd5a-4d99-b732-02c223d99f32)", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Inplay system ticket (uid:d44c5ec1" +
+                    "-f64d-4aaa-a288-2f2b7bd83830)", null, tagsOfScenario, argumentsOfScenario);
 #line 95
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -657,22 +650,19 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 97
-    testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"3\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 98
-    testRunner.And("the player has added \"1\" random \"SPECIAL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.When("the player selects \"1/3,3/3\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 99
-    testRunner.And("the player has added \"1\" random \"INPLAY\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player purchases an \"ONLINE\" sport \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 100
-    testRunner.When("the player purchases an \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Then("the \"ONLINE\" sport \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 101
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 102
-    testRunner.And("the player balance amount is subtracted by the \"SPORT\" ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -680,13 +670,21 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a mix Prematch, Inplay and Special s" +
-            "ystem ticket (uid:c946596a-9c00-4570-a418-74b97e105e08)")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAMixPrematchInplayAndSpecialSystemTicketUidC946596A_9C00_4570_A418_74B97E105E08()
+            "imple ticket (uid:ff9a080b-0673-470e-925e-3f5997142387)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAMixPrematchInplayAndSpecialSimpleTicketUidFf9A080B_0673_470E_925E_3F5997142387()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression",
+                    "acceptance",
+                    "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a mix Prematch, Inplay and Special s" +
-                    "ystem ticket (uid:c946596a-9c00-4570-a418-74b97e105e08)", null, tagsOfScenario, argumentsOfScenario);
+                    "imple ticket (uid:ff9a080b-0673-470e-925e-3f5997142387)", null, tagsOfScenario, argumentsOfScenario);
 #line 104
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -711,39 +709,42 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 106
-    testRunner.And("the player has added \"3\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"3\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 107
-    testRunner.And("the player has added \"1\" random \"SPECIAL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"1\" random \"SPECIAL\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 108
-    testRunner.And("the player has added \"1\" random \"INPLAY\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"1\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 109
-    testRunner.When("the player selects \"1/5,5/5\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("the player purchases an \"ONLINE\" sport \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 110
-    testRunner.And("the player purchases an \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Then("the \"ONLINE\" sport \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 111
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 112
-    testRunner.And("the player balance amount is subtracted by the \"SPORT\" ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a simple ticket with the \"16/16\" com" +
-            "bination option selected (uid:6eb0f5e0-b15b-41c9-a969-878169b95a2f)")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseASimpleTicketWithThe1616CombinationOptionSelectedUid6Eb0F5E0_B15B_41C9_A969_878169B95A2F()
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a mix Prematch, Inplay and Special s" +
+            "ystem ticket (uid:c88c3b6a-104b-4efe-b8e4-def7b6b9bc21)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAMixPrematchInplayAndSpecialSystemTicketUidC88C3B6A_104B_4Efe_B8E4_Def7B6B9Bc21()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a simple ticket with the \"16/16\" com" +
-                    "bination option selected (uid:6eb0f5e0-b15b-41c9-a969-878169b95a2f)", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a mix Prematch, Inplay and Special s" +
+                    "ystem ticket (uid:c88c3b6a-104b-4efe-b8e4-def7b6b9bc21)", null, tagsOfScenario, argumentsOfScenario);
 #line 114
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -768,16 +769,77 @@ namespace UI.Features.SystemIntegrationTests.UserJourney.SportBetting
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 116
-    testRunner.And("the player has added \"16\" random \"PREMATCH\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"3\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 117
-    testRunner.When("the player selects \"16/16\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.And("the player has added \"1\" random \"SPECIAL\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 118
-    testRunner.And("the player purchases an \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"1\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 119
-    testRunner.Then("the \"ONLINE\" \"SPORT\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When("the player selects \"1/5,5/5\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 120
+    testRunner.And("the player purchases an \"ONLINE\" sport \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 121
+    testRunner.Then("the \"ONLINE\" sport \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 122
+    testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a simple ticket with the \"16/16\" com" +
+            "bination option selected (uid:01fe3b56-d593-4fd2-93cd-7117d418d943)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseASimpleTicketWithThe1616CombinationOptionSelectedUid01Fe3B56_D593_4Fd2_93Cd_7117D418D943()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a simple ticket with the \"16/16\" com" +
+                    "bination option selected (uid:01fe3b56-d593-4fd2-93cd-7117d418d943)", null, tagsOfScenario, argumentsOfScenario);
+#line 125
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 126
+    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 127
+    testRunner.And("the player has added \"16\" random \"PREMATCH\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 128
+    testRunner.When("the player selects \"16/16\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 129
+    testRunner.And("the player purchases an \"ONLINE\" sport \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 130
+    testRunner.Then("the \"ONLINE\" sport \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -74,15 +74,21 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Lotto page (uid:f98d2847-f151-4bbc-91f9-391" +
-            "7f2626d35)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheLottoPageUidF98D2847_F151_4Bbc_91F9_3917F2626D35()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Lotto page (uid:d895df3f-72b2-4650-aab8-ae3" +
+            "64635cfe6)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheLottoPageUidD895Df3F_72B2_4650_Aab8_Ae364635Cfe6()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Lotto page (uid:f98d2847-f151-4bbc-91f9-391" +
-                    "7f2626d35)", null, tagsOfScenario, argumentsOfScenario);
-#line 4
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Lotto page (uid:d895df3f-72b2-4650-aab8-ae3" +
+                    "64635cfe6)", null, tagsOfScenario, argumentsOfScenario);
+#line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -102,13 +108,13 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 5
+#line 6
     testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 6
+#line 7
     testRunner.When("the player clicks on the page \"LOTTO\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 7
+#line 8
     testRunner.Then("the \"LOTTO\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -116,15 +122,21 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Live page (uid:ab03d30c-2963-470b-b3cd-f11a" +
-            "3d0d4972)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheLivePageUidAb03D30C_2963_470B_B3Cd_F11A3D0D4972()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Live page (uid:333cf42d-0725-4e29-8a88-7835" +
+            "a6f5993a)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheLivePageUid333Cf42D_0725_4E29_8A88_7835A6F5993A()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Live page (uid:ab03d30c-2963-470b-b3cd-f11a" +
-                    "3d0d4972)", null, tagsOfScenario, argumentsOfScenario);
-#line 9
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Live page (uid:333cf42d-0725-4e29-8a88-7835" +
+                    "a6f5993a)", null, tagsOfScenario, argumentsOfScenario);
+#line 11
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -144,13 +156,13 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 10
+#line 12
     testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 11
+#line 13
     testRunner.When("the player clicks on the page \"LIVE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
+#line 14
     testRunner.Then("the \"LIVE\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -158,15 +170,21 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Homepage (uid:ae5ff56c-db20-4ba0-9c1a-d19d5" +
-            "585f317)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheHomepageUidAe5Ff56C_Db20_4Ba0_9C1A_D19D5585F317()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Homepage (uid:89b199d9-ed54-4ef2-a8d4-786a1" +
+            "d995d25)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheHomepageUid89B199D9_Ed54_4Ef2_A8D4_786A1D995D25()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Homepage (uid:ae5ff56c-db20-4ba0-9c1a-d19d5" +
-                    "585f317)", null, tagsOfScenario, argumentsOfScenario);
-#line 14
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Homepage (uid:89b199d9-ed54-4ef2-a8d4-786a1" +
+                    "d995d25)", null, tagsOfScenario, argumentsOfScenario);
+#line 17
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -186,13 +204,13 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 15
+#line 18
     testRunner.Given("the player is on the page \"LIVE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 16
+#line 19
     testRunner.When("the player clicks on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 20
     testRunner.Then("the \"SUPERBET\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -200,15 +218,21 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Sport page (uid:909346f1-612d-4018-8a59-d8d" +
-            "ec5a0cfee)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheSportPageUid909346F1_612D_4018_8A59_D8Dec5A0Cfee()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Sport page (uid:4d4679dd-1212-4fa1-a89f-984" +
+            "2a0735324)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheSportPageUid4D4679Dd_1212_4Fa1_A89F_9842A0735324()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Sport page (uid:909346f1-612d-4018-8a59-d8d" +
-                    "ec5a0cfee)", null, tagsOfScenario, argumentsOfScenario);
-#line 19
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Sport page (uid:4d4679dd-1212-4fa1-a89f-984" +
+                    "2a0735324)", null, tagsOfScenario, argumentsOfScenario);
+#line 23
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -228,13 +252,13 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 20
+#line 24
     testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 21
+#line 25
     testRunner.When("the player clicks on the page \"SPORT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 26
     testRunner.Then("the \"SPORT\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -242,56 +266,20 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Games page (uid:619edcce-67f5-4be6-92f1-f8e" +
-            "3251e1747)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheGamesPageUid619Edcce_67F5_4Be6_92F1_F8E3251E1747()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Games page (uid:953c3ea1-b328-410b-9de3-57f" +
+            "878a3c777)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheGamesPageUid953C3Ea1_B328_410B_9De3_57F878A3C777()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "acceptance",
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Games page (uid:619edcce-67f5-4be6-92f1-f8e" +
-                    "3251e1747)", null, tagsOfScenario, argumentsOfScenario);
-#line 24
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 25
-    testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 26
-    testRunner.When("the player clicks on the page \"GAMES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 27
-    testRunner.Then("the \"GAMES\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Casino live page (uid:091287c4-b8f4-449a-8d" +
-            "66-736ad3d42f52)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheCasinoLivePageUid091287C4_B8F4_449A_8D66_736Ad3D42F52()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Casino live page (uid:091287c4-b8f4-449a-8d" +
-                    "66-736ad3d42f52)", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Games page (uid:953c3ea1-b328-410b-9de3-57f" +
+                    "878a3c777)", null, tagsOfScenario, argumentsOfScenario);
 #line 29
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -316,9 +304,57 @@ namespace UI.Features.SystemTests
     testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 31
-    testRunner.When("the player clicks on the page \"CASINO\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("the player clicks on the page \"GAMES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 32
+    testRunner.Then("the \"GAMES\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Casino live page (uid:e74a10af-1d3a-410a-b3" +
+            "e7-b75b24a92c4e)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheCasinoLivePageUidE74A10Af_1D3A_410A_B3E7_B75B24A92C4E()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Casino live page (uid:e74a10af-1d3a-410a-b3" +
+                    "e7-b75b24a92c4e)", null, tagsOfScenario, argumentsOfScenario);
+#line 35
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 36
+    testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 37
+    testRunner.When("the player clicks on the page \"CASINO\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 38
     testRunner.Then("the \"CASINO\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -326,15 +362,21 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Virtual games page (uid:35e4e9e8-aa00-4275-" +
-            "8a5a-bbccd7ff48ff)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheVirtualGamesPageUid35E4E9E8_Aa00_4275_8A5A_Bbccd7Ff48Ff()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Virtual games page (uid:d308f37e-8eea-4f95-" +
+            "9ae5-b80f1818261a)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheVirtualGamesPageUidD308F37E_8Eea_4F95_9Ae5_B80F1818261A()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Virtual games page (uid:35e4e9e8-aa00-4275-" +
-                    "8a5a-bbccd7ff48ff)", null, tagsOfScenario, argumentsOfScenario);
-#line 34
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Virtual games page (uid:d308f37e-8eea-4f95-" +
+                    "9ae5-b80f1818261a)", null, tagsOfScenario, argumentsOfScenario);
+#line 41
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -354,13 +396,13 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 35
+#line 42
     testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 36
+#line 43
     testRunner.When("the player clicks on the page \"VIRTUAL\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 37
+#line 44
     testRunner.Then("the \"VIRTUAL\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -368,15 +410,21 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the News page (uid:dd7ef12c-b948-42b3-ac65-6cee" +
-            "484f1b63)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheNewsPageUidDd7Ef12C_B948_42B3_Ac65_6Cee484F1B63()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the News page (uid:fd12947e-f5c9-44f5-a29b-8843" +
+            "d07e24b7)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheNewsPageUidFd12947E_F5C9_44F5_A29B_8843D07E24B7()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the News page (uid:dd7ef12c-b948-42b3-ac65-6cee" +
-                    "484f1b63)", null, tagsOfScenario, argumentsOfScenario);
-#line 39
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the News page (uid:fd12947e-f5c9-44f5-a29b-8843" +
+                    "d07e24b7)", null, tagsOfScenario, argumentsOfScenario);
+#line 47
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -396,13 +444,13 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 40
+#line 48
     testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 41
+#line 49
     testRunner.When("the player clicks on the page \"NEWS\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 42
+#line 50
     testRunner.Then("the \"NEWS\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -410,15 +458,21 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Results page (uid:fabdad62-49a5-45fb-be1b-1" +
-            "b6ff1839a9b)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheResultsPageUidFabdad62_49A5_45Fb_Be1B_1B6Ff1839A9B()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Results page (uid:e7d6451f-8b71-461e-b5c1-3" +
+            "8930eb41667)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheResultsPageUidE7D6451F_8B71_461E_B5C1_38930Eb41667()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Results page (uid:fabdad62-49a5-45fb-be1b-1" +
-                    "b6ff1839a9b)", null, tagsOfScenario, argumentsOfScenario);
-#line 44
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Results page (uid:e7d6451f-8b71-461e-b5c1-3" +
+                    "8930eb41667)", null, tagsOfScenario, argumentsOfScenario);
+#line 53
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -438,13 +492,13 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 45
+#line 54
     testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 46
+#line 55
     testRunner.When("the player clicks on the page \"RESULTS\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 47
+#line 56
     testRunner.Then("the \"RESULTS\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -452,98 +506,20 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Shops page (uid:dfa5bd0a-bbae-49f2-9bb0-d6a" +
-            "77f88643f)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheShopsPageUidDfa5Bd0A_Bbae_49F2_9Bb0_D6A77F88643F()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Shops page (uid:cdbbeb10-7b8b-453c-ba55-7a5" +
+            "6b9db4e7d)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheShopsPageUidCdbbeb10_7B8B_453C_Ba55_7A56B9Db4E7D()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Shops page (uid:dfa5bd0a-bbae-49f2-9bb0-d6a" +
-                    "77f88643f)", null, tagsOfScenario, argumentsOfScenario);
-#line 49
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 50
-    testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 51
-    testRunner.When("the player clicks on the page \"SHOPS\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 52
-    testRunner.Then("the \"SHOPS\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Help pop up (uid:4f72e00e-9ffb-4278-a10a-b6" +
-            "6b75ad6121)")]
-        public virtual void ThePlayerShouldBeAbleToOpenTheHelpPopUpUid4F72E00E_9Ffb_4278_A10A_B66B75Ad6121()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Help pop up (uid:4f72e00e-9ffb-4278-a10a-b6" +
-                    "6b75ad6121)", null, tagsOfScenario, argumentsOfScenario);
-#line 54
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 55
-    testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 56
-    testRunner.When("the player clicks on the page \"HELP\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 57
-    testRunner.Then("the \"HELP\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Player account page (uid:3527496f-fc1a-48ab" +
-            "-87bd-9dde9a2a21c2)")]
-        public virtual void ThePlayerShouldBeAbleToOpenThePlayerAccountPageUid3527496F_Fc1A_48Ab_87Bd_9Dde9A2A21C2()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Player account page (uid:3527496f-fc1a-48ab" +
-                    "-87bd-9dde9a2a21c2)", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Shops page (uid:cdbbeb10-7b8b-453c-ba55-7a5" +
+                    "6b9db4e7d)", null, tagsOfScenario, argumentsOfScenario);
 #line 59
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -565,12 +541,110 @@ namespace UI.Features.SystemTests
             {
                 this.ScenarioStart();
 #line 60
-    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 61
-    testRunner.When("the player clicks on the page \"PLAYER ACCOUNT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("the player clicks on the page \"SHOPS\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 62
+    testRunner.Then("the \"SHOPS\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Help pop up (uid:e324c779-c707-4c39-88c7-1d" +
+            "9af058496a)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenTheHelpPopUpUidE324C779_C707_4C39_88C7_1D9Af058496A()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Help pop up (uid:e324c779-c707-4c39-88c7-1d" +
+                    "9af058496a)", null, tagsOfScenario, argumentsOfScenario);
+#line 65
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 66
+    testRunner.Given("the player is on the page \"SUPERBET\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 67
+    testRunner.When("the player clicks on the page \"HELP\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 68
+    testRunner.Then("the \"HELP\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Player account page (uid:60e00bd5-ba27-4772" +
+            "-ad5b-82406c92599e)")]
+        [NUnit.Framework.CategoryAttribute("online")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenThePlayerAccountPageUid60E00Bd5_Ba27_4772_Ad5B_82406C92599E()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "online",
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Player account page (uid:60e00bd5-ba27-4772" +
+                    "-ad5b-82406c92599e)", null, tagsOfScenario, argumentsOfScenario);
+#line 71
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 72
+    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 73
+    testRunner.When("the player clicks on the page \"PLAYER ACCOUNT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 74
     testRunner.Then("the \"PLAYER ACCOUNT\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -578,15 +652,23 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Player tickets page (uid:9bfe8d20-e909-4968" +
-            "-b157-34f7969fe863)")]
-        public virtual void ThePlayerShouldBeAbleToOpenThePlayerTicketsPageUid9Bfe8D20_E909_4968_B157_34F7969Fe863()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Player tickets page (uid:b76218ac-af1a-432e" +
+            "-9735-e5ffa15090ec)")]
+        [NUnit.Framework.CategoryAttribute("online")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenThePlayerTicketsPageUidB76218Ac_Af1A_432E_9735_E5Ffa15090Ec()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "online",
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Player tickets page (uid:9bfe8d20-e909-4968" +
-                    "-b157-34f7969fe863)", null, tagsOfScenario, argumentsOfScenario);
-#line 64
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Player tickets page (uid:b76218ac-af1a-432e" +
+                    "-9735-e5ffa15090ec)", null, tagsOfScenario, argumentsOfScenario);
+#line 77
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -606,13 +688,13 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 65
+#line 78
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 66
+#line 79
     testRunner.When("the player clicks on the page \"PLAYER TICKETS\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 67
+#line 80
     testRunner.Then("the \"PLAYER TICKETS\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -620,15 +702,23 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Player history page (uid:24bb0ba8-586f-46cb" +
-            "-9984-b25d42ee9bfa)")]
-        public virtual void ThePlayerShouldBeAbleToOpenThePlayerHistoryPageUid24Bb0Ba8_586F_46Cb_9984_B25D42Ee9Bfa()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to open the Player history page (uid:89c19dc2-77c9-4e93" +
+            "-9b6b-ea4a4d5fdeb1)")]
+        [NUnit.Framework.CategoryAttribute("online")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void ThePlayerShouldBeAbleToOpenThePlayerHistoryPageUid89C19Dc2_77C9_4E93_9B6B_Ea4A4D5Fdeb1()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "online",
+                    "RULES_automated",
+                    "regression",
+                    "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Player history page (uid:24bb0ba8-586f-46cb" +
-                    "-9984-b25d42ee9bfa)", null, tagsOfScenario, argumentsOfScenario);
-#line 69
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to open the Player history page (uid:89c19dc2-77c9-4e93" +
+                    "-9b6b-ea4a4d5fdeb1)", null, tagsOfScenario, argumentsOfScenario);
+#line 83
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -648,13 +738,13 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 70
+#line 84
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 71
+#line 85
     testRunner.When("the player clicks on the page \"PLAYER HISTORY\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 72
+#line 86
     testRunner.Then("the \"PLAYER HISTORY\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
