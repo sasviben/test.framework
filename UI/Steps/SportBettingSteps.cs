@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using System;
 using TechTalk.SpecFlow;
+using UI.Models;
 using UI.Objects;
 
 namespace UI.Steps
@@ -9,26 +10,34 @@ namespace UI.Steps
     [Binding]
     class SportBettingSteps
     {
-        public SportBettingSteps(IWebDriver webDriver)
-        {
-            _driver = webDriver;
-            _navigationObject = new NavigationObject(_driver);
-            _betslipObject = new BetslipObject(_driver);
-        }
-
-        private const string SPORT = "SPORT";
         private const string LOTTO = "LOTTO";
         private const string PREMATCH = "PREMATCH";
         private const string INPLAY = "INPLAY";
         private const string SPECIAL = "SPECIAL";
         private readonly IWebDriver _driver;
         private readonly NavigationObject _navigationObject;
-        private readonly BetslipObject _betslipObject;
+        private readonly SportBettingObject _sportBettingObject;
+        private readonly PlayerProfileObject _playerProfileObject;
+
+        public SportBettingSteps(IWebDriver webDriver)
+        {
+            _driver = webDriver;
+            _navigationObject = new NavigationObject(_driver);
+            _sportBettingObject = new SportBettingObject(_driver);
+            _playerProfileObject = new PlayerProfileObject(_driver);
+        }
 
         #region Actions
         [Given(@"the player has added ""(.*)"" random ""(.*)"" ""(.*)"" events to the Betslip")]
         public void GivenThePlayerHasAddedRandomEventsToTheBetslip(int numberOfEventsToAdd, string bettingType, string sportGame)
         {
+            if (numberOfEventsToAdd <= 0)
+                Assert.Fail("Number of events to add must be greater than zero!");
+            if (string.IsNullOrEmpty(bettingType))
+                Assert.Fail("String bettingType is null or empty!");
+            if (string.IsNullOrEmpty(sportGame))
+                Assert.Fail("String sportGame is null or empty!");
+
             try
             {
                 if (bettingType.Equals(PREMATCH, StringComparison.OrdinalIgnoreCase))
@@ -44,45 +53,57 @@ namespace UI.Steps
                 else if (bettingType.Equals(SPECIAL, StringComparison.OrdinalIgnoreCase))
                     _navigationObject.NavigateToSportPage(bettingType);
 
-                _betslipObject.AddSportEvents(numberOfEventsToAdd, bettingType);
+                _sportBettingObject.AddSportEvents(numberOfEventsToAdd, bettingType);
             }
-            catch (Exception e) { Assert.Fail($"Step 'the player has added {numberOfEventsToAdd} random {bettingType} {sportGame} events to the Betslip' failed! {e.Message}"); }
+            catch (Exception e)
+            {
+                Assert.Fail(
+                    $"Step 'the player has added {numberOfEventsToAdd} random {bettingType} {sportGame} events to the Betslip' failed!" +
+                    $" {e.Message}");
+            }
 
         }
 
-        [When(@"the player purchases an ""(.*)"" ""(.*)"" ""(.*)"" ticket")]
-        public void WhenThePlayerPurchasesAnTicket(string ticketType, string bettingType, string ticketCombinationType)
+        [When(@"the player purchases an ""(.*)"" sport ""(.*)"" ticket")]
+        public void WhenThePlayerPurchasesAnTicket(string ticketSessionType, string ticketCombinationType)
         {
-            if (string.IsNullOrEmpty(ticketType))
+            if (string.IsNullOrEmpty(ticketSessionType))
                 Assert.Fail("String ticketType is null or empty!");
-            if (string.IsNullOrEmpty(bettingType))
-                Assert.Fail("String bettingType is null or empty!");
             if (string.IsNullOrEmpty(ticketCombinationType))
                 Assert.Fail("String ticketCombinationType is null or empty!");
 
             try
             {
-                if (bettingType.Equals(SPORT, StringComparison.OrdinalIgnoreCase))
-                {
-                    Assert.IsTrue(_betslipObject.IsBetslipEmpty(), "Sport Betslip does not contain any sport events!");
+                Assert.IsTrue(_sportBettingObject.IsBetslipEmpty(), "Sport Betslip does not contain any sport events!");
 
-                    _betslipObject.SelectTicketOptions(ticketType, ticketCombinationType);
-                    _betslipObject.PurchaseTicket();
-                }
-
-                if (bettingType.Equals(LOTTO, StringComparison.OrdinalIgnoreCase))
-                {
-                    Assert.IsTrue(_betslipObject.IsBetslipEmpty(), "Lotto Betslip does not contain any lotto numbers!");
-
-                    _betslipObject.SelectTicketOptions(ticketType, ticketCombinationType);
-                    _betslipObject.PurchaseTicket();
-                }
+                _sportBettingObject.SelectTicketOptions(ticketSessionType, ticketCombinationType);
+                _sportBettingObject.PurchaseTicket();
             }
-            catch (Exception e) { Assert.Fail($"Step 'the player purchases an {ticketType} {bettingType} {ticketCombinationType} ticket' failed! {e.Message}"); }
+            catch (Exception e) { Assert.Fail($"Step 'the player purchases an {ticketSessionType} sport {ticketCombinationType} ticket' failed! {e.Message}"); }
 
         }
 
-    }
+        #endregion
 
-    #endregion
+        #region Assertions
+        [Then(@"the ""(.*)"" sport ""(.*)"" ticket is purchased")]
+        public void ThenTheTicketIsPurchased(string ticketSessionType, string ticketCombinationType)
+        {
+            try
+            {
+                _sportBettingObject.TicketWidgetWithCorrectDataIsDisplayed(ticketSessionType, ticketCombinationType);
+            }
+            catch (Exception e) { Assert.Fail($"Step 'the {ticketSessionType} sport {ticketCombinationType} ticket is purchased' failed! {e.Message}"); }
+
+        }
+
+        [Then(@"the player balance amount is subtracted by the ticket stake")]
+        public void ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake()
+        {
+            _playerProfileObject.PlayerBalanceIsCReducedByTheStake(BetslipModel.Stake);
+        }
+
+
+        #endregion
+    }
 }

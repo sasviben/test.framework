@@ -10,20 +10,15 @@ namespace UI.Objects
 {
     class NavigationObject
     {
+        
+        private readonly IWebDriver _driver;
         public NavigationObject(IWebDriver webdriver)
         {
             _driver = webdriver;
         }
 
-        private readonly IWebDriver _driver;
-
         #region Actions
-        /// <summary>
-        ///   Opens homepage
-        /// </summary>
-        /// <exception cref="ArgumentException">
-        ///    Browser name is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
-        /// </exception>
+        
         public void NavigateToHomePage()
         {
             if (Enum.TryParse(Settings.Browser, true, out BrowserType browserType) == false)
@@ -37,16 +32,7 @@ namespace UI.Objects
             _driver.WdFindElement(NavigationHeaderLOC.SuperbetLogo, 30);
 
         }
-
-        /// <summary>
-        ///    Navigates to the desired page from main header navigation (Sport, Live, Games, ...).
-        /// </summary>
-        /// <param name="pageName">
-        ///    pageName represents the name of the page to navigate.
-        /// </param>
-        /// <exception cref="ArgumentException">
-        ///    pageName is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
-        /// </exception>
+        
         public void NavigateToMainPage(string pageName)
         {
             if (Enum.TryParse(pageName.Replace(" ", "_"), true, out PageType pageTypeParsed) == false)
@@ -135,20 +121,10 @@ namespace UI.Objects
             _driver.WaitUntilElementIsInvisible(NavigationHeaderLOC.Spinner, 20);
         }
 
-        /// <summary>
-        ///    Navigates to the Sport betting type page (Prematch, Inplay, Special).
-        /// </summary>
-        /// <param name="sportPageName">
-        ///    sportPageName represents the name of the Sport's page to navigate.
-        /// </param>
-        /// <exception cref="ArgumentException">
-        ///    sportPageName is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
-        /// </exception>
         public void NavigateToSportPage(string sportPageName)
         {
             if (Enum.TryParse(sportPageName, true, out SportBettingType sportBettingType) == false)
                 throw new ArgumentException($"String {sportPageName} can't be parsed to enum SportBettingType!");
-
 
             switch (sportBettingType)
             {
@@ -174,15 +150,6 @@ namespace UI.Objects
 
         }
 
-        /// <summary>
-        ///    Navigates to the Sport betting game (Footbal, Basketball, Tennis, ...).
-        /// </summary>
-        /// <param name="sportGameType">
-        ///    sportGameType represents the name of the Sport's game to navigate.
-        /// </param>
-        /// <exception cref="ArgumentException">
-        ///    sportGameType is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
-        /// </exception>
         public void NavigateToSportGame(string sportGameType)
         {
             if (Enum.TryParse(sportGameType, true, out SportGameType sportGameTypeParsed) == false)
@@ -202,15 +169,7 @@ namespace UI.Objects
         #endregion
 
         #region Assertions
-        /// <summary>
-        ///    Checks if the page is displayed.
-        /// </summary>
-        /// <param name="pageName">
-        ///    pageName represents the name of displayed page.
-        /// </param>
-        /// <exception cref="ArgumentException">
-        ///    pageName is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
-        /// </exception>
+
         public void IsThePageDisplayed(string pageName)
         {
             if (!Enum.TryParse(pageName.Replace(" ", "_"), true, out PageType pageTypeParsed))

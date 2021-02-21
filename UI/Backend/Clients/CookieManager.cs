@@ -15,7 +15,7 @@ namespace UI.Backend.Clients
         public static List<Cookie> SeleniumCookies { get; set; } = new List<Cookie>();
 
         /// <summary>
-        ///     Sets HttpClient cookies from POST request.
+        ///     Converts HttpClient cookies from POST request to the Selenium cookies.
         /// </summary>
         /// <exception cref="HttpRequestException">
         ///    HTTP request failure message.

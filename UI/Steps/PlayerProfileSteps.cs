@@ -1,10 +1,11 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.Extensions;
 using System;
 using TechTalk.SpecFlow;
+using UI.Backend.Clients;
 using UI.Helpers;
 using UI.Locators;
+using UI.Models;
 using UI.Objects;
 
 namespace UI.Steps
@@ -43,9 +44,10 @@ namespace UI.Steps
             {
                 _navigationObject.NavigateToHomePage();
                 _playerSessionObject.ExecuteLoginRequest();
-                _driver.WdFindElement(NavigationHeaderLOC.SuperbetLogo, 30);
+                _driver.WdFindElement(NavigationHeaderLOC.SuperbetLogo);
 
-                Assert.IsTrue(_playerSessionObject.IsThePlayerLoggedOut(), "Player logout failed!");
+                Assert.IsTrue(_playerSessionObject.IsThePlayerLoggedIn(), "Player login failed!");
+                PlayerProfileModel.BalanceAfterLogin = CookieManager.GetPlayerBalance();
             }
             catch (Exception e) { Assert.Fail($"Step 'the player is logged in' failed! {e.Message}"); }
 

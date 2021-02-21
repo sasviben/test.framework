@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Linq;
 using UI.Backend.Clients;
@@ -9,13 +10,8 @@ using static UI.Helpers.Enums;
 
 namespace UI.Objects
 {
-    class BetslipObject
+    class SportBettingObject
     {
-        public BetslipObject(IWebDriver webDriver)
-        {
-            _driver = webDriver;
-            _playerSessionObject = new PlayerSessionObject(_driver);
-        }
 
         private readonly IWebDriver _driver;
         private readonly PlayerSessionObject _playerSessionObject;
@@ -23,9 +19,13 @@ namespace UI.Objects
         private const string SPORT_INPLAY = "INPLAY";
         private const string SPORT_PREMATCH = "PREMATCH";
 
-        /// <summary>
-        ///    Finds event with validation message and replaces it with the new one.
-        /// </summary>
+        public SportBettingObject(IWebDriver webDriver)
+        {
+            _driver = webDriver;
+            _playerSessionObject = new PlayerSessionObject(_driver);
+        }
+
+
         private void ReplaceDirtyEvent()
         {
 
@@ -33,9 +33,9 @@ namespace UI.Objects
 
             foreach (var dirtyEvent in betslipEvents)
             {
-                if (dirtyEvent.WeIsElementVisible(_driver, BetslipLOC.EventValidationMessage))
+                if (dirtyEvent.WeIsElementVisible(_driver, BetslipLOC.EventValidationMessage, 1))
                 {
-                    if (dirtyEvent.WeIsElementVisible(_driver, SportEventLOC.LiveIndicator))
+                    if (dirtyEvent.WeIsElementVisible(_driver, SportEventLOC.LiveIndicator, 1))
                     {
                         dirtyEvent.WeFindElement(_driver, BetslipLOC.ButtonDeleteEvent).Click();
                         if (!_driver.Url.Contains(URL_INPLAY))
@@ -55,28 +55,16 @@ namespace UI.Objects
 
         #region Actions
 
-        /// <summary>
-        ///    Add random Sport events to the Betslip.
-        /// </summary>
-        /// <param name="numberOfEventsToAdd">
-        ///    Number of random Sport events to add.
-        /// </param>
-        /// <param name="bettingType">
-        ///    Type of Sport events to add. Can be Prematch, Inplay and Special.
-        /// </param>
-        /// <exception cref="ArgumentException">
-        ///    bettingType is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
-        /// </exception>
         public void AddSportEvents(int numberOfEventsToAdd, string bettingType)
         {
             var random = new Random();
+            var numberOfEventsOnTheBetslip = 0;
 
             if (Enum.TryParse(bettingType, true, out SportBettingType sportBettingType) == false)
                 throw new ArgumentException($"String {bettingType} can't be parsed to enum SportBettingType!");
 
             if (sportBettingType.Equals(SportBettingType.SPECIAL))
             {
-                //todo
                 throw new NotImplementedException("Special betting is not supported yet!");
             }
             else
@@ -85,13 +73,15 @@ namespace UI.Objects
                 var eventsListLength = eventsTemp.Count;
 
                 if (eventsListLength < numberOfEventsToAdd)
-                    numberOfEventsToAdd = eventsListLength;
+                    throw new Exception($"Can't add {numberOfEventsToAdd} selections on the Betslip because there are only {eventsListLength} selections available!");
 
                 while (numberOfEventsToAdd != 0)
                 {
                     var randomEvent = eventsTemp[random.Next(eventsListLength)];
                     randomEvent.WeMoveToElement(_driver);
-                    randomEvent.WeHighlightElement(_driver);
+
+                    if (randomEvent.Displayed)
+                        randomEvent.WeHighlightElement(_driver);
 
                     var odd = randomEvent.WeFindElement(_driver, SportEventLOC.ContainerOdd);
                     if (odd != null)
@@ -102,7 +92,15 @@ namespace UI.Objects
                         if (oddValueDouble >= 1.01)
                         {
                             odd.Click();
-                            numberOfEventsToAdd--;
+
+                            var numberOfEventsOnTheBetslipTemp = int.Parse(_driver.WdFindElement(BetslipLOC.EventsCount).WeGetAttributeValue(_driver, "innerText"));
+
+                            if (numberOfEventsOnTheBetslipTemp > numberOfEventsOnTheBetslip)
+                            {
+                                numberOfEventsOnTheBetslip = numberOfEventsOnTheBetslipTemp;
+                                numberOfEventsToAdd--;
+                            }
+
                         }
                     }
                 }
@@ -110,9 +108,6 @@ namespace UI.Objects
 
         }
 
-        /// <summary>
-        ///    Purchases a ticket.
-        /// </summary>
         public void PurchaseTicket()
         {
 
@@ -123,42 +118,31 @@ namespace UI.Objects
             {
                 if (_driver.WdIsElementVisible(BetslipLOC.EventValidationMessage, 1))
                     ReplaceDirtyEvent();
-                
+
 
                 _driver.WdFindElement(BetslipLOC.ButtonPurchase).Click();
 
-                if (_driver.WdIsElementVisible(BetslipLOC.Spinner, 1))
-                {
-                    _driver.WaitUntilElementIsInvisible(BetslipLOC.Spinner, 30);
+                if (_driver.WdIsElementVisible(BetslipLOC.Spinner))
                     break;
-                }
 
                 currentTime = DateTime.Now;
             }
+
+            if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 1))
+                BetslipModel.ValidationMessage = _driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText");
+            _driver.WaitUntilElementIsInvisible(BetslipLOC.Spinner, 1);
             if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 1))
                 BetslipModel.ValidationMessage = _driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText");
 
-            if (PlayerProfileModel.BalanceAfterLogin > 0)
-                PlayerProfileModel.BalanceAfterPurchase = CookieManager.GetPlayerBalance();
+            PlayerProfileModel.BalanceAfterPurchase = CookieManager.GetPlayerBalance();
 
         }
 
-        /// <summary>
-        ///    Selects ticket options on the Betslip.
-        /// </summary>
-        /// <param name="ticketType">
-        ///    Represents Online or Agency ticket type.
-        /// </param>
-        /// <param name="ticketCombinationType">
-        ///    Represents Simple or System ticket type.
-        /// </param>
-        /// <exception cref="ArgumentException">
-        ///    ticketType or ticketCombinationType is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
-        /// </exception>
-        public void SelectTicketOptions(string ticketType, string ticketCombinationType)
+        public void SelectTicketOptions(string ticketSessionType, string ticketCombinationType)
         {
-            if (Enum.TryParse(ticketType, true, out BetslipType ticketTypeParsed) == false)
-                throw new ArgumentException($"String {ticketType} can't be parsed to enum BetslipType!");
+
+            if (Enum.TryParse(ticketSessionType, true, out BetslipType ticketTypeParsed) == false)
+                throw new ArgumentException($"String {ticketSessionType} can't be parsed to enum BetslipType!");
 
             if (Enum.TryParse(ticketCombinationType, true, out BetslipType ticketCombinationTypeParsed) == false)
                 throw new ArgumentException($"String {ticketCombinationType} can't be parsed to enum BetslipType!");
@@ -176,17 +160,17 @@ namespace UI.Objects
             else if (ticketCombinationTypeParsed.Equals(BetslipType.SYSTEM))
                 _driver.WdFindElement(BetslipLOC.ButtonSystemTicket).Click();
 
+            BetslipModel.Stake = Common.GetRandomNumber(2, 20);
+
+            var ticketStakeField = _driver.WdFindElement(BetslipLOC.InputFieldStake);
+            ticketStakeField.Clear();
+            ticketStakeField.SendKeys(BetslipModel.Stake.ToString());
+
         }
 
         #endregion
 
         #region Assertions
-        /// <summary>
-        ///    Checks if Betslip is empty.
-        /// </summary>
-        /// <returns>
-        ///    True if Betslip component contains sport events or lotto numbers, else returns false.
-        /// </returns>
         public bool IsBetslipEmpty()
         {
             var betslipEventCount = _driver.WdFindElement(BetslipLOC.EventsCount).WeGetAttributeValue(_driver, "innerText");
@@ -195,6 +179,33 @@ namespace UI.Objects
             if (betslipEventCountDouble <= 0)
                 return false;
             return true;
+
+        }
+
+        public void TicketWidgetWithCorrectDataIsDisplayed(string ticketSessionType, string ticketCombinationType)
+        {
+            if (Enum.TryParse(ticketSessionType, true, out BetslipType ticketSessionTypeParsed) == false)
+                throw new ArgumentException($"String {ticketSessionType} can't be parsed to enum BetslipType!");
+
+            if (ticketSessionTypeParsed.Equals(BetslipType.ONLINE))
+            {
+                var widgetTitle = _driver.WdFindElement(WidgetLOC.Title).WeGetAttributeValue(_driver, "innerText").Trim().Split("\r");
+
+                var bettingTypeActual = Common.TranslateToEnglish(widgetTitle[0]);
+                var ticketCombinationTypeActual = Common.TranslateToEnglish(widgetTitle[1].Remove(0, 1));
+                var ticketId = widgetTitle[2].Remove(0, 1);
+
+                Assert.Multiple(() =>
+                {
+                    StringAssert.AreEqualIgnoringCase(expected: "SPORT", actual: bettingTypeActual, $"Widget betting type is not equal to the SPORT!");
+                    StringAssert.AreEqualIgnoringCase(expected: ticketCombinationType, actual: ticketCombinationTypeActual, $"Widget ticket type is not equal to the {ticketCombinationType} !");
+                    Assert.IsNotEmpty(ticketId, $"Ticket ID ({ticketId}) is missing on the ticket widget!");
+                });
+            }
+            else if (ticketSessionTypeParsed.Equals(BetslipType.AGENCY))
+            {
+                throw new NotImplementedException();
+            }
 
         }
         #endregion

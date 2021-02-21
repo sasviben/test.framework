@@ -8,7 +8,7 @@ namespace UI.Models
         public static List<EventModel> Events { get; set; }
         public static string EventsCounter { get; set; }
         public static string OddTotal { get; set; }
-        public static string StakeInput { get; set; }
+        public static double Stake { get; set; }
         public static string PotentialWin { get; set; }
         public static string BonusPotential { get; set; }
         public static string ValidationMessage { get; set; }

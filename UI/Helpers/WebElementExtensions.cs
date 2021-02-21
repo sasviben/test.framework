@@ -46,7 +46,7 @@ namespace UI.Helpers
         /// <exception cref="WebDriverTimeoutException">
         ///    Driver finding the web element timeouts after the specified time.
         /// </exception>
-        public static IWebElement WeFindElement(this IWebElement element, IWebDriver driver, By by, int sec = 10)
+        public static IWebElement WeFindElement(this IWebElement element, IWebDriver driver, By by, int sec = 60)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace UI.Helpers
         /// <exception cref="WebDriverTimeoutException">
         ///    Driver finding the web element timeouts after the specified time.
         /// </exception>
-        public static IList<IWebElement> WeFindElements(this IWebElement element, IWebDriver driver, By by, int sec = 10)
+        public static IList<IWebElement> WeFindElements(this IWebElement element, IWebDriver driver, By by, int sec = 60)
         {
             try
             {
@@ -190,7 +190,7 @@ namespace UI.Helpers
         /// <returns>
         ///    True if element is visible or false if element is not visible.
         /// </returns>
-        public static bool WeIsElementVisible(this IWebElement element, IWebDriver driver, By by, int sec = 10)
+        public static bool WeIsElementVisible(this IWebElement element, IWebDriver driver, By by, int sec = 60)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
             try

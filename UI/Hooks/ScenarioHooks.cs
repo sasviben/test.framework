@@ -1,5 +1,4 @@
 ﻿using BoDi;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Linq;
@@ -7,6 +6,7 @@ using TechTalk.SpecFlow;
 using UI.Backend.Clients;
 using UI.Configuration;
 using UI.Drivers;
+using web.test.app.hooks;
 using static UI.Helpers.Enums;
 
 namespace UI.Hooks
@@ -26,8 +26,9 @@ namespace UI.Hooks
         private readonly IObjectContainer _objectContainer;
         private IWebDriver _driver;
         private readonly ScenarioContext _scenarioContext;
-        private readonly ConfigurationManager _configurationManager;
         private readonly AppConfiguration _appConfiguration;
+        private readonly ConfigurationManager _configurationManager;
+
 
         #region Helpers
         /// <summary>
@@ -83,14 +84,19 @@ namespace UI.Hooks
         {
             var scenarioTags = _scenarioContext.ScenarioInfo.Tags.ToList();
 
-            if (scenarioTags.Contains(UserType.SPORT.ToString()))
+            if (FeatureHooks.Feature.Equals("Sport Online Betting"))
                 _configurationManager.SetUserCredentials(UserType.SPORT.ToString());
-            else if (scenarioTags.Contains(UserType.LOTTO.ToString()))
+            else if (FeatureHooks.Feature.Equals("Lotto Online Betting"))
                 _configurationManager.SetUserCredentials(UserType.LOTTO.ToString());
-            else if (scenarioTags.Contains(UserType.GAMES.ToString()))
+            else if (FeatureHooks.Feature.Equals("Games Online Betting"))
                 _configurationManager.SetUserCredentials(UserType.GAMES.ToString());
-            else
+            else if (FeatureHooks.Feature.Equals("Player Session"))
                 _configurationManager.SetUserCredentials(UserType.RETAIL_BETTING.ToString());
+            else if (FeatureHooks.Feature.Equals("Navigation"))
+            {
+                if (scenarioTags.Contains("online"))
+                    _configurationManager.SetUserCredentials(UserType.SPORT.ToString());
+            }
 
             LoadBrowser();
             CookieManager.ConvertHTTPCookieToSeleniumCookie();

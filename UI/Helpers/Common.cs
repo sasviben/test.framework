@@ -4,18 +4,10 @@ namespace UI.Helpers
 {
     class Common
     {
-        /// <summary>
-        ///    Converts string value to double and rounds it to two decimal points.
-        /// </summary>
-        /// <param name="stringValue">
-        ///    stringValue represents string that should be converted.
-        /// </param>
-        /// <returns>
-        ///    Returns double value of a string value rounded to two decimal points.
-        /// </returns>
-        /// <exception cref="ArgumentException">
-        ///    stringValue is a zero-length string, contains only white space, contains one or more invalid characters.
-        /// </exception>
+        private const string SIMPLE = "SIMPLU";
+        private const string SYSTEM = "SISTEM";
+        private const string LOTTO = "LOTO";
+
         public static double GetDoubleValueRoundedTwoDecimal(string stringValue)
         {
             if (double.TryParse(stringValue, out double doubleValue) == false)
@@ -23,6 +15,26 @@ namespace UI.Helpers
 
             Math.Round(doubleValue, 2);
             return doubleValue;
+
+        }
+        public static string TranslateToEnglish(string word)
+        {
+            string translatedWord = word;
+
+            if (word.Equals(SIMPLE, StringComparison.OrdinalIgnoreCase))
+                translatedWord = "SIMPLE";
+            if (word.Equals(SYSTEM, StringComparison.OrdinalIgnoreCase))
+                translatedWord = "SYSTEM";
+            if (word.Equals(LOTTO, StringComparison.OrdinalIgnoreCase))
+                translatedWord = "LOTTO";
+
+            return translatedWord;
+
+        }
+        public static double GetRandomNumber(int startNumber, int endNumber)
+        {
+            var random = new Random();
+            return (double)(random.Next(startNumber, endNumber));
         }
     }
 }
