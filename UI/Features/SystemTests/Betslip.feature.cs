@@ -74,15 +74,19 @@ namespace UI.Features.SystemTests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player shouldn\'t be able to purchase a ticket with more than 31 events (uid:c" +
-            "ec68d90-b931-4357-9cf2-b3c50f22e1e5)")]
-        public virtual void ThePlayerShouldntBeAbleToPurchaseATicketWithMoreThan31EventsUidCec68D90_B931_4357_9Cf2_B3C50F22E1E5()
+        [NUnit.Framework.DescriptionAttribute("the player shouldn\'t be able to purchase a ticket with more than 31 events (uid:7" +
+            "668cf6f-7e64-4e88-979e-9d8bc94d8b6f)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        public virtual void ThePlayerShouldntBeAbleToPurchaseATicketWithMoreThan31EventsUid7668Cf6F_7E64_4E88_979E_9D8Bc94D8B6F()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player shouldn\'t be able to purchase a ticket with more than 31 events (uid:c" +
-                    "ec68d90-b931-4357-9cf2-b3c50f22e1e5)", null, tagsOfScenario, argumentsOfScenario);
-#line 4
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player shouldn\'t be able to purchase a ticket with more than 31 events (uid:7" +
+                    "668cf6f-7e64-4e88-979e-9d8bc94d8b6f)", null, tagsOfScenario, argumentsOfScenario);
+#line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -102,17 +106,17 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 5
+#line 6
     testRunner.Given("the player is on the page \"SPORT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 6
+#line 7
     testRunner.When("the player adds more than \"30\" \"PREMATCH\"events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 7
+#line 8
     testRunner.Then("the \"Ai atins numărul maxim de selecții.\" validation message is displayed on the " +
                         "Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 8
+#line 9
     testRunner.And("the Betslip\'s purchase button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -121,14 +125,18 @@ namespace UI.Features.SystemTests
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("the player shouldn\'t be able to select more than 16 combinations on the system Be" +
-            "tslip (uid:42d56b60-2db5-4e5d-aff8-60e1185aa100)")]
-        public virtual void ThePlayerShouldntBeAbleToSelectMoreThan16CombinationsOnTheSystemBetslipUid42D56B60_2Db5_4E5D_Aff8_60E1185Aa100()
+            "tslip (uid:3dd6373b-3572-4627-9bb6-f22d06819235)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        public virtual void ThePlayerShouldntBeAbleToSelectMoreThan16CombinationsOnTheSystemBetslipUid3Dd6373B_3572_4627_9Bb6_F22D06819235()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player shouldn\'t be able to select more than 16 combinations on the system Be" +
-                    "tslip (uid:42d56b60-2db5-4e5d-aff8-60e1185aa100)", null, tagsOfScenario, argumentsOfScenario);
-#line 10
+                    "tslip (uid:3dd6373b-3572-4627-9bb6-f22d06819235)", null, tagsOfScenario, argumentsOfScenario);
+#line 12
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -148,16 +156,16 @@ namespace UI.Features.SystemTests
             else
             {
                 this.ScenarioStart();
-#line 11
+#line 13
     testRunner.Given("the player is on the page \"SPORT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 12
+#line 14
     testRunner.When("the player adds \"17\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 15
     testRunner.And("the player selects \"SYSTEM\" ticket on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 16
     testRunner.Then("the \"1F16/16\" combination option is available on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

@@ -42,5 +42,25 @@
             PLAYER_TICKETS,
             PLAYER_HISTORY
         }
+
+        public enum SportBettingType
+        {
+            PREMATCH,
+            INPLAY,
+            SPECIAL
+        }
+
+        public enum SportGameType
+        {
+            FOOTBALL
+        }
+
+        public enum BetslipType
+        {
+            ONLINE,
+            AGENCY,
+            SIMPLE,
+            SYSTEM
+        }
     }
 }
