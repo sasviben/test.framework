@@ -1,110 +1,214 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
-using TechTalk.SpecFlow;
+using System.Linq;
+using UI.Backend.Clients;
+using UI.Helpers;
+using UI.Locators;
 using UI.Models;
-using UI.Objects;
+using static UI.Helpers.Enums;
 
-namespace UI.Steps
+namespace UI.Objects
 {
-    [Binding]
-    class SportBettingSteps
+    class SportBettingObject
     {
-       
-        private const string LOTTO = "LOTTO";
-        private const string PREMATCH = "PREMATCH";
-        private const string INPLAY = "INPLAY";
-        private const string SPECIAL = "SPECIAL";
-        private readonly IWebDriver _driver;
-        private readonly NavigationObject _navigationObject;
-        private readonly SportBettingObject _sportBettingObject;
-        private readonly PlayerProfileObject _playerProfileObject;
 
-        public SportBettingSteps(IWebDriver webDriver)
+        private readonly IWebDriver _driver;
+        private readonly PlayerSessionObject _playerSessionObject;
+        private const string URL_INPLAY = "LIVE";
+        private const string SPORT_INPLAY = "INPLAY";
+        private const string SPORT_PREMATCH = "PREMATCH";
+
+        public SportBettingObject(IWebDriver webDriver)
         {
             _driver = webDriver;
-            _navigationObject = new NavigationObject(_driver);
-            _sportBettingObject = new SportBettingObject(_driver);
-            _playerProfileObject = new PlayerProfileObject(_driver);
+            _playerSessionObject = new PlayerSessionObject(_driver);
+        }
+
+
+        private void ReplaceDirtyEvent()
+        {
+
+            var betslipEvents = _driver.WdFindElements(BetslipLOC.RowEvent);
+
+            foreach (var dirtyEvent in betslipEvents)
+            {
+                if (dirtyEvent.WeIsElementVisible(_driver, BetslipLOC.EventValidationMessage, 1))
+                {
+                    if (dirtyEvent.WeIsElementVisible(_driver, SportEventLOC.LiveIndicator, 1))
+                    {
+                        dirtyEvent.WeFindElement(_driver, BetslipLOC.ButtonDeleteEvent).Click();
+                        if (!_driver.Url.Contains(URL_INPLAY))
+                            new NavigationObject(_driver).NavigateToSportPage(SPORT_INPLAY);
+                        AddSportEvents(1, SPORT_INPLAY);
+                    }
+                    else
+                    {
+                        dirtyEvent.WeFindElement(_driver, BetslipLOC.ButtonDeleteEvent).Click();
+                        new NavigationObject(_driver).NavigateToSportPage(SPORT_PREMATCH);
+                        AddSportEvents(1, SPORT_PREMATCH);
+                    }
+                }
+            }
+
         }
 
         #region Actions
-        [Given(@"the player has added ""(.*)"" random ""(.*)"" ""(.*)"" events to the Betslip")]
-        public void GivenThePlayerHasAddedRandomEventsToTheBetslip(int numberOfEventsToAdd, string bettingType, string sportGame)
+
+        public void AddSportEvents(int numberOfEventsToAdd, string bettingType)
         {
-            if (numberOfEventsToAdd <= 0)
-                Assert.Fail("Number of events to add must be greater than zero!");
-            if (string.IsNullOrEmpty(bettingType))
-                Assert.Fail("String bettingType is null or empty!");
-            if (string.IsNullOrEmpty(sportGame))
-                Assert.Fail("String sportGame is null or empty!");
+            var random = new Random();
+            var numberOfEventsOnTheBetslip = 0;
 
-            try
+            if (Enum.TryParse(bettingType, true, out SportBettingType sportBettingType) == false)
+                throw new ArgumentException($"String {bettingType} can't be parsed to enum SportBettingType!");
+
+            if (sportBettingType.Equals(SportBettingType.SPECIAL))
             {
-                if (bettingType.Equals(PREMATCH, StringComparison.OrdinalIgnoreCase))
-                {
-                    _navigationObject.NavigateToSportPage(bettingType);
-                    _navigationObject.NavigateToSportGame(sportGame);
-                }
-                else if (bettingType.Equals(INPLAY, StringComparison.OrdinalIgnoreCase))
-                {
-                    _navigationObject.NavigateToSportPage(bettingType);
-                    _navigationObject.NavigateToSportGame(sportGame);
-                }
-                else if (bettingType.Equals(SPECIAL, StringComparison.OrdinalIgnoreCase))
-                    _navigationObject.NavigateToSportPage(bettingType);
-
-                _sportBettingObject.AddSportEvents(numberOfEventsToAdd, bettingType);
+                throw new NotImplementedException("Special betting is not supported yet!");
             }
-            catch (Exception e)
+            else
             {
-                Assert.Fail(
-                    $"Step 'the player has added {numberOfEventsToAdd} random {bettingType} {sportGame} events to the Betslip' failed!" +
-                    $" {e.Message}");
+                var eventsTemp = _driver.WdFindElements(SportOfferLOC.Matches);
+                var eventsListLength = eventsTemp.Count;
+
+                if (eventsListLength < numberOfEventsToAdd)
+                    throw new Exception($"Can't add {numberOfEventsToAdd} selections on the Betslip because there are only {eventsListLength} selections available!");
+
+                while (numberOfEventsToAdd != 0)
+                {
+                    var randomEvent = eventsTemp[random.Next(eventsListLength)];
+                    randomEvent.WeMoveToElement(_driver);
+
+                    if (randomEvent.Displayed)
+                        randomEvent.WeHighlightElement(_driver);
+
+                    var odd = randomEvent.WeFindElement(_driver, SportEventLOC.ContainerOdd);
+                    if (odd != null)
+                    {
+                        var oddValue = randomEvent.WeFindElements(_driver, SportEventLOC.OddValue).FirstOrDefault();
+
+                        var oddValueDouble = Common.GetDoubleValueRoundedTwoDecimal(oddValue.WeGetAttributeValue(_driver, "innerText"));
+                        if (oddValueDouble >= 1.01)
+                        {
+                            odd.Click();
+
+                            var numberOfEventsOnTheBetslipTemp = int.Parse(_driver.WdFindElement(BetslipLOC.EventsCount).WeGetAttributeValue(_driver, "innerText"));
+
+                            if (numberOfEventsOnTheBetslipTemp > numberOfEventsOnTheBetslip)
+                            {
+                                numberOfEventsOnTheBetslip = numberOfEventsOnTheBetslipTemp;
+                                numberOfEventsToAdd--;
+                            }
+
+                        }
+                    }
+                }
             }
 
         }
 
-        [When(@"the player purchases an ""(.*)"" sport ""(.*)"" ticket")]
-        public void WhenThePlayerPurchasesAnTicket(string ticketSessionType, string ticketCombinationType)
+        public void PurchaseTicket()
         {
-            if (string.IsNullOrEmpty(ticketSessionType))
-                Assert.Fail("String ticketType is null or empty!");
-            if (string.IsNullOrEmpty(ticketCombinationType))
-                Assert.Fail("String ticketCombinationType is null or empty!");
 
-            try
+            var currentTime = DateTime.Now;
+            var exceedTime = currentTime.AddSeconds(300); //5min
+
+            while (currentTime < exceedTime)
             {
-                Assert.IsTrue(_sportBettingObject.IsBetslipEmpty(), "Sport Betslip does not contain any sport events!");
+                if (_driver.WdIsElementVisible(BetslipLOC.EventValidationMessage, 1))
+                    ReplaceDirtyEvent();
 
-                _sportBettingObject.SelectTicketOptions(ticketSessionType, ticketCombinationType);
-                _sportBettingObject.PurchaseTicket();
+
+                _driver.WdFindElement(BetslipLOC.ButtonPurchase).Click();
+
+                if (_driver.WdIsElementVisible(BetslipLOC.Spinner))
+                    break;
+
+                currentTime = DateTime.Now;
             }
-            catch (Exception e) { Assert.Fail($"Step 'the player purchases an {ticketSessionType} sport {ticketCombinationType} ticket' failed! {e.Message}"); }
+
+            if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 1))
+                BetslipModel.ValidationMessage = _driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText");
+            _driver.WaitUntilElementIsInvisible(BetslipLOC.Spinner, 1);
+            if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 1))
+                BetslipModel.ValidationMessage = _driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText");
+
+            PlayerProfileModel.BalanceAfterPurchase = CookieManager.GetPlayerBalance();
+
+        }
+
+        public void SelectTicketOptions(string ticketSessionType, string ticketCombinationType)
+        {
+
+            if (Enum.TryParse(ticketSessionType, true, out BetslipType ticketTypeParsed) == false)
+                throw new ArgumentException($"String {ticketSessionType} can't be parsed to enum BetslipType!");
+
+            if (Enum.TryParse(ticketCombinationType, true, out BetslipType ticketCombinationTypeParsed) == false)
+                throw new ArgumentException($"String {ticketCombinationType} can't be parsed to enum BetslipType!");
+
+            if (ticketTypeParsed.Equals(BetslipType.ONLINE))
+            {
+                if (_playerSessionObject.IsThePlayerLoggedIn())
+                    _driver.WdFindElement(BetslipLOC.ButtonOnlineTicket).Click();
+            }
+            else if (ticketTypeParsed.Equals(BetslipType.AGENCY))
+                _driver.WdFindElement(BetslipLOC.ButtonAgencyTicket).Click();
+
+            if (ticketCombinationTypeParsed.Equals(BetslipType.SIMPLE))
+                _driver.WdFindElement(BetslipLOC.ButtonSimpleTicket).Click();
+            else if (ticketCombinationTypeParsed.Equals(BetslipType.SYSTEM))
+                _driver.WdFindElement(BetslipLOC.ButtonSystemTicket).Click();
+
+            BetslipModel.Stake = Common.GetRandomNumber(2, 20);
+
+            var ticketStakeField = _driver.WdFindElement(BetslipLOC.InputFieldStake);
+            ticketStakeField.Clear();
+            ticketStakeField.SendKeys(BetslipModel.Stake.ToString());
 
         }
 
         #endregion
 
         #region Assertions
-        [Then(@"the ""(.*)"" sport ""(.*)"" ticket is purchased")]
-        public void ThenTheTicketIsPurchased(string ticketSessionType, string ticketCombinationType)
+        public bool IsBetslipEmpty()
         {
-            try
+            var betslipEventCount = _driver.WdFindElement(BetslipLOC.EventsCount).WeGetAttributeValue(_driver, "innerText");
+            var betslipEventCountDouble = Common.GetDoubleValueRoundedTwoDecimal(betslipEventCount);
+
+            if (betslipEventCountDouble <= 0)
+                return false;
+            return true;
+
+        }
+
+        public void TicketWidgetWithCorrectDataIsDisplayed(string ticketSessionType, string ticketCombinationType)
+        {
+            if (Enum.TryParse(ticketSessionType, true, out BetslipType ticketSessionTypeParsed) == false)
+                throw new ArgumentException($"String {ticketSessionType} can't be parsed to enum BetslipType!");
+
+            if (ticketSessionTypeParsed.Equals(BetslipType.ONLINE))
             {
-                _sportBettingObject.TicketWidgetWithCorrectDataIsDisplayed(ticketSessionType, ticketCombinationType);
+                var widgetTitle = _driver.WdFindElement(WidgetLOC.Title).WeGetAttributeValue(_driver, "innerText").Trim().Split("\r");
+
+                var bettingTypeActual = Common.TranslateToEnglish(widgetTitle[0]);
+                var ticketCombinationTypeActual = Common.TranslateToEnglish(widgetTitle[1].Remove(0, 1));
+                var ticketId = widgetTitle[2].Remove(0, 1);
+
+                Assert.Multiple(() =>
+                {
+                    StringAssert.AreEqualIgnoringCase(expected: "SPORT", actual: bettingTypeActual, $"Widget betting type is not equal to the SPORT!");
+                    StringAssert.AreEqualIgnoringCase(expected: ticketCombinationType, actual: ticketCombinationTypeActual, $"Widget ticket type is not equal to the {ticketCombinationType} !");
+                    Assert.IsNotEmpty(ticketId, $"Ticket ID ({ticketId}) is missing on the ticket widget!");
+                });
             }
-            catch (Exception e) { Assert.Fail($"Step 'the {ticketSessionType} sport {ticketCombinationType} ticket is purchased' failed! {e.Message}"); }
+            else if (ticketSessionTypeParsed.Equals(BetslipType.AGENCY))
+            {
+                throw new NotImplementedException();
+            }
 
         }
-
-        [Then(@"the player balance amount is subtracted by the ticket stake")]
-        public void ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake()
-        {
-            _playerProfileObject.PlayerBalanceIsCReducedByTheStake(BetslipModel.Stake);
-        }
-
-
         #endregion
+
     }
 }
