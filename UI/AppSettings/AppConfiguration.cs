@@ -10,12 +10,6 @@ namespace UI.Configuration
         public string ExecutionEnvironment { get; set; }
         public string SeleniumHubUri { get; set; }
 
-        /// <summary>
-        ///     Initializes all AppConfiguration properties.
-        /// </summary>
-        /// <exception cref="ArgumentException">
-        ///     Hostname, Port or Browser is null.
-        /// </exception>
         public void Initialize()
         {
             Hostname = Environment.GetEnvironmentVariable("seleniumHubHost");

@@ -14,12 +14,6 @@ namespace UI.Backend.Clients
     {
         public static List<Cookie> SeleniumCookies { get; set; } = new List<Cookie>();
 
-        /// <summary>
-        ///     Converts HttpClient cookies from POST request to the Selenium cookies.
-        /// </summary>
-        /// <exception cref="HttpRequestException">
-        ///    HTTP request failure message.
-        /// </exception>
         public static void ConvertHTTPCookieToSeleniumCookie()
         {
             var client = new RestClient(Settings.PlayerSessionAPI);
@@ -47,18 +41,6 @@ namespace UI.Backend.Clients
             }
         }
 
-        /// <summary>
-        ///    Gets player balance value by executing GET request.
-        /// </summary>
-        /// <returns>
-        ///    Player balance double value.
-        /// </returns>
-        /// <exception cref="NullReferenceException">
-        ///    SeleniumCookies property can't be null.
-        /// </exception>
-        /// <exception cref="ArgumentException">
-        ///    Response content string shouldn't be null or empty.
-        /// </exception>
         public static double GetPlayerBalance()
         {
             var client = new RestClient(Settings.PlayerBalanceAPI);
