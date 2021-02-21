@@ -19,6 +19,7 @@ namespace UI.Configuration
         private string _configurationName;
         private ConfigOptions _configOptions;
 
+
         ///<summary>
         ///     Loads JSON configuration.
         ///</summary>
@@ -52,23 +53,29 @@ namespace UI.Configuration
         ///     Gets the configuration depending on the passed parameters.
         ///     This method is used only in Release configuration mode.
         /// </summary>
+        /// 
         /// <param name="executionEnvironment">
         ///     Name of the desired execution environment.
         ///</param>
+        ///
         /// <returns>
         ///     Returns the configuration name specified by executionEnvironment parameter.
         ///</returns>
+        ///
+        /// <exception cref="ArgumentNullException">
+        ///         executionEnvironment is null.
+        /// </exception>
         /// <exception cref="ArgumentException">
-        ///     executionEnvironment is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
+        ///         executionEnvironment is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
         /// </exception>
         public string GetConfiguration(string executionEnvironment)
         {
             if (executionEnvironment == null)
-                throw new ArgumentException("Environment variable 'environment' is null! You should enter execution environment when running a tests. For example: Stage");
+                throw new ArgumentNullException("Environment variable 'environment' is null! You should enter execution environment when running a tests. For example: Stage");
 
             var configuration = "";
 
-            if (!Enum.TryParse(executionEnvironment, true, out ExecutionEnvironmentType executionEnvironmentParsed))
+            if (!Enum.TryParse(executionEnvironment.ToUpper(), out ExecutionEnvironmentType executionEnvironmentParsed))
                 throw new ArgumentException($"Object {executionEnvironment} can't be parsed to enum!");
 
             switch (executionEnvironmentParsed)
@@ -88,13 +95,16 @@ namespace UI.Configuration
         }
         /// <summary>
         ///     Sets desirable user credentials depending on the passed parameters.
-        /// </summary>/// 
+        /// </summary>
+        /// 
         /// <param name="userType">
         ///     User whose credentials need to be set.
-        /// </param>/// 
-        /// <exception cref="ArgumentException">
-        ///     Player user name is a zero-length string, contains only white space, contains one or more invalid characters, or is null.
+        /// </param>
+        /// 
+        /// <exception cref="ArgumentNullException">
+        ///     PlayerUsername is null.
         /// </exception>
+        /// 
         public void SetUserCredentials(string userType)
         {
             foreach (var player in Settings.Configuration.PlayerCredentials)
@@ -110,7 +120,7 @@ namespace UI.Configuration
             }
 
             if (Settings.PlayerUsername == null)
-                throw new ArgumentException($"Configuration doesn't contains user {userType}! Please check configuration.");
+                throw new ArgumentNullException($"Configuration doesn't contains user {userType}! Please check configuration.");
         }
     }
 }

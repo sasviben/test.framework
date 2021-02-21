@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace UI.Features.SystemIntegrationTests.UserJourney
+namespace UI.Features.SystemIntegrationTests.UserJourney.LottoBetting
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,22 +20,22 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Lotto Retail Betting")]
-    public partial class LottoRetailBettingFeature
+    [NUnit.Framework.DescriptionAttribute("Retail")]
+    public partial class RetailFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "LottoRetailBetting.feature"
+#line 1 "Retail.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/SystemIntegrationTests/UserJourney", "Lotto Retail Betting", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/SystemIntegrationTests/UserJourney/LottoBetting", "Retail", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,21 +74,15 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to place a Lotto simple ticket (uid:d8f16b54-5140-4f6e-" +
-            "a74e-8f3256b5351c)")]
-        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
-        [NUnit.Framework.CategoryAttribute("regression")]
-        [NUnit.Framework.CategoryAttribute("acceptance")]
-        public virtual void ThePlayerShouldBeAbleToPlaceALottoSimpleTicketUidD8F16B54_5140_4F6E_A74E_8F3256B5351C()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to place a Lotto simple ticket (uid:715c1bd2-6634-4f15-" +
+            "bbd4-5da50213aed0)")]
+        public virtual void ThePlayerShouldBeAbleToPlaceALottoSimpleTicketUid715C1Bd2_6634_4F15_Bbd4_5Da50213Aed0()
         {
-            string[] tagsOfScenario = new string[] {
-                    "RULES_automation_todo",
-                    "regression",
-                    "acceptance"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to place a Lotto simple ticket (uid:d8f16b54-5140-4f6e-" +
-                    "a74e-8f3256b5351c)", null, tagsOfScenario, argumentsOfScenario);
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to place a Lotto simple ticket (uid:715c1bd2-6634-4f15-" +
+                    "bbd4-5da50213aed0)", null, tagsOfScenario, argumentsOfScenario);
+#line 4
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -108,38 +102,32 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
             else
             {
                 this.ScenarioStart();
+#line 5
+    testRunner.Given("the player has added \"1\" random \"LOTTO\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 6
-    testRunner.Given("the player has added \"\" Lotto selection to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.When("the player purchases an \"AGENCY\" \"LOTTO\" \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
-    testRunner.When("the player purchases an \"AGENCY\" Lotto \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Then("the \"AGENCY\" \"LOTTO\" \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 8
-    testRunner.Then("the \"AGENCY\" Lotto \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 9
-    testRunner.And("the data on the \"DETAILS\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the data on the \"DETAILS\" is the same as data on the \"LOTTO\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the player should be able to place a Lotto system ticket (uid:1a284ab6-40f9-42ae-" +
-            "a49d-9ac977b09892)")]
-        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
-        [NUnit.Framework.CategoryAttribute("regression")]
-        [NUnit.Framework.CategoryAttribute("acceptance")]
-        public virtual void ThePlayerShouldBeAbleToPlaceALottoSystemTicketUid1A284Ab6_40F9_42Ae_A49D_9Ac977B09892()
+        [NUnit.Framework.DescriptionAttribute("the player should be able to place a Lotto system ticket (uid:4c74eb38-950b-4f33-" +
+            "8246-d271f32ec706)")]
+        public virtual void ThePlayerShouldBeAbleToPlaceALottoSystemTicketUid4C74Eb38_950B_4F33_8246_D271F32Ec706()
         {
-            string[] tagsOfScenario = new string[] {
-                    "RULES_automation_todo",
-                    "regression",
-                    "acceptance"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to place a Lotto system ticket (uid:1a284ab6-40f9-42ae-" +
-                    "a49d-9ac977b09892)", null, tagsOfScenario, argumentsOfScenario);
-#line 12
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the player should be able to place a Lotto system ticket (uid:4c74eb38-950b-4f33-" +
+                    "8246-d271f32ec706)", null, tagsOfScenario, argumentsOfScenario);
+#line 10
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -159,20 +147,23 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
             else
             {
                 this.ScenarioStart();
-#line 13
-    testRunner.Given("the player has added \"1\" Lotto selection to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 11
+    testRunner.Given("the player has added \"1\" random \"LOTTO\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 14
+#line 12
+    testRunner.And("the player has added \"1\" random \"LOTTO\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
     testRunner.When("the player selects \"RANDOM\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 14
+    testRunner.And("the player purchases an \"AGENCY\" \"LOTTO\" \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 15
-    testRunner.And("the player purchases an \"AGENCY\" sport \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Then("the \"AGENCY\" \"LOTTO\" \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 16
-    testRunner.Then("the \"AGENCY\" sport \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 17
-    testRunner.And("the data on the \"DETAILS\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the data on the \"DETAILS\" is the same as data on the \"LOTTO\" Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

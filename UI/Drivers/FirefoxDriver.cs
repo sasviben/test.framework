@@ -10,18 +10,15 @@ namespace UI.Drivers
     class FirefoxDriver
     {
         /// <summary>
-        ///    Loads Firefox driver with desired options.
+        ///     Loads Firefox driver with desired options.
         /// </summary>
         /// <param name="headless">
-        ///    Flag to run in headless mode.
-        ///    Default: false
+        ///     Flag to run in headless mode.
+        ///     Default: false
         /// </param>
         /// <returns>
-        ///    IWebDriver with desired arguments set.
+        ///     IWebDriver with desired arguments set.
         /// </returns>
-        /// <exception cref="WebDriverException">
-        ///    Problem with loading Firefox Driver.
-        /// </exception>
         public IWebDriver LoadFirefoxDriver(bool headless = false)
         {
             var driverService = FirefoxDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
@@ -40,30 +37,27 @@ namespace UI.Drivers
                 var driver = new OpenQA.Selenium.Firefox.FirefoxDriver(driverService, options);
                 return driver;
             }
-            catch (WebDriverException we)
+            catch (Exception e)
             {
                 if (driverService != null)
                     driverService.Dispose();
-                throw new WebDriverException(we.Message);
+                throw new Exception(e.Message);
             }
 
         }
         /// <summary>
-        ///    Loads remote Firefox driver with desired options.
+        ///     Loads remote Firefox driver with desired options.
         /// </summary>
         /// <param name="remoteUri">
-        ///    Remote Firefox driver uri. 
+        ///     Remote Firefox driver uri. 
         /// </param>
         /// <param name="headless">
-        ///    Flag to run in headless mode.
-        ///    Default: true
+        ///     Flag to run in headless mode.
+        ///     Default: true
         /// </param>
         /// <returns>
-        ///    IWebDriver with desired arguments set.
+        ///     IWebDriver with desired arguments set.
         /// </returns>
-        /// <exception cref="WebDriverException">
-        ///    Problem with loading remote Firefox Driver.
-        /// </exception>
         public IWebDriver LoadRemoteFirefoxDriver(Uri remoteUri, bool headless = true)
         {
             try
@@ -79,9 +73,9 @@ namespace UI.Drivers
                 var driver = new RemoteWebDriver(remoteUri, options);
                 return driver;
             }
-            catch (WebDriverException we)
+            catch (Exception e)
             {
-                throw new WebDriverException(we.Message);
+                throw new Exception(e.Message);
             }
 
         }
