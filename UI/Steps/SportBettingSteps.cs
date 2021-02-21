@@ -10,6 +10,7 @@ namespace UI.Steps
     [Binding]
     class SportBettingSteps
     {
+       
         private const string LOTTO = "LOTTO";
         private const string PREMATCH = "PREMATCH";
         private const string INPLAY = "INPLAY";
