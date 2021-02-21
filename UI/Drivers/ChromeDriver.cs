@@ -9,16 +9,7 @@ namespace UI.Drivers
 {
     class ChromeDriver
     {
-        /// <summary>
-        ///     Loads Chrome driver with desired options.
-        /// </summary>
-        /// <param name="headless">
-        ///     Flag to run in headless mode.
-        ///     Default: false
-        /// </param>
-        /// <returns>
-        ///     IWebDriver with desired arguments set.
-        /// </returns>
+
         public IWebDriver LoadChromeDriver(bool headless = false)
         {
             var driverService = ChromeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
@@ -44,19 +35,7 @@ namespace UI.Drivers
                 throw new Exception(e.Message);
             }
         }
-        /// <summary>
-        ///     Loads remote Chrome driver with desired options.
-        /// </summary>
-        /// <param name="remoteUri">
-        ///     Remote Chrome driver uri. 
-        /// </param>
-        /// <param name="headless">
-        ///     Flag to run in headless mode.
-        ///     Default: true
-        /// </param>
-        /// <returns>
-        ///     IWebDriver with desired arguments set.
-        /// </returns>
+      
         public IWebDriver LoadRemoteChromeDriver(Uri remoteUri, bool headless = true)
         {
             try

@@ -13,12 +13,6 @@ namespace UI.Backend.Clients
     {
         public static List<Cookie> SeleniumCookies { get; set; } = new List<Cookie>();
 
-        /// <summary>
-        ///     Sets HttpClient cookies from POST request.
-        /// </summary>
-        /// <exception cref="HttpRequestException">
-        ///    HTTP request failure message.
-        /// </exception>
         public static void ConvertHTTPCookieToSeleniumCookie()
         {
             var client = new RestClient(Settings.PlayerSessionAPI);
@@ -46,13 +40,7 @@ namespace UI.Backend.Clients
                 SeleniumCookies.Add(new Cookie(cookie.Name, cookie.Value, cookie.Domain, cookie.Path, cookie.Expires));
             }
         }
-        
-        /// <summary>
-        ///    Gets player balance value by executing GET request.
-        /// </summary>
-        /// <returns>
-        ///    Player balance double value.
-        /// </returns>
+      
         public static double GetPlayerBalance()
         {
             var client = new RestClient(Settings.PlayerBalanceAPI);

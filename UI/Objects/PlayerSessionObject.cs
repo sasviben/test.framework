@@ -10,12 +10,12 @@ namespace UI.Objects
 {
     class PlayerSessionObject
     {
+        private readonly IWebDriver _driver;
+
         public PlayerSessionObject(IWebDriver webDriver)
         {
             _driver = webDriver;
         }
-
-        private readonly IWebDriver _driver;
 
         #region Actions
         /// <summary>

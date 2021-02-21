@@ -9,16 +9,6 @@ namespace UI.Drivers
 {
     class FirefoxDriver
     {
-        /// <summary>
-        ///     Loads Firefox driver with desired options.
-        /// </summary>
-        /// <param name="headless">
-        ///     Flag to run in headless mode.
-        ///     Default: false
-        /// </param>
-        /// <returns>
-        ///     IWebDriver with desired arguments set.
-        /// </returns>
         public IWebDriver LoadFirefoxDriver(bool headless = false)
         {
             var driverService = FirefoxDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
@@ -45,19 +35,7 @@ namespace UI.Drivers
             }
 
         }
-        /// <summary>
-        ///     Loads remote Firefox driver with desired options.
-        /// </summary>
-        /// <param name="remoteUri">
-        ///     Remote Firefox driver uri. 
-        /// </param>
-        /// <param name="headless">
-        ///     Flag to run in headless mode.
-        ///     Default: true
-        /// </param>
-        /// <returns>
-        ///     IWebDriver with desired arguments set.
-        /// </returns>
+      
         public IWebDriver LoadRemoteFirefoxDriver(Uri remoteUri, bool headless = true)
         {
             try
