@@ -1,8 +1,7 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using System;
+﻿using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using UI.Objects;
+using static UI.Helpers.Enums;
 
 namespace UI.Steps
 {
@@ -17,7 +16,6 @@ namespace UI.Steps
 
         private readonly IWebDriver _driver;
         private readonly NavigationObject _navigationObject;
-        private const string URL_SUPERBET = "SUPERBET";
 
         #region Actions
         [Given(@"the player is on the page ""(.*)""")]
@@ -25,41 +23,25 @@ namespace UI.Steps
         {
             string currentUrl = _driver.Url;
 
-            try
-            {
-                if (!currentUrl.Contains(URL_SUPERBET, StringComparison.OrdinalIgnoreCase))
-                    _navigationObject.NavigateToHomePage();
+            if (!currentUrl.Contains(PageType.SUPERBET.ToString().ToLower()))
+                _navigationObject.NavigateToHomePage();
 
-                if (!pageName.ToUpper().Equals(URL_SUPERBET, StringComparison.OrdinalIgnoreCase))
-                    _navigationObject.NavigateToMainPage(pageName);
-            }
-            catch (Exception e) { Assert.Fail($"Step 'the player is on the page {pageName}' failed! {e.Message}"); }
-
+            if (!pageName.ToUpper().Equals(PageType.SUPERBET.ToString()))
+                _navigationObject.NavigateToPage(pageName);
         }
 
         [When(@"the player clicks on the page ""(.*)""")]
         public void WhenThePlayerClicksOnThePage(string pageName)
         {
-            try
-            {
-                _navigationObject.NavigateToMainPage(pageName);
-            }
-            catch (Exception e) { Assert.Fail($"Step 'the player clicks on the page {pageName}' failed! {e.Message}"); }
-
+            _navigationObject.NavigateToPage(pageName);
         }
 
         #endregion
-
         #region Assertions
         [Then(@"the ""(.*)"" page is displayed")]
         public void ThenThePageIsDisplayed(string pageName)
         {
-            try
-            {
-                _navigationObject.IsThePageDisplayed(pageName);
-            }
-            catch (Exception e) { Assert.Fail($"Step 'the {pageName} page is displayed' failed! {e.Message}"); }
-
+            _navigationObject.IsThePageDisplayed(pageName);
         }
 
         #endregion

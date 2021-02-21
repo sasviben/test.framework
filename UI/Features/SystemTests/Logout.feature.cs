@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace UI.Features.SystemIntegrationTests.UserJourney
+namespace UI.Features.SystemTests
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,25 +20,22 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Games Online Betting")]
-    [NUnit.Framework.CategoryAttribute("GAMES")]
-    public partial class GamesOnlineBettingFeature
+    [NUnit.Framework.DescriptionAttribute("Logout")]
+    public partial class LogoutFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = new string[] {
-                "GAMES"};
+        private string[] _featureTags = ((string[])(null));
         
-#line 1 "GamesOnlineBetting.feature"
+#line 1 "Logout.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/SystemIntegrationTests/UserJourney", "Games Online Betting", null, ProgrammingLanguage.CSharp, new string[] {
-                        "GAMES"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/SystemTests", "Logout", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,15 +74,15 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to play the Jocuri game (uid:a1be29b4-1ee5-47ed-" +
-            "9580-96c6cb1d70a4)")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPlayTheJocuriGameUidA1Be29B4_1Ee5_47Ed_9580_96C6Cb1D70A4()
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to logout from the Superbet page (uid:1d077f62-a" +
+            "b86-41fd-bc6c-ff56c3c0521e)")]
+        public virtual void TheOnlinePlayerShouldBeAbleToLogoutFromTheSuperbetPageUid1D077F62_Ab86_41Fd_Bc6C_Ff56C3C0521E()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to play the Jocuri game (uid:a1be29b4-1ee5-47ed-" +
-                    "9580-96c6cb1d70a4)", null, tagsOfScenario, argumentsOfScenario);
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to logout from the Superbet page (uid:1d077f62-a" +
+                    "b86-41fd-bc6c-ff56c3c0521e)", null, tagsOfScenario, argumentsOfScenario);
+#line 4
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -105,17 +102,14 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+#line 6
+    testRunner.When("the player tries to logout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 7
-    testRunner.And("the player is on the page \"GAMES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 8
-    testRunner.When("the player plays \"Sweet Bonanza\" game", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 9
-    testRunner.Then("the game is played", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("the player is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
