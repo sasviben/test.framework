@@ -9,6 +9,7 @@ namespace UI.Drivers
 {
     class ChromeDriver
     {
+
         public IWebDriver LoadChromeDriver(bool headless = false)
         {
             var driverService = ChromeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
@@ -27,14 +28,14 @@ namespace UI.Drivers
 
                 return new OpenQA.Selenium.Chrome.ChromeDriver(driverService, options);
             }
-            catch (WebDriverException we)
+            catch (Exception e)
             {
                 if (driverService != null)
                     driverService.Dispose();
-                throw new WebDriverException(we.Message);
+                throw new Exception(e.Message);
             }
         }
-
+      
         public IWebDriver LoadRemoteChromeDriver(Uri remoteUri, bool headless = true)
         {
             try
@@ -50,9 +51,9 @@ namespace UI.Drivers
                 var driver = new RemoteWebDriver(remoteUri, options);
                 return driver;
             }
-            catch (WebDriverException we)
+            catch (Exception e)
             {
-                throw new WebDriverException(we.Message);
+                throw new Exception(e.Message);
             }
 
         }

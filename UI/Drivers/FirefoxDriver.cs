@@ -9,7 +9,6 @@ namespace UI.Drivers
 {
     class FirefoxDriver
     {
-
         public IWebDriver LoadFirefoxDriver(bool headless = false)
         {
             var driverService = FirefoxDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
@@ -28,15 +27,15 @@ namespace UI.Drivers
                 var driver = new OpenQA.Selenium.Firefox.FirefoxDriver(driverService, options);
                 return driver;
             }
-            catch (WebDriverException we)
+            catch (Exception e)
             {
                 if (driverService != null)
                     driverService.Dispose();
-                throw new WebDriverException(we.Message);
+                throw new Exception(e.Message);
             }
 
         }
-
+      
         public IWebDriver LoadRemoteFirefoxDriver(Uri remoteUri, bool headless = true)
         {
             try
@@ -52,9 +51,9 @@ namespace UI.Drivers
                 var driver = new RemoteWebDriver(remoteUri, options);
                 return driver;
             }
-            catch (WebDriverException we)
+            catch (Exception e)
             {
-                throw new WebDriverException(we.Message);
+                throw new Exception(e.Message);
             }
 
         }

@@ -1,4 +1,5 @@
 ﻿using BoDi;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Linq;
@@ -6,7 +7,6 @@ using TechTalk.SpecFlow;
 using UI.Backend.Clients;
 using UI.Configuration;
 using UI.Drivers;
-using web.test.app.hooks;
 using static UI.Helpers.Enums;
 
 namespace UI.Hooks
@@ -32,8 +32,9 @@ namespace UI.Hooks
 
         private void LoadBrowser()
         {
-            if (!Enum.TryParse(Settings.Browser, true, out BrowserType browserTypeParsed))
-                throw new ArgumentException($"String {Settings.Browser} can't be parsed to BrowserType enum!");
+            var browserName = Settings.Browser.ToUpper();
+            if (!Enum.TryParse(browserName, out BrowserType browserTypeParsed))
+                throw new ArgumentException("String " + browserName + " can't be parsed to enum!");
 
             switch (browserTypeParsed)
             {
@@ -58,7 +59,7 @@ namespace UI.Hooks
                         break;
                     }
                 default:
-                    throw new PlatformNotSupportedException($"{Settings.Browser} is not a supported browser!");
+                    throw new PlatformNotSupportedException(Settings.Browser + " is not a supported browser!");
             }
 
             if (_driver != null)
@@ -71,22 +72,25 @@ namespace UI.Hooks
         {
             var scenarioTags = _scenarioContext.ScenarioInfo.Tags.ToList();
 
-            if (FeatureHooks.Feature.Equals("Sport Online Betting"))
+            if (scenarioTags.Contains(UserType.SPORT.ToString()))
                 _configurationManager.SetUserCredentials(UserType.SPORT.ToString());
-            else if (FeatureHooks.Feature.Equals("Lotto Online Betting"))
+            else if (scenarioTags.Contains(UserType.LOTTO.ToString()))
                 _configurationManager.SetUserCredentials(UserType.LOTTO.ToString());
-            else if (FeatureHooks.Feature.Equals("Games Online Betting"))
+            else if (scenarioTags.Contains(UserType.GAMES.ToString()))
                 _configurationManager.SetUserCredentials(UserType.GAMES.ToString());
-            else if (FeatureHooks.Feature.Equals("Player Session"))
+            else
                 _configurationManager.SetUserCredentials(UserType.RETAIL_BETTING.ToString());
-            else if (FeatureHooks.Feature.Equals("Navigation"))
-            {
-                if (scenarioTags.Contains("online"))
-                    _configurationManager.SetUserCredentials(UserType.SPORT.ToString());
-            }
 
             LoadBrowser();
-            CookieManager.ConvertHTTPCookieToSeleniumCookie();
+
+            try
+            {
+                CookieManager.ConvertHTTPCookieToSeleniumCookie();
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
 
         }
 

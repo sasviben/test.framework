@@ -19,7 +19,7 @@ namespace UI.Configuration
             _appConfig = new AppConfiguration();
             _configOptions = new ConfigOptions();
         }
-
+      
         public void LoadConfiguration(BoDi.IObjectContainer _objectContainer)
         {
 #if DEBUG
@@ -46,11 +46,11 @@ namespace UI.Configuration
         public string GetConfiguration(string executionEnvironment)
         {
             if (executionEnvironment == null)
-                throw new ArgumentException("Environment variable 'environment' is null! You should enter execution environment when running a tests. For example: Stage");
+                throw new ArgumentNullException("Environment variable 'environment' is null! You should enter execution environment when running a tests. For example: Stage");
 
             var configuration = "";
 
-            if (!Enum.TryParse(executionEnvironment, true, out ExecutionEnvironmentType executionEnvironmentParsed))
+            if (!Enum.TryParse(executionEnvironment.ToUpper(), out ExecutionEnvironmentType executionEnvironmentParsed))
                 throw new ArgumentException($"Object {executionEnvironment} can't be parsed to enum!");
 
             switch (executionEnvironmentParsed)
@@ -68,7 +68,7 @@ namespace UI.Configuration
 
             return configuration;
         }
-     
+      
         public void SetUserCredentials(string userType)
         {
             foreach (var player in Settings.Configuration.PlayerCredentials)
@@ -84,7 +84,7 @@ namespace UI.Configuration
             }
 
             if (Settings.PlayerUsername == null)
-                throw new ArgumentException($"Configuration doesn't contains user {userType}! Please check configuration.");
+                throw new ArgumentNullException($"Configuration doesn't contains user {userType}! Please check configuration.");
         }
     }
 }

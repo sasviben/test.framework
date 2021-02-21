@@ -6,7 +6,6 @@ using RestSharp;
 using Newtonsoft.Json;
 using UI.Backend.Models;
 using Newtonsoft.Json.Linq;
-using System;
 
 namespace UI.Backend.Clients
 {
@@ -20,6 +19,7 @@ namespace UI.Backend.Clients
             var request = new RestRequest(Method.POST);
             request.AddHeader("Content-Type", "application/json");
 
+            //Serialize to JSON body.
             JObject jObjectbody = new JObject
             {
                 { "clientSourceType", Settings.ClientSourceType },
@@ -40,20 +40,14 @@ namespace UI.Backend.Clients
                 SeleniumCookies.Add(new Cookie(cookie.Name, cookie.Value, cookie.Domain, cookie.Path, cookie.Expires));
             }
         }
-
+      
         public static double GetPlayerBalance()
         {
             var client = new RestClient(Settings.PlayerBalanceAPI);
             var request = new RestRequest(Method.GET);
-
-            if (SeleniumCookies == null)
-                throw new NullReferenceException("Property CookieManager.SeleniumCookies is null! Please check the code.");
-            request.AddHeader("Cookie", SeleniumCookies[1].ToString());
-
+            request.AddHeader("Cookie", SeleniumCookies.ToString());
             var response = client.Execute(request);
 
-            if (string.IsNullOrEmpty(response.Content))
-                throw new ArgumentException("Response content shouldn't be null or empty! Please check the code.");
             var balanceResponse = JsonConvert.DeserializeObject<PlayerBalanceResponse>(response.Content);
 
             return balanceResponse.PlayerRecord.Accounts[0].Balance;
