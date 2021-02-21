@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UI.Configuration;
 
 namespace UI.AppSettings
 {
@@ -13,5 +12,11 @@ namespace UI.AppSettings
         public string Domain { get; set; }
         public string ClientSourceType { get; set; }
         public List<Credentials> PlayerCredentials { get; set; }
+
+    }
+    public class Credentials
+    {
+        public string Username { get; set; }
+
     }
 }

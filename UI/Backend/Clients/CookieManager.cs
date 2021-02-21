@@ -6,6 +6,7 @@ using RestSharp;
 using Newtonsoft.Json;
 using UI.Backend.Models;
 using Newtonsoft.Json.Linq;
+using System;
 
 namespace UI.Backend.Clients
 {
@@ -13,13 +14,18 @@ namespace UI.Backend.Clients
     {
         public static List<Cookie> SeleniumCookies { get; set; } = new List<Cookie>();
 
+        /// <summary>
+        ///     Converts HttpClient cookies from POST request to the Selenium cookies.
+        /// </summary>
+        /// <exception cref="HttpRequestException">
+        ///    HTTP request failure message.
+        /// </exception>
         public static void ConvertHTTPCookieToSeleniumCookie()
         {
             var client = new RestClient(Settings.PlayerSessionAPI);
             var request = new RestRequest(Method.POST);
             request.AddHeader("Content-Type", "application/json");
 
-            //Serialize to JSON body.
             JObject jObjectbody = new JObject
             {
                 { "clientSourceType", Settings.ClientSourceType },
@@ -40,14 +46,32 @@ namespace UI.Backend.Clients
                 SeleniumCookies.Add(new Cookie(cookie.Name, cookie.Value, cookie.Domain, cookie.Path, cookie.Expires));
             }
         }
-      
+
+        /// <summary>
+        ///    Gets player balance value by executing GET request.
+        /// </summary>
+        /// <returns>
+        ///    Player balance double value.
+        /// </returns>
+        /// <exception cref="NullReferenceException">
+        ///    SeleniumCookies property can't be null.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        ///    Response content string shouldn't be null or empty.
+        /// </exception>
         public static double GetPlayerBalance()
         {
             var client = new RestClient(Settings.PlayerBalanceAPI);
             var request = new RestRequest(Method.GET);
-            request.AddHeader("Cookie", SeleniumCookies.ToString());
+
+            if (SeleniumCookies == null)
+                throw new NullReferenceException("Property CookieManager.SeleniumCookies is null! Please check the code.");
+            request.AddHeader("Cookie", SeleniumCookies[1].ToString());
+
             var response = client.Execute(request);
 
+            if (string.IsNullOrEmpty(response.Content))
+                throw new ArgumentException("Response content shouldn't be null or empty! Please check the code.");
             var balanceResponse = JsonConvert.DeserializeObject<PlayerBalanceResponse>(response.Content);
 
             return balanceResponse.PlayerRecord.Accounts[0].Balance;

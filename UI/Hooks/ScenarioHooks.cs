@@ -1,5 +1,4 @@
 ﻿using BoDi;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Linq;
@@ -7,6 +6,7 @@ using TechTalk.SpecFlow;
 using UI.Backend.Clients;
 using UI.Configuration;
 using UI.Drivers;
+using web.test.app.hooks;
 using static UI.Helpers.Enums;
 
 namespace UI.Hooks
@@ -14,11 +14,6 @@ namespace UI.Hooks
     [Binding]
     class ScenarioHooks
     {
-        private readonly IObjectContainer _objectContainer;
-        private IWebDriver _driver;
-        private readonly ScenarioContext _scenarioContext;
-        private readonly AppConfiguration _appConfiguration;
-        private readonly ConfigurationManager _configurationManager;
         public ScenarioHooks(AppConfiguration appConfig, IObjectContainer objectContainer, ScenarioContext scenarioContext)
         {
             _objectContainer = objectContainer;
@@ -28,13 +23,27 @@ namespace UI.Hooks
             _configurationManager.LoadConfiguration(_objectContainer);
         }
 
-        #region Helpers
+        private readonly IObjectContainer _objectContainer;
+        private IWebDriver _driver;
+        private readonly ScenarioContext _scenarioContext;
+        private readonly AppConfiguration _appConfiguration;
+        private readonly ConfigurationManager _configurationManager;
 
+
+        #region Helpers
+        /// <summary>
+        ///     Loads defined browser.
+        /// </summary>
+        /// <exception cref="ArgumentException">
+        ///     browserName is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
+        /// </exception>
+        /// <exception cref="PlatformNotSupportedException">
+        ///     Defined internet browser is not supported.
+        /// </exception>
         private void LoadBrowser()
         {
-            var browserName = Settings.Browser.ToUpper();
-            if (!Enum.TryParse(browserName, out BrowserType browserTypeParsed))
-                throw new ArgumentException("String " + browserName + " can't be parsed to enum!");
+            if (!Enum.TryParse(Settings.Browser, true, out BrowserType browserTypeParsed))
+                throw new ArgumentException($"String {Settings.Browser} can't be parsed to BrowserType enum!");
 
             switch (browserTypeParsed)
             {
@@ -59,7 +68,7 @@ namespace UI.Hooks
                         break;
                     }
                 default:
-                    throw new PlatformNotSupportedException(Settings.Browser + " is not a supported browser!");
+                    throw new PlatformNotSupportedException($"{Settings.Browser} is not a supported browser!");
             }
 
             if (_driver != null)
@@ -67,33 +76,36 @@ namespace UI.Hooks
         }
         #endregion
 
+        /// <summary>
+        ///     Initialize test scenario specific prerequisites before running scenario.
+        /// </summary>
         [BeforeScenario]
         public void BeforeScenario()
         {
             var scenarioTags = _scenarioContext.ScenarioInfo.Tags.ToList();
 
-            if (scenarioTags.Contains(UserType.SPORT.ToString()))
+            if (FeatureHooks.Feature.Equals("Sport Online Betting"))
                 _configurationManager.SetUserCredentials(UserType.SPORT.ToString());
-            else if (scenarioTags.Contains(UserType.LOTTO.ToString()))
+            else if (FeatureHooks.Feature.Equals("Lotto Online Betting"))
                 _configurationManager.SetUserCredentials(UserType.LOTTO.ToString());
-            else if (scenarioTags.Contains(UserType.GAMES.ToString()))
+            else if (FeatureHooks.Feature.Equals("Games Online Betting"))
                 _configurationManager.SetUserCredentials(UserType.GAMES.ToString());
-            else
+            else if (FeatureHooks.Feature.Equals("Player Session"))
                 _configurationManager.SetUserCredentials(UserType.RETAIL_BETTING.ToString());
+            else if (FeatureHooks.Feature.Equals("Navigation"))
+            {
+                if (scenarioTags.Contains("online"))
+                    _configurationManager.SetUserCredentials(UserType.SPORT.ToString());
+            }
 
             LoadBrowser();
-
-            try
-            {
-                CookieManager.ConvertHTTPCookieToSeleniumCookie();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            CookieManager.ConvertHTTPCookieToSeleniumCookie();
 
         }
 
+        /// <summary>
+        ///     Cleans all objects in memory and processes after the test scenario is finished.
+        /// </summary>
         [AfterScenario]
         public void AfterScenario()
         {
