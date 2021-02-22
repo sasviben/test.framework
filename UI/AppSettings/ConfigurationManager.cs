@@ -8,33 +8,26 @@ namespace UI.Configuration
 {
     class ConfigurationManager
     {
+        private readonly string _configPath = "/AppSettings";
+        private readonly AppConfiguration _appConfig;
+        private string _configurationName;
+        private ConfigOptions _configOptions;
+
         public ConfigurationManager()
         {
             _appConfig = new AppConfiguration();
             _configOptions = new ConfigOptions();
         }
 
-        private readonly string _configPath = "/AppSettings";
-        private readonly AppConfiguration _appConfig;
-        private string _configurationName;
-        private ConfigOptions _configOptions;
-
-        ///<summary>
-        ///     Loads JSON configuration.
-        ///</summary>
-        ///<param name="objectContainer">
-        ///     IObjectContainer type used for configuration instance registration configuration.
-        /// </param>
         public void LoadConfiguration(BoDi.IObjectContainer _objectContainer)
         {
-#if DEBUG
-            _configurationName = "appsettings.QA.json";
-#endif
 
-#if RELEASE
             _appConfig.Initialize();
+
+            if(string.IsNullOrEmpty(_appConfig.ExecutionEnvironment))
+                _appConfig.ExecutionEnvironment = "QA";
             _configurationName = GetConfiguration(_appConfig.ExecutionEnvironment);
-#endif
+
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory() + _configPath).AddJsonFile(_configurationName);
             var config = builder.Build();
 
@@ -48,19 +41,6 @@ namespace UI.Configuration
             _objectContainer.RegisterInstanceAs(_configOptions);
         }
 
-        /// <summary>
-        ///     Gets the configuration depending on the passed parameters.
-        ///     This method is used only in Release configuration mode.
-        /// </summary>
-        /// <param name="executionEnvironment">
-        ///     Name of the desired execution environment.
-        ///</param>
-        /// <returns>
-        ///     Returns the configuration name specified by executionEnvironment parameter.
-        ///</returns>
-        /// <exception cref="ArgumentException">
-        ///     executionEnvironment is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
-        /// </exception>
         public string GetConfiguration(string executionEnvironment)
         {
             if (executionEnvironment == null)
@@ -86,15 +66,7 @@ namespace UI.Configuration
 
             return configuration;
         }
-        /// <summary>
-        ///     Sets desirable user credentials depending on the passed parameters.
-        /// </summary>/// 
-        /// <param name="userType">
-        ///     User whose credentials need to be set.
-        /// </param>/// 
-        /// <exception cref="ArgumentException">
-        ///     Player user name is a zero-length string, contains only white space, contains one or more invalid characters, or is null.
-        /// </exception>
+        
         public void SetUserCredentials(string userType)
         {
             foreach (var player in Settings.Configuration.PlayerCredentials)

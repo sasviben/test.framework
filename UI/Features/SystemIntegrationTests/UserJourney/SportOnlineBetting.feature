@@ -66,7 +66,7 @@ Feature: Sport Online Betting
     And the data on the "WIDGET" is the same as data on the Betslip
     And the data on the "DETAILS" is the same as data on the Betslip
 
-  @RULES_automation_todo @regression @acceptance
+  @RULES_automated @regression @acceptance
   Scenario: the online player should be able to purchase a Prematch simple ticket (uid:1358b00e-c0ce-4fd9-8fa0-0c496626f5c6)
     Given the player is logged in
     And the player has added "3" random "PREMATCH" "FOOTBALL" events to the Betslip

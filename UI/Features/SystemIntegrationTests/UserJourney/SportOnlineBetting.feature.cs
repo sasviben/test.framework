@@ -449,13 +449,13 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Prematch simple ticket (uid:1358b0" +
             "0e-c0ce-4fd9-8fa0-0c496626f5c6)")]
-        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
         [NUnit.Framework.CategoryAttribute("regression")]
         [NUnit.Framework.CategoryAttribute("acceptance")]
         public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAPrematchSimpleTicketUid1358B00E_C0Ce_4Fd9_8Fa0_0C496626F5C6()
         {
             string[] tagsOfScenario = new string[] {
-                    "RULES_automation_todo",
+                    "RULES_automated",
                     "regression",
                     "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

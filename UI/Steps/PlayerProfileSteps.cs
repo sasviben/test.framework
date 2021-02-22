@@ -13,16 +13,16 @@ namespace UI.Steps
     [Binding]
     class PlayerProfileSteps
     {
+        private readonly IWebDriver _driver;
+        private readonly PlayerSessionObject _playerSessionObject;
+        private readonly NavigationObject _navigationObject;
+
         public PlayerProfileSteps(IWebDriver webDriver)
         {
             _driver = webDriver;
             _playerSessionObject = new PlayerSessionObject(_driver);
             _navigationObject = new NavigationObject(_driver);
         }
-
-        private readonly IWebDriver _driver;
-        private readonly PlayerSessionObject _playerSessionObject;
-        private readonly NavigationObject _navigationObject;
 
 
         #region Actions

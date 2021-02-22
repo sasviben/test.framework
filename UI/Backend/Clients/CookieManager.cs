@@ -14,12 +14,6 @@ namespace UI.Backend.Clients
     {
         public static List<Cookie> SeleniumCookies { get; set; } = new List<Cookie>();
 
-        /// <summary>
-        ///     Converts HttpClient cookies from POST request to the Selenium cookies.
-        /// </summary>
-        /// <exception cref="HttpRequestException">
-        ///    HTTP request failure message.
-        /// </exception>
         public static void ConvertHTTPCookieToSeleniumCookie()
         {
             var client = new RestClient(Settings.PlayerSessionAPI);
@@ -38,8 +32,8 @@ namespace UI.Backend.Clients
 
 
             var response = client.Execute(request);
-            if (!response.IsSuccessful)
-                throw new HttpRequestException($"Post request failed. \n Error message: {response.ErrorMessage}.\n Response status: {response.StatusCode}");
+            if (!response.IsSuccessful && response.Content.Contains("{\"error\":true"))
+                throw new HttpRequestException($"Request failed. \n Error message: {response.ErrorMessage}.\n Response status: {response.StatusCode}. \n Response content: {response.Content}.");
 
             foreach (var cookie in response.Cookies)
             {
@@ -47,18 +41,6 @@ namespace UI.Backend.Clients
             }
         }
 
-        /// <summary>
-        ///    Gets player balance value by executing GET request.
-        /// </summary>
-        /// <returns>
-        ///    Player balance double value.
-        /// </returns>
-        /// <exception cref="NullReferenceException">
-        ///    SeleniumCookies property can't be null.
-        /// </exception>
-        /// <exception cref="ArgumentException">
-        ///    Response content string shouldn't be null or empty.
-        /// </exception>
         public static double GetPlayerBalance()
         {
             var client = new RestClient(Settings.PlayerBalanceAPI);
@@ -70,8 +52,9 @@ namespace UI.Backend.Clients
 
             var response = client.Execute(request);
 
-            if (string.IsNullOrEmpty(response.Content))
-                throw new ArgumentException("Response content shouldn't be null or empty! Please check the code.");
+            if (!response.IsSuccessful && response.Content.Contains("{\"error\":true"))
+                throw new HttpRequestException($"Request failed. \n Error message: {response.ErrorMessage}.\n Response status: {response.StatusCode}. \n Response content: {response.Content}.");
+
             var balanceResponse = JsonConvert.DeserializeObject<PlayerBalanceResponse>(response.Content);
 
             return balanceResponse.PlayerRecord.Accounts[0].Balance;

@@ -10,29 +10,21 @@ namespace UI.Configuration
         public string ExecutionEnvironment { get; set; }
         public string SeleniumHubUri { get; set; }
 
-        /// <summary>
-        ///     Initializes all AppConfiguration properties.
-        /// </summary>
-        /// <exception cref="ArgumentException">
-        ///     Hostname, Port or Browser is null.
-        /// </exception>
         public void Initialize()
         {
-            Hostname = Environment.GetEnvironmentVariable("seleniumHubHost");
-            if (string.IsNullOrEmpty(Hostname))
-                throw new ArgumentException("Environment variable 'hostname' is null or empty! You should enter Selenium hub hostname when running a tests.");
 
-            Port = Environment.GetEnvironmentVariable("seleniumHubPort");
-            if (string.IsNullOrEmpty(Port))
-                throw new ArgumentException("Environment variable 'port' is null or empty! You should enter Selenium hub port when running a tests.");
+            if (!string.IsNullOrEmpty(Hostname))
+                Hostname = Environment.GetEnvironmentVariable("seleniumHubHost");
+
+            if (!string.IsNullOrEmpty(Port))
+                Port = Environment.GetEnvironmentVariable("seleniumHubPort");
 
             SeleniumHubUri = $"http://{Hostname}:{Port}/wd/hub";
 
             ExecutionEnvironment = Environment.GetEnvironmentVariable("environment");
 
-            Browser = Environment.GetEnvironmentVariable("browser");
-            if (string.IsNullOrEmpty(Browser))
-                throw new ArgumentException("Environment variable 'browser' is null or empty! You should enter browser type when running a tests. For example: Chrome");
+            if (!string.IsNullOrEmpty(Browser))
+                Browser = Environment.GetEnvironmentVariable("browser");
         }
 
     }

@@ -130,7 +130,9 @@ namespace UI.Objects
 
             if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 1))
                 BetslipModel.ValidationMessage = _driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText");
+
             _driver.WaitUntilElementIsInvisible(BetslipLOC.Spinner, 1);
+
             if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 1))
                 BetslipModel.ValidationMessage = _driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText");
 
