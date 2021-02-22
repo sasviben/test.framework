@@ -4,163 +4,229 @@
         <name>UI</name>
     </assembly>
     <members>
-        <member name="M:UI.Configuration.AppConfiguration.Initialize">
+        <member name="M:UI.Helpers.WebDriverExtensions.WdFindElement(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
             <summary>
-                    Initializes all AppConfiguration properties.
+               Finds web element with driver in the DOM.
             </summary>
-            
-            <exception cref="T:System.ArgumentNullException">
-                    Hostname, Port or Browser is null.
+            <param name="driver">
+               IWebDriver driver instance.
+            </param>
+            <param name="by">
+               Locator of the web element.
+            </param>
+            <param name="sec">
+               Time to wait for driver to find the web element.
+               Default time is 10 seconds.
+            </param>
+            <returns>
+               Web element specified by locator.
+            </returns>
+            <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">
+               Driver finding the web element timeouts after the specified time.
             </exception>
         </member>
-        <member name="M:UI.Configuration.ConfigurationManager.LoadConfiguration(BoDi.IObjectContainer)">
+        <member name="M:UI.Helpers.WebDriverExtensions.WdFindElements(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
             <summary>
-                 Loads JSON configuration.
+               Finds web elements with driver in the DOM.
             </summary>
-            <param name="objectContainer">
-                 IObjectContainer type used for configuration instance registration configuration.
+            <param name="driver">
+               IWebDriver driver instance.
+            </param>
+            <param name="by">
+               Locator of the web element.
+            </param>
+            <param name="sec">
+               Time to wait for driver to find the web element.
+               Default time is 10 seconds.
+            </param>
+            <returns>
+               List of web elements specified by locator.
+            </returns>
+            <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">
+               Driver finding the web element timeouts after the specified time.
+            </exception>
+        </member>
+        <member name="M:UI.Helpers.WebDriverExtensions.WdHighlight(OpenQA.Selenium.By,OpenQA.Selenium.IWebDriver,System.Int32)">
+            <summary>
+               Highlights founded element in the DOM.
+            </summary>
+            <param name="by">
+               Locator of the web element.
              </param>
-        </member>
-        <member name="M:UI.Configuration.ConfigurationManager.GetConfiguration(System.String)">
-             <summary>
-                 Gets the configuration depending on the passed parameters.
-                 This method is used only in Release configuration mode.
-             </summary>
-             
-             <param name="executionEnvironment">
-                 Name of the desired execution environment.
+            <param name="driver">
+               IWebDriver driver instance.
             </param>
-            
-             <returns>
-                 Returns the configuration name specified by executionEnvironment parameter.
-            </returns>
-            
-             <exception cref="T:System.ArgumentNullException">
-                     executionEnvironment is null.
-             </exception>
-             <exception cref="T:System.ArgumentException">
-                     executionEnvironment is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
-             </exception>
-        </member>
-        <member name="M:UI.Configuration.ConfigurationManager.SetUserCredentials(UI.Helpers.Enums.UserType)">
-            <summary>
-                Sets desirable user credentials depending on the passed parameters.
-            </summary>
-            
-            <param name="userType">
-                User whose credentials need to be set.
+            <param name="sec">
+               Time to wait for driver to find the web element.
+               Default time is 10 seconds.
             </param>
-            
-            <exception cref="T:System.ArgumentNullException">
-                PlayerUsername is null.
+            <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">
+               Driver finding the web element timeouts after the specified time.
             </exception>
-            
         </member>
-        <member name="M:UI.Drivers.ChromeDriver.LoadChromeDriver(System.Boolean)">
+        <member name="M:UI.Helpers.WebDriverExtensions.WdMoveToElement(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By)">
             <summary>
-                Loads Chrome driver with desired options.
+               Hovers founded element in the DOM.
             </summary>
-            <param name="headless">
-                Flag to run in headless mode.
-                Default: false
+            <param name="driver">
+               IWebDriver driver instance.
             </param>
-            <returns>
-                IWebDriver with desired arguments set.
-            </returns>
+            <param name="by">
+               Locator of the web element.
+             </param>
+            <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">
+               Driver finding the web element timeouts after the specified time.
+            </exception>
         </member>
-        <member name="M:UI.Drivers.ChromeDriver.LoadRemoteChromeDriver(System.Uri,System.Boolean)">
+        <member name="M:UI.Helpers.WebDriverExtensions.WaitUntilElementIsInvisible(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
             <summary>
-                Loads remote Chrome driver with desired options.
+                Wait until element is invisible in DOM by its locator.
             </summary>
-            <param name="remoteUri">
-                Remote Chrome driver uri. 
-            </param>
-            <param name="headless">
-                Flag to run in headless mode.
-                Default: true
-            </param>
-            <returns>
-                IWebDriver with desired arguments set.
-            </returns>
-        </member>
-        <member name="M:UI.Drivers.FirefoxDriver.LoadFirefoxDriver(System.Boolean)">
-            <summary>
-                Loads Firefox driver with desired options.
-            </summary>
-            <param name="headless">
-                Flag to run in headless mode.
-                Default: false
-            </param>
-            <returns>
-                IWebDriver with desired arguments set.
-            </returns>
-        </member>
-        <member name="M:UI.Drivers.FirefoxDriver.LoadRemoteFirefoxDriver(System.Uri,System.Boolean)">
-            <summary>
-                Loads remote Firefox driver with desired options.
-            </summary>
-            <param name="remoteUri">
-                Remote Firefox driver uri. 
-            </param>
-            <param name="headless">
-                Flag to run in headless mode.
-                Default: true
-            </param>
-            <returns>
-                IWebDriver with desired arguments set.
-            </returns>
-        </member>
-        <member name="M:UI.Helpers.Waiters.WaitUntilElementIsVisible(OpenQA.Selenium.By,OpenQA.Selenium.IWebDriver,System.Int32)">
-            <summary>
-                Wait until element is visible in DOM by its locator.
-            </summary>
-            <param name="locator">
+            <param name="by">
                 Locator pointing to the web element.
             </param>
             <param name="driver">
                 Instance of Selenium IWebDriver.
             </param>
             <param name="seconds">
-                Time in seconds to wait for element become visible.
+                Time in seconds to wait for element become invisible.
+                Default: 10 seconds
+            </param>
+            <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">
+               Driver finding the web element timeouts after the specified time.
+            </exception>
+        </member>
+        <member name="M:UI.Helpers.WebDriverExtensions.WdIsElementVisible(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+               Checks if element is visible in DOM by its locator.
+            </summary>
+            <param name="by">
+               Locator pointing to the web element.
+            </param>
+            <param name="driver">
+               Instance of Selenium IWebDriver.
+            </param>
+            <param name="sec">
+                Time in seconds to wait for element become invisible.
                 Default: 10 seconds
             </param>
             <returns>
-                IWebElement. 
+               True if element is visible or false if element is not visible.
             </returns>
         </member>
-        <member name="M:UI.Hooks.ScenarioHooks.LoadBrowser">
+        <member name="M:UI.Helpers.WebElementExtensions.WeHighlightElement(OpenQA.Selenium.IWebElement,OpenQA.Selenium.IWebDriver)">
             <summary>
-                Loads defined browser.
+               Highlights founded web element in the DOM.
             </summary>
-            <exception cref="T:System.ArgumentException">
-                browserName is a zero-length string, contains only white space, contains one or more invalid characters, or is not the same as a comparing Enum.
-            </exception>
-            <exception cref="T:System.PlatformNotSupportedException">
-                Defined internet browser is not supported.
-            </exception>
-        </member>
-        <member name="M:UI.Hooks.ScenarioHooks.Initialize">
-            <summary>
-                Initialize test scenario specific prerequisites before running scenario.
-            </summary>
-        </member>
-        <member name="M:UI.Hooks.ScenarioHooks.CleanUp">
-            <summary>
-                Clean up all objects in memory and processes after the test scenario is finished.
-            </summary>
-        </member>
-        <member name="M:UI.Objects.NavigationObject.NavigateToHomePage">
-            <summary>
-               Opens homepage
-            </summary>
-        </member>
-        <member name="M:UI.Steps.NavigationSteps.GivenThePlayerIsOnThePage(System.String)">
-            <summary>
-                Step for player web navigation.
-            </summary>
-            <param name="pageName">
-                Name of page to navigate.
+            <param name="element">
+               Web element to highlight.
             </param>
+            <param name="driver">
+               IWebDriver driver instance.
+            </param>
+        </member>
+        <member name="M:UI.Helpers.WebElementExtensions.WeFindElement(OpenQA.Selenium.IWebElement,OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+               Finds element with web element in the DOM.
+            </summary>
+            <param name="element">
+               IWebElement element instance.
+            </param>
+            <param name="by">
+               Locator pointing to the web element to find.
+            </param>
+            <param name="driver">
+               IWebDriver driver instance.
+            </param>
+            <param name="sec">
+              Time to wait for driver to find the web element.
+              Default time is 10 seconds.
+            </param>
+            <returns>
+               IWebElement specified by locator.
+            </returns>
+            <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">
+               Driver finding the web element timeouts after the specified time.
+            </exception>
+        </member>
+        <member name="M:UI.Helpers.WebElementExtensions.WeFindElements(OpenQA.Selenium.IWebElement,OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+               Finds elements with web element in the DOM.
+            </summary>
+            <param name="element">
+               IWebElement element instance.
+            </param>
+            <param name="by">
+               Locator pointing to the web element to find.
+            </param>
+            <param name="driver">
+               IWebDriver driver instance.
+            </param>
+            <param name="sec">
+              Time to wait for driver to find the web element.
+              Default time is 10 seconds.
+            </param>
+            <returns>
+               IWebElement specified by locator.
+            </returns>
+            <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">
+               Driver finding the web element timeouts after the specified time.
+            </exception>
+        </member>
+        <member name="M:UI.Helpers.WebElementExtensions.WeGetAttributeValue(OpenQA.Selenium.IWebElement,OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+               Gets web element attribute value. 
+            </summary>
+            <param name="element">
+               IWebElement element instance.
+            </param>
+            <param name="driver">
+               IWebDriver driver instance.
+            </param>
+            <param name="propertyName">
+               Name of the web element property.
+            </param>
+            <returns>
+               Resturn web element property value as a string.
+            </returns>
+        </member>
+        <member name="M:UI.Helpers.WebElementExtensions.WeMoveToElement(OpenQA.Selenium.IWebElement,OpenQA.Selenium.IWebDriver)">
+            <summary>
+               Hovers founded element in the DOM.
+            </summary>
+            <param name="element">
+               IWebElement element instance.
+            </param>
+            <param name="driver">
+               IWebDriver driver instance.
+            </param>
+            <param name="by">
+               Locator pointing to the web element to find.
+             </param>
+            <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">
+               Driver finding the web element timeouts after the specified time.
+            </exception>
+        </member>
+        <member name="M:UI.Helpers.WebElementExtensions.WeIsElementVisible(OpenQA.Selenium.IWebElement,OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+               Checks if element is visible in DOM by its locator.
+            </summary>
+            <param name="element">
+               IWebElement element instance.
+            </param>
+            <param name="driver">
+               Instance of Selenium IWebDriver.
+            </param>
+            <param name="by">
+               Locator pointing to the web element to find.
+            </param>
+            <param name="sec">
+                Time in seconds to wait for element become invisible.
+                Default: 10 seconds
+            </param>
+            <returns>
+               True if element is visible or false if element is not visible.
+            </returns>
         </member>
     </members>
 </doc>

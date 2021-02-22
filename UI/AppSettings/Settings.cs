@@ -4,17 +4,6 @@ namespace UI.Configuration
 {
     class Settings
     {
-        public static string HomePageUrl { get; set; }
-        public static string HomePageUrlFirefox { get; set; }
-        public static string Browser { get; set; }
-        public static string PlayerUsername { get; set; }
-        public static string PlayerPassword { get; set; }
-        public static string PlayerSessionAPI { get; set; }
-        public static string PlayerBalanceAPI { get; set; }
-        public static string Domain { get; set; }
-        public static string ClientSourceType { get; set; }
-        public static ConfigOptions Configuration { get; set; }
-
         public Settings(ConfigOptions configOptions)
         {
             HomePageUrl = configOptions.HomepageUrl;
@@ -27,5 +16,15 @@ namespace UI.Configuration
             Configuration = configOptions;
         }
 
+        public static string HomePageUrl { get; set; }
+        public static string HomePageUrlFirefox { get; set; }
+        public static string Browser { get; set; }
+        public static string PlayerUsername { get; set; }
+        public static string PlayerPassword { get; set; }
+        public static string PlayerSessionAPI { get; set; }
+        public static string PlayerBalanceAPI { get; set; }
+        public static string Domain { get; set; }
+        public static string ClientSourceType { get; set; }
+        public static ConfigOptions Configuration { get; set; }
     }
 }

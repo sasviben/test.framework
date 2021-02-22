@@ -9,15 +9,16 @@ namespace UI.Steps
     [Binding]
     class NavigationSteps
     {
+        private readonly IWebDriver _driver;
+        private readonly NavigationObject _navigationObject;
+        private const string URL_SUPERBET = "SUPERBET";
         public NavigationSteps(IWebDriver driver)
         {
             _driver = driver;
             _navigationObject = new NavigationObject(_driver);
         }
 
-        private readonly IWebDriver _driver;
-        private readonly NavigationObject _navigationObject;
-        private const string URL_SUPERBET = "SUPERBET";
+
 
         #region Actions
         [Given(@"the player is on the page ""(.*)""")]

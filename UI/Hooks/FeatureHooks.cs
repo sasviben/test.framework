@@ -5,12 +5,14 @@ namespace web.test.app.hooks
     [Binding]
     public class FeatureHooks
     {
-        public static string Feature;
+        private static string _feature;
+
+        public static string Feature { get => _feature; }
 
         [BeforeFeature]
         public static void PrepareForTestExecution(FeatureContext featureContext)
         {
-            Feature = featureContext.FeatureInfo.Title;
+            _feature = featureContext.FeatureInfo.Title;
         }
 
     }
