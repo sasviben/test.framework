@@ -11,7 +11,6 @@ namespace UI.Configuration
             Browser = configOptions.Browser;
             PlayerSessionAPI = configOptions.CustomerSessionAPI;
             PlayerBalanceAPI = configOptions.PlayerBalanceAPI;
-            Domain = configOptions.Domain;
             ClientSourceType = configOptions.ClientSourceType;
             Configuration = configOptions;
         }
@@ -23,7 +22,6 @@ namespace UI.Configuration
         public static string PlayerPassword { get; set; }
         public static string PlayerSessionAPI { get; set; }
         public static string PlayerBalanceAPI { get; set; }
-        public static string Domain { get; set; }
         public static string ClientSourceType { get; set; }
         public static ConfigOptions Configuration { get; set; }
     }

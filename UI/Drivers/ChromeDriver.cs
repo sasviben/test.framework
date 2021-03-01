@@ -18,12 +18,14 @@ namespace UI.Drivers
 
                 var options = new ChromeOptions();
 
-                options.AddArgument("--start-maximized");
-                options.AddArgument("--disable-extensions");
-                options.AddArgument("--disable-popup-blocking");
-                
+                options.AddArgument("start-maximized");
+                options.AddArgument("disable-extensions");
+                options.AddArgument("disable-popup-blocking");
+                options.AddExcludedArgument("enable-automation");
+                options.AddArguments("disable-infobars");
+
                 if (headless == true)
-                    options.AddArgument("--headless");
+                    options.AddArgument("headless");
 
                 return new OpenQA.Selenium.Chrome.ChromeDriver(driverService, options);
             }
@@ -37,12 +39,12 @@ namespace UI.Drivers
             try
             {
                 var options = new ChromeOptions();
-                options.AddArgument("--disable-extensions");
-                options.AddArgument("--disable-popup-blocking");
-                options.AddArgument("--start-maximized");
-                options.AddArgument("--disable-dev-shm-usage");
+                options.AddArgument("disable-extensions");
+                options.AddArgument("disable-popup-blocking");
+                options.AddArgument("start-maximized");
+                options.AddArgument("disable-dev-shm-usage");
                 if (headless == true)
-                    options.AddArgument("--headless");
+                    options.AddArgument("headless");
 
                 var driver = new RemoteWebDriver(remoteUri, options);
                 return driver;

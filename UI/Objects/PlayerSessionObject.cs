@@ -29,7 +29,7 @@ namespace UI.Objects
             {
                 _driver.Manage().Cookies.AddCookie(cookie);
             }
-
+           
             _driver.Navigate().Refresh();
 
         }

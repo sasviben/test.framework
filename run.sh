@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 #----TEST RUNS----
 # regression test run ID: 513396
 # acceptance test run ID: 514338
@@ -8,11 +8,13 @@
 # Stage
 # QA
 
-TEST_RUN_ID="513396"
-TEST_CONFIG="UI\Features\hiptest-publisher.conf"
-TEST_ENVIRONMENT="QA"
+# dodati opis u word
+
+TEST_RUN_ID="513396" #test run-a id koji omogućuje aplikaciji da povuće test scenarije koje treba izvršiti
+TEST_CONFIG="UI\Features\hiptest-publisher.conf" #konfiguracija koja omogućuje komunikaciju između CucumberStudia i aplikacije
+TEST_ENVIRONMENT="QA" #okolina na kojoj će aplikacija izvršiti testove
 #TEST_FILTER="regression"
-TEST_FILTER="TestCategory=RULES_automated"
+TEST_FILTER="TestCategory=RULES_automated" #scenariji koji sadrže tag koji odgovara navedenom filteru će biti izvršeni
 
 # Fetch tests
 if ! hiptest-publisher \

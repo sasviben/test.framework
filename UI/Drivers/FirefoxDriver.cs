@@ -18,11 +18,13 @@ namespace UI.Drivers
                 driverService.HideCommandPromptWindow = true;
 
                 var options = new FirefoxOptions();
-                options.AddArgument("--disable-extensions");
-                options.AddArgument("--disable-popup-blocking");
-                options.AddArgument("--start-maximized");
+                options.AddArgument("start-maximized");
+                options.AddArgument("disable-extensions");
+                options.AddArgument("disable-popup-blocking");
+                options.AddArguments("disable-infobars");
+                
                 if (headless == true)
-                    options.AddArgument("--headless");
+                    options.AddArgument("headless");
 
                 var driver = new OpenQA.Selenium.Firefox.FirefoxDriver(driverService, options);
                 return driver;
@@ -39,12 +41,12 @@ namespace UI.Drivers
             try
             {
                 var options = new FirefoxOptions();
-                options.AddArgument("--disable-extensions");
-                options.AddArgument("--disable-popup-blocking");
-                options.AddArgument("--start-maximized");
-                options.AddArgument("--disable-dev-shm-usage");
+                options.AddArgument("disable-extensions");
+                options.AddArgument("disable-popup-blocking");
+                options.AddArgument("start-maximized");
+                options.AddArgument("disable-dev-shm-usage");
                 if (headless == true)
-                    options.AddArgument("--headless");
+                    options.AddArgument("headless");
 
                 var driver = new RemoteWebDriver(remoteUri, options);
                 return driver;

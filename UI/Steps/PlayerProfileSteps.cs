@@ -43,7 +43,8 @@ namespace UI.Steps
             try
             {
                 _navigationObject.NavigateToHomePage();
-                _playerSessionObject.ExecuteLoginRequest();
+                _playerSessionObject.OpenLoginModal();
+                _playerSessionObject.Login();
                 _driver.WdFindElement(NavigationHeaderLOC.SuperbetLogo);
 
                 Assert.IsTrue(_playerSessionObject.IsThePlayerLoggedIn(), "Player login failed!");
