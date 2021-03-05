@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UI.Backend.Clients;
 using UI.Helpers;
@@ -40,13 +41,13 @@ namespace UI.Objects
                         dirtyEvent.WeFindElement(_driver, BetslipLOC.ButtonDeleteEvent).Click();
                         if (!_driver.Url.Contains(URL_INPLAY))
                             new NavigationObject(_driver).NavigateToSportPage(SPORT_INPLAY);
-                        AddSportEvents(1, SPORT_INPLAY);
+                        AddRandomSportSelectionsToBetslip(1, SPORT_INPLAY);
                     }
                     else
                     {
                         dirtyEvent.WeFindElement(_driver, BetslipLOC.ButtonDeleteEvent).Click();
                         new NavigationObject(_driver).NavigateToSportPage(SPORT_PREMATCH);
-                        AddSportEvents(1, SPORT_PREMATCH);
+                        AddRandomSportSelectionsToBetslip(1, SPORT_PREMATCH);
                     }
                 }
             }
@@ -55,53 +56,48 @@ namespace UI.Objects
 
         #region Actions
 
-        public void AddSportEvents(int numberOfEventsToAdd, string bettingType)
+        public void AddRandomSportSelectionsToBetslip(int numberOfEventsToAdd, string bettingType)
         {
-            var random = new Random();
-            var numberOfEventsOnTheBetslip = 0;
-
             if (Enum.TryParse(bettingType, true, out SportBettingType sportBettingType) == false)
                 throw new ArgumentException($"String {bettingType} can't be parsed to enum SportBettingType!");
 
+            var selections = new List<IWebElement>();
             if (sportBettingType.Equals(SportBettingType.SPECIAL))
             {
                 throw new NotImplementedException("Special betting is not supported yet!");
             }
             else
             {
-                var eventsTemp = _driver.WdFindElements(SportOfferLOC.Matches);
-                var eventsListLength = eventsTemp.Count;
 
-                if (eventsListLength < numberOfEventsToAdd)
-                    throw new Exception($"Can't add {numberOfEventsToAdd} selections on the Betslip because there are only {eventsListLength} selections available!");
+                var offer = new Dictionary<IWebElement, List<IWebElement>>(); //key:event row, value: odds
 
-                while (numberOfEventsToAdd != 0)
+                var eventRows = _driver.WdFindElements(SportOfferLOC.Matches).ToList();
+                foreach (var row in eventRows)
                 {
-                    var randomEvent = eventsTemp[random.Next(eventsListLength)];
-                    randomEvent.WeMoveToElement(_driver);
-
-                    if (randomEvent.Displayed)
-                        randomEvent.WeHighlightElement(_driver);
-
-                    var odd = randomEvent.WeFindElement(_driver, SportEventLOC.ContainerOdd);
-                    if (odd != null)
+                    if (row.WeIsElementVisible(_driver, SportEventLOC.ContainerOdd))
                     {
-                        var oddValue = randomEvent.WeFindElements(_driver, SportEventLOC.OddValue).FirstOrDefault();
+                        selections = row.WeFindElements(_driver, SportEventLOC.OddValue).OrderBy(x => Guid.NewGuid()).ToList();
+                        offer.Add(row, selections);
+                    }
 
-                        var oddValueDouble = Common.GetDoubleValueRoundedTwoDecimal(oddValue.WeGetAttributeValue(_driver, "innerText"));
-                        if (oddValueDouble >= 1.01)
-                        {
-                            odd.Click();
+                }
 
-                            var numberOfEventsOnTheBetslipTemp = int.Parse(_driver.WdFindElement(BetslipLOC.EventsCount).WeGetAttributeValue(_driver, "innerText"));
+                if (offer.Count < numberOfEventsToAdd)
+                    throw new Exception($"Can't add {numberOfEventsToAdd} selections on the Betslip because there are only {offer.Count} selections available!");
 
-                            if (numberOfEventsOnTheBetslipTemp > numberOfEventsOnTheBetslip)
-                            {
-                                numberOfEventsOnTheBetslip = numberOfEventsOnTheBetslipTemp;
-                                numberOfEventsToAdd--;
-                            }
+                foreach (var row in offer)
+                {
+                    var selection = row.Value[0];
+                    selection.WeMoveToElement(_driver);
 
-                        }
+                    var oddValueDouble = Common.GetDoubleValueRoundedTwoDecimal(selection.WeGetAttributeValue(_driver, "innerText"));
+                    if (oddValueDouble >= 1.01)
+                    {
+                        selection.Click();
+
+                        var numberOfEventsOnTheBetslip = int.Parse(_driver.WdFindElement(BetslipLOC.EventsCount).WeGetAttributeValue(_driver, "innerText"));
+                        if (numberOfEventsOnTheBetslip == numberOfEventsToAdd)
+                            break;
                     }
                 }
             }

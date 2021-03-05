@@ -53,7 +53,7 @@ namespace UI.Steps
                 else if (bettingType.Equals(SPECIAL, StringComparison.OrdinalIgnoreCase))
                     _navigationObject.NavigateToSportPage(bettingType);
 
-                _sportBettingObject.AddSportEvents(numberOfEventsToAdd, bettingType);
+                _sportBettingObject.AddRandomSportSelectionsToBetslip(numberOfEventsToAdd, bettingType);
             }
             catch (Exception e)
             {
@@ -100,7 +100,7 @@ namespace UI.Steps
         [Then(@"the player balance amount is subtracted by the ticket stake")]
         public void ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake()
         {
-            _playerProfileObject.PlayerBalanceIsCReducedByTheStake(BetslipModel.Stake);
+            _playerProfileObject.PlayerBalanceIsReducedByTheStake(BetslipModel.Stake);
         }
 
 
