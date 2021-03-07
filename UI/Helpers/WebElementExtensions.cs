@@ -213,7 +213,7 @@ namespace UI.Helpers
         /// </param>
         /// <param name="sec">
         ///     Time in seconds to wait for element become clickable.
-        ///     Default: 10 seconds
+        ///     Default: 60 seconds
         /// </param>
         /// <returns>
         ///    True if element is clickable or false if element is not clickable.

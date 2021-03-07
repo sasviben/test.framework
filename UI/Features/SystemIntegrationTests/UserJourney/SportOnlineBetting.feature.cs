@@ -560,13 +560,13 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Inplay simple ticket (uid:6da48565" +
             "-61fc-407a-8f86-5435fa3edc4a)")]
-        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
         [NUnit.Framework.CategoryAttribute("regression")]
         [NUnit.Framework.CategoryAttribute("acceptance")]
         public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAInplaySimpleTicketUid6Da48565_61Fc_407A_8F86_5435Fa3Edc4A()
         {
             string[] tagsOfScenario = new string[] {
-                    "RULES_automation_todo",
+                    "RULES_automated",
                     "regression",
                     "acceptance"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -596,7 +596,7 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 89
-    testRunner.And("the player has added \"10\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"1\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 90
     testRunner.When("the player purchases an \"ONLINE\" sport \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
