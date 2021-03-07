@@ -185,7 +185,7 @@ namespace UI.Helpers
         /// </param>
         /// <param name="sec">
         ///     Time in seconds to wait for element become invisible.
-        ///     Default: 10 seconds
+        ///     Default: 60 seconds
         /// </param>
         /// <returns>
         ///    True if element is visible or false if element is not visible.
@@ -194,8 +194,36 @@ namespace UI.Helpers
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
             try
-            {
+            { 
                 wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(by));
+                element.WeHighlightElement(driver);
+                return true;
+            }
+            catch { return false; }
+        }
+
+        /// <summary>
+        ///    Checks if element is clickable in DOM by its locator.
+        /// </summary>
+        /// <param name="by">
+        ///    Locator pointing to the web element.
+        /// </param>
+        /// <param name="driver">
+        ///    Instance of Selenium IWebDriver.
+        /// </param>
+        /// <param name="sec">
+        ///     Time in seconds to wait for element become clickable.
+        ///     Default: 10 seconds
+        /// </param>
+        /// <returns>
+        ///    True if element is clickable or false if element is not clickable.
+        /// </returns>
+        public static bool WeIsElementClickable(this IWebElement element, IWebDriver driver, int sec = 60)
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
+            try
+            {
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
                 element.WeHighlightElement(driver);
                 return true;
             }

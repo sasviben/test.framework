@@ -596,7 +596,7 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 89
-    testRunner.And("the player has added \"1\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"10\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 90
     testRunner.When("the player purchases an \"ONLINE\" sport \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

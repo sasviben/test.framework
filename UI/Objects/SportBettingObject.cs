@@ -74,12 +74,14 @@ namespace UI.Objects
                 var eventRows = _driver.WdFindElements(SportOfferLOC.Matches).ToList();
                 foreach (var row in eventRows)
                 {
-                    if (row.WeIsElementVisible(_driver, SportEventLOC.ContainerOdd))
+
+                    selections = row.WeFindElements(_driver, SportEventLOC.OddValue).OrderBy(x => Guid.NewGuid()).ToList();
+                    //if (row.WeFindElement(_driver, SportEventLOC.PrimaryMarketTitle).GetAttribute("innerText") == "Final")
+                    if (selections.Count > 0)
                     {
-                        selections = row.WeFindElements(_driver, SportEventLOC.OddValue).OrderBy(x => Guid.NewGuid()).ToList();
+                        //selections = row.WeFindElements(_driver, SportEventLOC.OddValue).OrderBy(x => Guid.NewGuid()).ToList();
                         offer.Add(row, selections);
                     }
-
                 }
 
                 if (offer.Count < numberOfEventsToAdd)
@@ -93,15 +95,16 @@ namespace UI.Objects
                     var oddValueDouble = Common.GetDoubleValueRoundedTwoDecimal(selection.WeGetAttributeValue(_driver, "innerText"));
                     if (oddValueDouble >= 1.01)
                     {
-                        selection.Click();
+                        if (selection.WeIsElementClickable(_driver, 2))
+                            selection.Click();
 
                         var numberOfEventsOnTheBetslip = int.Parse(_driver.WdFindElement(BetslipLOC.EventsCount).WeGetAttributeValue(_driver, "innerText"));
                         if (numberOfEventsOnTheBetslip == numberOfEventsToAdd)
                             break;
                     }
                 }
-            }
 
+            }
         }
 
         public void PurchaseTicket()
@@ -124,13 +127,13 @@ namespace UI.Objects
                 currentTime = DateTime.Now;
             }
 
-            if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 1))
-                BetslipModel.ValidationMessage = _driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText");
+            if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 2))
+                throw new Exception($"Betslip contans error message: {_driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText")}");
 
-            _driver.WaitUntilElementIsInvisible(BetslipLOC.Spinner, 1);
+            _driver.WaitUntilElementIsInvisible(BetslipLOC.Spinner, 30);
 
-            if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 1))
-                BetslipModel.ValidationMessage = _driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText");
+            if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 2))
+                throw new Exception($"Betslip contans error message: {_driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText")}");
 
             PlayerProfileModel.BalanceAfterPurchase = CookieManager.GetPlayerBalance();
 
