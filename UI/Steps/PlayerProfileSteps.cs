@@ -49,6 +49,7 @@ namespace UI.Steps
 
                 Assert.IsTrue(_playerSessionObject.IsThePlayerLoggedIn(), "Player login failed!");
                 PlayerProfileModel.BalanceAfterLogin = CookieManager.GetPlayerBalance();
+                _driver.WdFindElement(PopUpModals.ButtonAcceptCookies).Click();
             }
             catch (Exception e) { Assert.Fail($"Step 'the player is logged in' failed! {e.Message}"); }
 

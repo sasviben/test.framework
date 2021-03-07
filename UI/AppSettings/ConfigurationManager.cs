@@ -25,7 +25,7 @@ namespace UI.Configuration
             _appConfig.Initialize();
 
             if(string.IsNullOrEmpty(_appConfig.ExecutionEnvironment))
-                _appConfig.ExecutionEnvironment = "QA";
+                _appConfig.ExecutionEnvironment = "Silent";
             _configurationName = GetConfiguration(_appConfig.ExecutionEnvironment);
 
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory() + _configPath).AddJsonFile(_configurationName);

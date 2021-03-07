@@ -19,7 +19,7 @@ namespace UI.Objects
 
 
         #region Assertions
-        public void PlayerBalanceIsCReducedByTheStake(double stake)
+        public void PlayerBalanceIsReducedByTheStake(double stake)
         {
             Assert.AreEqual(expected: PlayerProfileModel.BalanceAfterLogin - stake, actual: PlayerProfileModel.BalanceAfterPurchase, $"Player balance after purchase is not reduced by the ticket stake.");
 
