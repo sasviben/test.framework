@@ -41,21 +41,17 @@ namespace UI.Hooks
                 case BrowserType.CHROME:
                     {
                         var chromeDriver = new ChromeDriver();
-#if DEBUG
                         _driver = chromeDriver.LoadChromeDriver();
-#else
-                        _driver = chromeDriver.LoadRemoteChromeDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
-# endif
+                        //_driver = chromeDriver.LoadRemoteChromeDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
+
                         break;
                     }
                 case BrowserType.FIREFOX:
                     {
                         var firefoxDriver = new FirefoxDriver();
-#if DEBUG
+
                         _driver = firefoxDriver.LoadFirefoxDriver();
-#else
-                        _driver = firefoxDriver.LoadRemoteFirefoxDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
-#endif
+                        //_driver = firefoxDriver.LoadRemoteFirefoxDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
                         break;
                     }
                 default:

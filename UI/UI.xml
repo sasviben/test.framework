@@ -222,10 +222,28 @@
             </param>
             <param name="sec">
                 Time in seconds to wait for element become invisible.
-                Default: 10 seconds
+                Default: 60 seconds
             </param>
             <returns>
                True if element is visible or false if element is not visible.
+            </returns>
+        </member>
+        <member name="M:UI.Helpers.WebElementExtensions.WeIsElementClickable(OpenQA.Selenium.IWebElement,OpenQA.Selenium.IWebDriver,System.Int32)">
+            <summary>
+               Checks if element is clickable in DOM by its locator.
+            </summary>
+            <param name="by">
+               Locator pointing to the web element.
+            </param>
+            <param name="driver">
+               Instance of Selenium IWebDriver.
+            </param>
+            <param name="sec">
+                Time in seconds to wait for element become clickable.
+                Default: 60 seconds
+            </param>
+            <returns>
+               True if element is clickable or false if element is not clickable.
             </returns>
         </member>
     </members>
