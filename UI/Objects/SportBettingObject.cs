@@ -76,12 +76,9 @@ namespace UI.Objects
                 {
 
                     selections = row.WeFindElements(_driver, SportEventLOC.OddValue).OrderBy(x => Guid.NewGuid()).ToList();
-                    //if (row.WeFindElement(_driver, SportEventLOC.PrimaryMarketTitle).GetAttribute("innerText") == "Final")
                     if (selections.Count > 0)
-                    {
-                        //selections = row.WeFindElements(_driver, SportEventLOC.OddValue).OrderBy(x => Guid.NewGuid()).ToList();
                         offer.Add(row, selections);
-                    }
+
                 }
 
                 if (offer.Count < numberOfEventsToAdd)
