@@ -12,10 +12,11 @@
 
 TEST_RUN_ID="513396" #test run-a id koji omogućuje aplikaciji da povuće test scenarije koje treba izvršiti
 TEST_CONFIG="UI\Features\hiptest-publisher.conf" #konfiguracija koja omogućuje komunikaciju između CucumberStudia i aplikacije
-TEST_ENVIRONMENT="QA" #okolina na kojoj će aplikacija izvršiti testove
+TEST_ENVIRONMENT="QA" #okolina test run-a
 #TEST_FILTER="regression"
 TEST_FILTER="TestCategory=RULES_automated" #scenariji koji sadrže tag koji odgovara navedenom filteru će biti izvršeni
-
+environment="QA" #okolina na kojoj će se testovi izvršiti
+browser="Chrome" #internet preglednik u kojem će se izvršiti testovi
 # Fetch tests
 if ! hiptest-publisher \
 	--config-file "$TEST_CONFIG" \

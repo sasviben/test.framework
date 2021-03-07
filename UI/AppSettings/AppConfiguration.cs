@@ -22,6 +22,7 @@ namespace UI.Configuration
             //SeleniumHubUri = $"http://{Hostname}:{Port}/wd/hub";
 
             ExecutionEnvironment = Environment.GetEnvironmentVariable("environment");
+            Console.WriteLine($"{ExecutionEnvironment}");
 
             if (!string.IsNullOrEmpty(Browser))
                 Browser = Environment.GetEnvironmentVariable("browser");
