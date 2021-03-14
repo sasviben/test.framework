@@ -83,8 +83,6 @@ namespace UI.Hooks
             }
 
             LoadBrowser();
-            CookieManager.ConvertHTTPCookieToSeleniumCookie();
-
         }
 
         [AfterScenario]

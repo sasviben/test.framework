@@ -11,17 +11,19 @@ using UI.Objects;
 namespace UI.Steps
 {
     [Binding]
-    class PlayerProfileSteps
+    class PlayerSteps
     {
         private readonly IWebDriver _driver;
         private readonly PlayerSessionObject _playerSessionObject;
         private readonly NavigationObject _navigationObject;
+        private readonly PlayerProfileObject _playerProfileObject;
 
-        public PlayerProfileSteps(IWebDriver webDriver)
+        public PlayerSteps(IWebDriver webDriver)
         {
             _driver = webDriver;
             _playerSessionObject = new PlayerSessionObject(_driver);
             _navigationObject = new NavigationObject(_driver);
+            _playerProfileObject = new PlayerProfileObject(_driver);
         }
 
 
@@ -49,7 +51,10 @@ namespace UI.Steps
 
                 Assert.IsTrue(_playerSessionObject.IsThePlayerLoggedIn(), "Player login failed!");
                 PlayerProfileModel.BalanceAfterLogin = CookieManager.GetPlayerBalance();
-                _driver.WdFindElement(PopUpModals.ButtonAcceptCookies).Click();
+
+                if (_driver.WdIsElementVisible(PopUpModals.ButtonAcceptCookies, 2))
+                    _driver.WdFindElement(PopUpModals.ButtonAcceptCookies).Click();
+
             }
             catch (Exception e) { Assert.Fail($"Step 'the player is logged in' failed! {e.Message}"); }
 
@@ -89,6 +94,12 @@ namespace UI.Steps
             }
             catch (Exception e) { Assert.Fail($"The player can't logout from the Superbet page! {e.Message}"); }
 
+        }
+
+        [Then(@"the player balance amount is subtracted by the ticket stake")]
+        public void ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake()
+        {
+            _playerProfileObject.PlayerBalanceIsReducedByTheStake(BetslipModel.Stake);
         }
 
         #endregion

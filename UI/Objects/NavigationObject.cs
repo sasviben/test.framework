@@ -117,7 +117,7 @@ namespace UI.Objects
                         break;
                     }
             }
-
+            _driver.JsWaitReadyStateComplete();
             _driver.WaitUntilElementIsInvisible(NavigationHeaderLOC.Spinner, 20);
         }
 
@@ -204,7 +204,7 @@ namespace UI.Objects
                     }
                 case PageType.LOTTO:
                     {
-                        Assert.True(_driver.WdFindElement(LottoOfferLOC.GridEvents).Displayed, $"Lotto page could not be opened. The element is not visible! Web element locator: {LottoOfferLOC.GridEvents}.");
+                        Assert.True(_driver.WdFindElement(LottoLOC.GridEvents).Displayed, $"Lotto page could not be opened. The element is not visible! Web element locator: {LottoLOC.GridEvents}.");
                         break;
                     }
                 case PageType.VIRTUAL:

@@ -2,7 +2,6 @@
 using OpenQA.Selenium;
 using System;
 using TechTalk.SpecFlow;
-using UI.Models;
 using UI.Objects;
 
 namespace UI.Steps
@@ -10,21 +9,20 @@ namespace UI.Steps
     [Binding]
     class SportBettingSteps
     {
-        private const string LOTTO = "LOTTO";
         private const string PREMATCH = "PREMATCH";
         private const string INPLAY = "INPLAY";
         private const string SPECIAL = "SPECIAL";
         private readonly IWebDriver _driver;
         private readonly NavigationObject _navigationObject;
         private readonly SportBettingObject _sportBettingObject;
-        private readonly PlayerProfileObject _playerProfileObject;
+        private readonly BetslipController _betslipController;
 
         public SportBettingSteps(IWebDriver webDriver)
         {
             _driver = webDriver;
             _navigationObject = new NavigationObject(_driver);
             _sportBettingObject = new SportBettingObject(_driver);
-            _playerProfileObject = new PlayerProfileObject(_driver);
+            _betslipController = new BetslipController(_driver);
         }
 
         #region Actions
@@ -57,9 +55,7 @@ namespace UI.Steps
             }
             catch (Exception e)
             {
-                Assert.Fail(
-                    $"Step 'the player has added {numberOfEventsToAdd} random {bettingType} {sportGame} events to the Betslip' failed!" +
-                    $" {e.Message}");
+                Assert.Fail($"Step 'the player has added {numberOfEventsToAdd} random {bettingType} {sportGame} events to the Betslip' failed! {e.Message}");
             }
 
         }
@@ -74,15 +70,14 @@ namespace UI.Steps
 
             try
             {
-                Assert.IsTrue(_sportBettingObject.IsBetslipEmpty(), "Sport Betslip does not contain any sport events!");
+                Assert.IsTrue(_betslipController.IsBetslipEmpty(), "Sport Betslip does not contain any sport events!");
 
-                _sportBettingObject.SelectTicketOptions(ticketSessionType, ticketCombinationType);
-                _sportBettingObject.PurchaseTicket();
+                _betslipController.SelectTicketOptions(ticketSessionType, ticketCombinationType);
+                _sportBettingObject.PurchaseSportTicket();
             }
             catch (Exception e) { Assert.Fail($"Step 'the player purchases an {ticketSessionType} sport {ticketCombinationType} ticket' failed! {e.Message}"); }
 
         }
-
         #endregion
 
         #region Assertions
@@ -96,14 +91,6 @@ namespace UI.Steps
             catch (Exception e) { Assert.Fail($"Step 'the {ticketSessionType} sport {ticketCombinationType} ticket is purchased' failed! {e.Message}"); }
 
         }
-
-        [Then(@"the player balance amount is subtracted by the ticket stake")]
-        public void ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake()
-        {
-            _playerProfileObject.PlayerBalanceIsReducedByTheStake(BetslipModel.Stake);
-        }
-
-
         #endregion
     }
 }
