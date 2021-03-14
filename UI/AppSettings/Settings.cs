@@ -12,6 +12,7 @@ namespace UI.Configuration
             PlayerSessionAPI = configOptions.CustomerSessionAPI;
             PlayerBalanceAPI = configOptions.PlayerBalanceAPI;
             ClientSourceType = configOptions.ClientSourceType;
+            Cookie = configOptions.Cookie;
             Configuration = configOptions;
         }
 
@@ -23,6 +24,7 @@ namespace UI.Configuration
         public static string PlayerSessionAPI { get; set; }
         public static string PlayerBalanceAPI { get; set; }
         public static string ClientSourceType { get; set; }
+        public static string Cookie { get; set; }
         public static ConfigOptions Configuration { get; set; }
     }
 }

@@ -23,23 +23,13 @@ namespace UI.Objects
 
         }
 
-        public void ExecuteLoginRequest()
-        {
-            foreach (var cookie in CookieManager.SeleniumCookies)
-            {
-                _driver.Manage().Cookies.AddCookie(cookie);
-            }
-           
-            _driver.Navigate().Refresh();
-
-        }
-
         public void Login()
         {
             _driver.WdFindElement(LoginFormLOC.FieldUsername).SendKeys(Settings.PlayerUsername);
             _driver.WdFindElement(LoginFormLOC.FieldPassword).SendKeys(Settings.PlayerPassword);
             _driver.WdFindElement(LoginFormLOC.ButtonSubmit).Click();
 
+            CookieManager.SetCookieNameAndValue();
         }
 
         public void Logout()

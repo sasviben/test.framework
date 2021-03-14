@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="950c80ea-b8fb-4ed5-8258-7009b4ce1388" name="sandr@LAPTOP-GHFTIB1O 2021-03-12 17:51:24" runUser="LAPTOP-GHFTIB1O\sandr" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2021-03-12T17:51:24.6247943+01:00" queuing="2021-03-12T17:51:24.6247955+01:00" start="2021-03-12T17:51:01.4415411+01:00" finish="2021-03-12T17:56:21.3029848+01:00" />
+  <TestSettings name="default" id="441b907e-9b68-48bb-a101-3bc4c279f880">
+    <Deployment runDeploymentRoot="sandr_LAPTOP-GHFTIB1O_2021-03-12_17_51_24" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="3a0e9365-8fc5-48a9-92a5-2e69781fbda4" testId="832fe0bc-b37e-2659-ad02-03631e16c0eb" testName="ThePlayerShouldBeAbleToOpenTheShopsPageUidCdbbeb10_7B8B_453C_Ba55_7A56B9Db4E7D" computerName="LAPTOP-GHFTIB1O" duration="00:00:08.3503589" startTime="2021-03-12T17:54:24.2740400+01:00" endTime="2021-03-12T17:54:32.6243961+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a0e9365-8fc5-48a9-92a5-2e69781fbda4">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.7s)&#xD;
+When the player clicks on the page "SHOPS"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("SHOPS") (0.2s)&#xD;
+Then the "SHOPS" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("SHOPS") (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="093596ec-2767-4002-9095-2faa776b2ccc" testId="62bf34e6-5879-1091-841c-0420fda1134b" testName="ThePlayerShouldBeAbleToOpenTheLivePageUid333Cf42D_0725_4E29_8A88_7835A6F5993A" computerName="LAPTOP-GHFTIB1O" duration="00:00:09.2295820" startTime="2021-03-12T17:52:53.5510919+01:00" endTime="2021-03-12T17:53:02.7806701+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="093596ec-2767-4002-9095-2faa776b2ccc">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.3s)&#xD;
+When the player clicks on the page "LIVE"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("LIVE") (1.3s)&#xD;
+Then the "LIVE" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("LIVE") (0.2s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5cdac3ef-12e3-42dd-b09b-1e941d9a443c" testId="462c6867-563d-8fcf-a4d7-972874cf7236" testName="ThePlayerShouldBeAbleToOpenThePlayerHistoryPageUid89C19Dc2_77C9_4E93_9B6B_Ea4A4D5Fdeb1" computerName="LAPTOP-GHFTIB1O" duration="00:00:17.2582440" startTime="2021-03-12T17:53:40.3676000+01:00" endTime="2021-03-12T17:53:57.6258419+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5cdac3ef-12e3-42dd-b09b-1e941d9a443c">
+      <Output>
+        <StdOut>Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (10.0s)&#xD;
+When the player clicks on the page "PLAYER HISTORY"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("PLAYER HISTORY") (0.4s)&#xD;
+Then the "PLAYER HISTORY" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("PLAYER HISTORY") (1.6s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="271e7020-b664-4179-a0e2-954441a2c9bf" testId="06f8d459-195e-2026-15f9-0bef49edd0cf" testName="TheOnlinePlayerShouldBeAbleToPurchaseALottoSimpleTicketUidB0Afcf6E_F620_49A3_9E30_5Dddc7895F39" computerName="LAPTOP-GHFTIB1O" duration="00:00:22.0771540" startTime="2021-03-12T17:51:02.5016278+01:00" endTime="2021-03-12T17:51:24.5786399+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="271e7020-b664-4179-a0e2-954441a2c9bf">
+      <Output>
+        <StdOut>Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (9.5s)&#xD;
+And the player has added "1" Lotto selection to the Betslip&#xD;
+-&gt; done: LottoBettingSteps.GivenThePlayerHasAddedLottoSelectionToTheBetslip(1) (1.7s)&#xD;
+When the player purchases an "ONLINE" Lotto "SIMPLE" ticket&#xD;
+-&gt; done: LottoBettingSteps.WhenThePlayerPurchasesAnLottoTicket("ONLINE", "SIMPLE") (5.3s)&#xD;
+Then the "ONLINE" Lotto "SIMPLE" ticket is purchased&#xD;
+-&gt; done: LottoBettingSteps.ThenTheLottoTicketIsPurchased("ONLINE", "SIMPLE") (0.1s)&#xD;
+And the player balance amount is subtracted by the ticket stake&#xD;
+-&gt; done: PlayerSteps.ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1e8e2c2b-5a2b-49c9-a803-884cb92f30d2" testId="769b007d-5945-cb05-b0a3-a429c5fac78a" testName="TheOnlinePlayerShouldBeAbleToPurchaseAPrematchSimpleTicketUid1358B00E_C0Ce_4Fd9_8Fa0_0C496626F5C6" computerName="LAPTOP-GHFTIB1O" duration="00:00:25.4238399" startTime="2021-03-12T17:51:50.7962598+01:00" endTime="2021-03-12T17:52:16.2200995+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e8e2c2b-5a2b-49c9-a803-884cb92f30d2">
+      <Output>
+        <StdOut>Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (9.1s)&#xD;
+And the player has added "3" random "PREMATCH" "FOOTBALL" events to the Betslip&#xD;
+-&gt; done: SportBettingSteps.GivenThePlayerHasAddedRandomEventsToTheBetslip(3, "PREMATCH", "FOOTBALL") (3.9s)&#xD;
+When the player purchases an "ONLINE" sport "SIMPLE" ticket&#xD;
+-&gt; done: SportBettingSteps.WhenThePlayerPurchasesAnTicket("ONLINE", "SIMPLE") (6.9s)&#xD;
+Then the "ONLINE" sport "SIMPLE" ticket is purchased&#xD;
+-&gt; done: SportBettingSteps.ThenTheTicketIsPurchased("ONLINE", "SIMPLE") (0.1s)&#xD;
+And the player balance amount is subtracted by the ticket stake&#xD;
+-&gt; done: PlayerSteps.ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8c916580-eeb3-4de9-9e8d-82d768c67715" testId="2de5489f-99b3-1868-cd77-dabc8f4ad750" testName="TheOnlinePlayerShouldBeAbleToPurchaseAInplaySimpleTicketUid6Da48565_61Fc_407A_8F86_5435Fa3Edc4A" computerName="LAPTOP-GHFTIB1O" duration="00:00:26.2116599" startTime="2021-03-12T17:51:24.5844971+01:00" endTime="2021-03-12T17:51:50.7961540+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8c916580-eeb3-4de9-9e8d-82d768c67715">
+      <Output>
+        <StdOut>Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (9.5s)&#xD;
+And the player has added "1" random "INPLAY" "FOOTBALL" events to the Betslip&#xD;
+-&gt; done: SportBettingSteps.GivenThePlayerHasAddedRandomEventsToTheBetslip(1, "INPLAY", "FOOTBALL") (2.1s)&#xD;
+When the player purchases an "ONLINE" sport "SIMPLE" ticket&#xD;
+-&gt; done: SportBettingSteps.WhenThePlayerPurchasesAnTicket("ONLINE", "SIMPLE") (9.1s)&#xD;
+Then the "ONLINE" sport "SIMPLE" ticket is purchased&#xD;
+-&gt; done: SportBettingSteps.ThenTheTicketIsPurchased("ONLINE", "SIMPLE") (0.1s)&#xD;
+And the player balance amount is subtracted by the ticket stake&#xD;
+-&gt; done: PlayerSteps.ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="da42fafe-19ea-4c2c-b771-e78a0a9c4474" testId="150d07a3-0984-fd59-db0d-baa368cb2b6c" testName="ThePlayerShouldBeAbleToOpenTheNewsPageUidFd12947E_F5C9_44F5_A29B_8843D07E24B7" computerName="LAPTOP-GHFTIB1O" duration="00:00:11.7842160" startTime="2021-03-12T17:53:11.6870524+01:00" endTime="2021-03-12T17:53:23.4712659+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da42fafe-19ea-4c2c-b771-e78a0a9c4474">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (3.0s)&#xD;
+When the player clicks on the page "NEWS"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("NEWS") (3.4s)&#xD;
+Then the "NEWS" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("NEWS") (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e7e566d3-0037-49c5-b51a-57e0ec93f486" testId="312d3942-1a7b-0a7c-33af-335b0d18a63c" testName="ThePlayerShouldBeAbleToOpenTheHomepageUid89B199D9_Ed54_4Ef2_A8D4_786A1D995D25" computerName="LAPTOP-GHFTIB1O" duration="00:00:10.9960320" startTime="2021-03-12T17:52:42.5550185+01:00" endTime="2021-03-12T17:52:53.5510489+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e7e566d3-0037-49c5-b51a-57e0ec93f486">
+      <Output>
+        <StdOut>Given the player is on the page "LIVE"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("LIVE") (4.5s)&#xD;
+When the player clicks on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("SUPERBET") (1.1s)&#xD;
+Then the "SUPERBET" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("SUPERBET") (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4b301617-a578-4463-b35c-7a240a00c51f" testId="cd55d25b-41d2-42ae-24a1-94a58f3fa220" testName="ThePlayerShouldBeAbleToOpenTheResultsPageUidE7D6451F_8B71_461E_B5C1_38930Eb41667" computerName="LAPTOP-GHFTIB1O" duration="00:00:09.2051230" startTime="2021-03-12T17:54:15.0688859+01:00" endTime="2021-03-12T17:54:24.2740087+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b301617-a578-4463-b35c-7a240a00c51f">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.8s)&#xD;
+When the player clicks on the page "RESULTS"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("RESULTS") (0.4s)&#xD;
+Then the "RESULTS" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("RESULTS") (0.6s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="dcfcc255-3c71-460a-aabf-6b3b5d817b7f" testId="96dc22a6-dc37-9b76-bb2e-c01b7e229c42" testName="ThePlayerShouldBeAbleToOpenTheHelpPopUpUidE324C779_C707_4C39_88C7_1D9Af058496A" computerName="LAPTOP-GHFTIB1O" duration="00:00:08.5017760" startTime="2021-03-12T17:52:34.0532148+01:00" endTime="2021-03-12T17:52:42.5549904+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dcfcc255-3c71-460a-aabf-6b3b5d817b7f">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.9s)&#xD;
+When the player clicks on the page "HELP"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("HELP") (0.3s)&#xD;
+Then the "HELP" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("HELP") (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6a06f816-408b-47ab-89bd-d5623f921326" testId="8eed4094-d36c-308c-d5c6-ff8227b13555" testName="ThePlayerShouldBeAbleToOpenThePlayerAccountPageUid60E00Bd5_Ba27_4772_Ad5B_82406C92599E" computerName="LAPTOP-GHFTIB1O" duration="00:00:16.8961150" startTime="2021-03-12T17:53:23.4713818+01:00" endTime="2021-03-12T17:53:40.3674945+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6a06f816-408b-47ab-89bd-d5623f921326">
+      <Output>
+        <StdOut>Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (9.5s)&#xD;
+When the player clicks on the page "PLAYER ACCOUNT"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("PLAYER ACCOUNT") (0.4s)&#xD;
+Then the "PLAYER ACCOUNT" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("PLAYER ACCOUNT") (1.6s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8cbf79d5-e019-4372-ad6a-c84bdea5d966" testId="ae22006c-1cde-9dca-3f19-cdab47fbd44b" testName="ThePlayerShouldBeAbleToOpenTheGamesPageUid953C3Ea1_B328_410B_9De3_57F878A3C777" computerName="LAPTOP-GHFTIB1O" duration="00:00:09.5372630" startTime="2021-03-12T17:52:24.5158535+01:00" endTime="2021-03-12T17:52:34.0531139+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8cbf79d5-e019-4372-ad6a-c84bdea5d966">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.9s)&#xD;
+When the player clicks on the page "GAMES"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("GAMES") (1.2s)&#xD;
+Then the "GAMES" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("GAMES") (0.1s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4f905f42-770b-4711-a5cc-e18fb7f3bcb5" testId="7f950236-c379-a9eb-85ac-327d2bf02419" testName="ThePlayerShouldBeAbleToOpenThePlayerTicketsPageUidB76218Ac_Af1A_432E_9735_E5Ffa15090Ec" computerName="LAPTOP-GHFTIB1O" duration="00:00:17.4428190" startTime="2021-03-12T17:53:57.6259650+01:00" endTime="2021-03-12T17:54:15.0687835+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f905f42-770b-4711-a5cc-e18fb7f3bcb5">
+      <Output>
+        <StdOut>Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (9.6s)&#xD;
+When the player clicks on the page "PLAYER TICKETS"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("PLAYER TICKETS") (0.4s)&#xD;
+Then the "PLAYER TICKETS" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("PLAYER TICKETS") (1.6s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="623d115a-d2ba-4789-bead-3d8c6fa7899d" testId="e7d66fc3-f627-c8ba-c466-7d8dbe4a1013" testName="TheOnlinePlayerShouldBeAbleToLogoutFromTheSuperbetPageUid7C59221E_A3Cf_467A_9B01_7609816E119D" computerName="LAPTOP-GHFTIB1O" duration="00:00:15.7383950" startTime="2021-03-12T17:55:50.8284651+01:00" endTime="2021-03-12T17:56:06.5668549+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="623d115a-d2ba-4789-bead-3d8c6fa7899d">
+      <Output>
+        <StdOut>Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (8.9s)&#xD;
+When the player tries to logout&#xD;
+-&gt; done: PlayerSteps.WhenThePlayerTriesToLogout() (0.4s)&#xD;
+Then the player is logged out&#xD;
+-&gt; done: PlayerSteps.ThenThePlayerIsLoggedOut() (1.1s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f4a4cef6-9c13-4ed3-9f37-5cd57fbdcd8e" testId="83c159ff-89ec-1f41-ffcc-7cb7f3277b04" testName="ThePlayerShouldBeAbleToLogInTheSuperbetPageUid45Bba8D7_836C_41C4_9E37_4064A9Ee474B" computerName="LAPTOP-GHFTIB1O" duration="00:00:12.3041840" startTime="2021-03-12T17:56:06.5681053+01:00" endTime="2021-03-12T17:56:18.8722877+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f4a4cef6-9c13-4ed3-9f37-5cd57fbdcd8e">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.9s)&#xD;
+When the player tries to log in with valid credentials&#xD;
+-&gt; done: PlayerSteps.WhenThePlayerTriesToLogInWithValidCredentials() (2.4s)&#xD;
+Then the player should be logged in&#xD;
+-&gt; done: PlayerSteps.ThenThePlayerShouldBeLoggedIn() (1.6s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d238c229-a34e-4838-b5b0-4f6f0e75b5f9" testId="7ecd2631-c3db-2a32-8c89-0fd82e80c21e" testName="ThePlayerShouldBeAbleToOpenTheSportPageUid4D4679Dd_1212_4Fa1_A89F_9842A0735324" computerName="LAPTOP-GHFTIB1O" duration="00:01:08.4260550" startTime="2021-03-12T17:54:32.6245092+01:00" endTime="2021-03-12T17:55:41.0505622+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d238c229-a34e-4838-b5b0-4f6f0e75b5f9">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.6s)&#xD;
+When the player clicks on the page "SPORT"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("SPORT") (0.1s)&#xD;
+Then the "SPORT" page is displayed&#xD;
+-&gt; error: Step 'the SPORT page is displayed' failed! Method WdFindElement can not find element with locator: By.CssSelector: .offer--prematch.&#xD;
+Method WdHighlight can not find and highlight element with locator: By.CssSelector: .offer--prematch.&#xD;
+Timed out after 60 seconds. (60.4s)</StdOut>
+        <ErrorInfo>
+          <Message>Step 'the SPORT page is displayed' failed! Method WdFindElement can not find element with locator: By.CssSelector: .offer--prematch.&#xD;
+Method WdHighlight can not find and highlight element with locator: By.CssSelector: .offer--prematch.&#xD;
+Timed out after 60 seconds.</Message>
+          <StackTrace>   at UI.Steps.NavigationSteps.ThenThePageIsDisplayed(String pageName) in C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\Steps\NavigationSteps.cs:line 62&#xD;
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)&#xD;
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)&#xD;
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)&#xD;
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()&#xD;
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()&#xD;
+   at UI.Features.SystemTests.NavigationFeature.ScenarioCleanup()&#xD;
+   at UI.Features.SystemTests.NavigationFeature.ThePlayerShouldBeAbleToOpenTheSportPageUid4D4679Dd_1212_4Fa1_A89F_9842A0735324() in C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\Features\SystemTests\Navigation.feature:line 26&#xD;
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="dc8840e1-2ba2-43dc-afbc-aa37c049b319" testId="6a1b1fca-35f6-151e-865c-b9741de64790" testName="ThePlayerShouldBeAbleToOpenTheVirtualGamesPageUidD308F37E_8Eea_4F95_9Ae5_B80F1818261A" computerName="LAPTOP-GHFTIB1O" duration="00:00:09.7754150" startTime="2021-03-12T17:55:41.0516532+01:00" endTime="2021-03-12T17:55:50.8270686+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dc8840e1-2ba2-43dc-afbc-aa37c049b319">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (3.5s)&#xD;
+When the player clicks on the page "VIRTUAL"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("VIRTUAL") (0.9s)&#xD;
+Then the "VIRTUAL" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("VIRTUAL") (0.1s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="327ecbf8-d170-4518-bb24-a09190c647e5" testId="38dd565e-bdff-4e9c-cd06-e26b79422a0d" testName="ThePlayerShouldBeAbleToOpenTheLottoPageUidD895Df3F_72B2_4650_Aab8_Ae364635Cfe6" computerName="LAPTOP-GHFTIB1O" duration="00:00:08.9061869" startTime="2021-03-12T17:53:02.7807622+01:00" endTime="2021-03-12T17:53:11.6869465+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="327ecbf8-d170-4518-bb24-a09190c647e5">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.6s)&#xD;
+When the player clicks on the page "LOTTO"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("LOTTO") (0.9s)&#xD;
+Then the "LOTTO" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("LOTTO") (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8ff75ad0-1958-43c6-aa0c-0c24ce22f76d" testId="f3d53b5f-6575-95b3-cffd-d26c50101f5c" testName="ThePlayerShouldBeAbleToOpenTheCasinoLivePageUidE74A10Af_1D3A_410A_B3E7_B75B24A92C4E" computerName="LAPTOP-GHFTIB1O" duration="00:00:08.2950120" startTime="2021-03-12T17:52:16.2207317+01:00" endTime="2021-03-12T17:52:24.5157413+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ff75ad0-1958-43c6-aa0c-0c24ce22f76d">
+      <Output>
+        <StdOut>Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.7s)&#xD;
+When the player clicks on the page "CASINO"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("CASINO") (0.1s)&#xD;
+Then the "CASINO" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("CASINO") (0.1s)</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="TheOnlinePlayerShouldBeAbleToLogoutFromTheSuperbetPageUid7C59221E_A3Cf_467A_9B01_7609816E119D" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="e7d66fc3-f627-c8ba-c466-7d8dbe4a1013">
+      <Execution id="623d115a-d2ba-4789-bead-3d8c6fa7899d" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.PlayerSessionFeature" name="TheOnlinePlayerShouldBeAbleToLogoutFromTheSuperbetPageUid7C59221E_A3Cf_467A_9B01_7609816E119D" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenThePlayerHistoryPageUid89C19Dc2_77C9_4E93_9B6B_Ea4A4D5Fdeb1" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="462c6867-563d-8fcf-a4d7-972874cf7236">
+      <Execution id="5cdac3ef-12e3-42dd-b09b-1e941d9a443c" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenThePlayerHistoryPageUid89C19Dc2_77C9_4E93_9B6B_Ea4A4D5Fdeb1" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheHomepageUid89B199D9_Ed54_4Ef2_A8D4_786A1D995D25" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="312d3942-1a7b-0a7c-33af-335b0d18a63c">
+      <Execution id="e7e566d3-0037-49c5-b51a-57e0ec93f486" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheHomepageUid89B199D9_Ed54_4Ef2_A8D4_786A1D995D25" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheCasinoLivePageUidE74A10Af_1D3A_410A_B3E7_B75B24A92C4E" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="f3d53b5f-6575-95b3-cffd-d26c50101f5c">
+      <Execution id="8ff75ad0-1958-43c6-aa0c-0c24ce22f76d" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheCasinoLivePageUidE74A10Af_1D3A_410A_B3E7_B75B24A92C4E" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheHelpPopUpUidE324C779_C707_4C39_88C7_1D9Af058496A" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="96dc22a6-dc37-9b76-bb2e-c01b7e229c42">
+      <Execution id="dcfcc255-3c71-460a-aabf-6b3b5d817b7f" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheHelpPopUpUidE324C779_C707_4C39_88C7_1D9Af058496A" />
+    </UnitTest>
+    <UnitTest name="TheOnlinePlayerShouldBeAbleToPurchaseAPrematchSimpleTicketUid1358B00E_C0Ce_4Fd9_8Fa0_0C496626F5C6" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="769b007d-5945-cb05-b0a3-a429c5fac78a">
+      <Execution id="1e8e2c2b-5a2b-49c9-a803-884cb92f30d2" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemIntegrationTests.UserJourney.SportOnlineBettingFeature" name="TheOnlinePlayerShouldBeAbleToPurchaseAPrematchSimpleTicketUid1358B00E_C0Ce_4Fd9_8Fa0_0C496626F5C6" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheShopsPageUidCdbbeb10_7B8B_453C_Ba55_7A56B9Db4E7D" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="832fe0bc-b37e-2659-ad02-03631e16c0eb">
+      <Execution id="3a0e9365-8fc5-48a9-92a5-2e69781fbda4" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheShopsPageUidCdbbeb10_7B8B_453C_Ba55_7A56B9Db4E7D" />
+    </UnitTest>
+    <UnitTest name="TheOnlinePlayerShouldBeAbleToPurchaseALottoSimpleTicketUidB0Afcf6E_F620_49A3_9E30_5Dddc7895F39" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="06f8d459-195e-2026-15f9-0bef49edd0cf">
+      <Execution id="271e7020-b664-4179-a0e2-954441a2c9bf" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemIntegrationTests.UserJourney.LottoOnlineBettingFeature" name="TheOnlinePlayerShouldBeAbleToPurchaseALottoSimpleTicketUidB0Afcf6E_F620_49A3_9E30_5Dddc7895F39" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheVirtualGamesPageUidD308F37E_8Eea_4F95_9Ae5_B80F1818261A" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="6a1b1fca-35f6-151e-865c-b9741de64790">
+      <Execution id="dc8840e1-2ba2-43dc-afbc-aa37c049b319" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheVirtualGamesPageUidD308F37E_8Eea_4F95_9Ae5_B80F1818261A" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheGamesPageUid953C3Ea1_B328_410B_9De3_57F878A3C777" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="ae22006c-1cde-9dca-3f19-cdab47fbd44b">
+      <Execution id="8cbf79d5-e019-4372-ad6a-c84bdea5d966" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheGamesPageUid953C3Ea1_B328_410B_9De3_57F878A3C777" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheLivePageUid333Cf42D_0725_4E29_8A88_7835A6F5993A" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="62bf34e6-5879-1091-841c-0420fda1134b">
+      <Execution id="093596ec-2767-4002-9095-2faa776b2ccc" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheLivePageUid333Cf42D_0725_4E29_8A88_7835A6F5993A" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheLottoPageUidD895Df3F_72B2_4650_Aab8_Ae364635Cfe6" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="38dd565e-bdff-4e9c-cd06-e26b79422a0d">
+      <Execution id="327ecbf8-d170-4518-bb24-a09190c647e5" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheLottoPageUidD895Df3F_72B2_4650_Aab8_Ae364635Cfe6" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheSportPageUid4D4679Dd_1212_4Fa1_A89F_9842A0735324" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="7ecd2631-c3db-2a32-8c89-0fd82e80c21e">
+      <Execution id="d238c229-a34e-4838-b5b0-4f6f0e75b5f9" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheSportPageUid4D4679Dd_1212_4Fa1_A89F_9842A0735324" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenThePlayerAccountPageUid60E00Bd5_Ba27_4772_Ad5B_82406C92599E" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="8eed4094-d36c-308c-d5c6-ff8227b13555">
+      <Execution id="6a06f816-408b-47ab-89bd-d5623f921326" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenThePlayerAccountPageUid60E00Bd5_Ba27_4772_Ad5B_82406C92599E" />
+    </UnitTest>
+    <UnitTest name="TheOnlinePlayerShouldBeAbleToPurchaseAInplaySimpleTicketUid6Da48565_61Fc_407A_8F86_5435Fa3Edc4A" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="2de5489f-99b3-1868-cd77-dabc8f4ad750">
+      <Execution id="8c916580-eeb3-4de9-9e8d-82d768c67715" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemIntegrationTests.UserJourney.SportOnlineBettingFeature" name="TheOnlinePlayerShouldBeAbleToPurchaseAInplaySimpleTicketUid6Da48565_61Fc_407A_8F86_5435Fa3Edc4A" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToLogInTheSuperbetPageUid45Bba8D7_836C_41C4_9E37_4064A9Ee474B" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="83c159ff-89ec-1f41-ffcc-7cb7f3277b04">
+      <Execution id="f4a4cef6-9c13-4ed3-9f37-5cd57fbdcd8e" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.PlayerSessionFeature" name="ThePlayerShouldBeAbleToLogInTheSuperbetPageUid45Bba8D7_836C_41C4_9E37_4064A9Ee474B" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheResultsPageUidE7D6451F_8B71_461E_B5C1_38930Eb41667" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="cd55d25b-41d2-42ae-24a1-94a58f3fa220">
+      <Execution id="4b301617-a578-4463-b35c-7a240a00c51f" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheResultsPageUidE7D6451F_8B71_461E_B5C1_38930Eb41667" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenTheNewsPageUidFd12947E_F5C9_44F5_A29B_8843D07E24B7" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="150d07a3-0984-fd59-db0d-baa368cb2b6c">
+      <Execution id="da42fafe-19ea-4c2c-b771-e78a0a9c4474" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenTheNewsPageUidFd12947E_F5C9_44F5_A29B_8843D07E24B7" />
+    </UnitTest>
+    <UnitTest name="ThePlayerShouldBeAbleToOpenThePlayerTicketsPageUidB76218Ac_Af1A_432E_9735_E5Ffa15090Ec" storage="c:\users\sandr\source\diplomski\code\web.test.ui\ui\bin\debug\net5.0\ui.dll" id="7f950236-c379-a9eb-85ac-327d2bf02419">
+      <Execution id="4f905f42-770b-4711-a5cc-e18fb7f3bcb5" />
+      <TestMethod codeBase="C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll" adapterTypeName="executor://nunit3testexecutor/" className="UI.Features.SystemTests.NavigationFeature" name="ThePlayerShouldBeAbleToOpenThePlayerTicketsPageUidB76218Ac_Af1A_432E_9735_E5Ffa15090Ec" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="832fe0bc-b37e-2659-ad02-03631e16c0eb" executionId="3a0e9365-8fc5-48a9-92a5-2e69781fbda4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="62bf34e6-5879-1091-841c-0420fda1134b" executionId="093596ec-2767-4002-9095-2faa776b2ccc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="462c6867-563d-8fcf-a4d7-972874cf7236" executionId="5cdac3ef-12e3-42dd-b09b-1e941d9a443c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="06f8d459-195e-2026-15f9-0bef49edd0cf" executionId="271e7020-b664-4179-a0e2-954441a2c9bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="769b007d-5945-cb05-b0a3-a429c5fac78a" executionId="1e8e2c2b-5a2b-49c9-a803-884cb92f30d2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2de5489f-99b3-1868-cd77-dabc8f4ad750" executionId="8c916580-eeb3-4de9-9e8d-82d768c67715" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="150d07a3-0984-fd59-db0d-baa368cb2b6c" executionId="da42fafe-19ea-4c2c-b771-e78a0a9c4474" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="312d3942-1a7b-0a7c-33af-335b0d18a63c" executionId="e7e566d3-0037-49c5-b51a-57e0ec93f486" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cd55d25b-41d2-42ae-24a1-94a58f3fa220" executionId="4b301617-a578-4463-b35c-7a240a00c51f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="96dc22a6-dc37-9b76-bb2e-c01b7e229c42" executionId="dcfcc255-3c71-460a-aabf-6b3b5d817b7f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8eed4094-d36c-308c-d5c6-ff8227b13555" executionId="6a06f816-408b-47ab-89bd-d5623f921326" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ae22006c-1cde-9dca-3f19-cdab47fbd44b" executionId="8cbf79d5-e019-4372-ad6a-c84bdea5d966" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7f950236-c379-a9eb-85ac-327d2bf02419" executionId="4f905f42-770b-4711-a5cc-e18fb7f3bcb5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e7d66fc3-f627-c8ba-c466-7d8dbe4a1013" executionId="623d115a-d2ba-4789-bead-3d8c6fa7899d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="83c159ff-89ec-1f41-ffcc-7cb7f3277b04" executionId="f4a4cef6-9c13-4ed3-9f37-5cd57fbdcd8e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ecd2631-c3db-2a32-8c89-0fd82e80c21e" executionId="d238c229-a34e-4838-b5b0-4f6f0e75b5f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a1b1fca-35f6-151e-865c-b9741de64790" executionId="dc8840e1-2ba2-43dc-afbc-aa37c049b319" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="38dd565e-bdff-4e9c-cd06-e26b79422a0d" executionId="327ecbf8-d170-4518-bb24-a09190c647e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f3d53b5f-6575-95b3-cffd-d26c50101f5c" executionId="8ff75ad0-1958-43c6-aa0c-0c24ce22f76d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="19" executed="19" passed="18" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.0.0.0: Test execution started&#xD;
+Running selected tests in C:\Users\sandr\source\Diplomski\Code\web.test.UI\UI\bin\Debug\net5.0\UI.dll&#xD;
+   NUnit3TestExecutor discovered 19 of 19 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (9.5s)&#xD;
+And the player has added "1" Lotto selection to the Betslip&#xD;
+-&gt; done: LottoBettingSteps.GivenThePlayerHasAddedLottoSelectionToTheBetslip(1) (1.7s)&#xD;
+When the player purchases an "ONLINE" Lotto "SIMPLE" ticket&#xD;
+-&gt; done: LottoBettingSteps.WhenThePlayerPurchasesAnLottoTicket("ONLINE", "SIMPLE") (5.3s)&#xD;
+Then the "ONLINE" Lotto "SIMPLE" ticket is purchased&#xD;
+-&gt; done: LottoBettingSteps.ThenTheLottoTicketIsPurchased("ONLINE", "SIMPLE") (0.1s)&#xD;
+And the player balance amount is subtracted by the ticket stake&#xD;
+-&gt; done: PlayerSteps.ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake() (0.0s)&#xD;
+&#xD;
+Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (9.5s)&#xD;
+And the player has added "1" random "INPLAY" "FOOTBALL" events to the Betslip&#xD;
+-&gt; done: SportBettingSteps.GivenThePlayerHasAddedRandomEventsToTheBetslip(1, "INPLAY", "FOOTBALL") (2.1s)&#xD;
+When the player purchases an "ONLINE" sport "SIMPLE" ticket&#xD;
+-&gt; done: SportBettingSteps.WhenThePlayerPurchasesAnTicket("ONLINE", "SIMPLE") (9.1s)&#xD;
+Then the "ONLINE" sport "SIMPLE" ticket is purchased&#xD;
+-&gt; done: SportBettingSteps.ThenTheTicketIsPurchased("ONLINE", "SIMPLE") (0.1s)&#xD;
+And the player balance amount is subtracted by the ticket stake&#xD;
+-&gt; done: PlayerSteps.ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake() (0.0s)&#xD;
+&#xD;
+Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (9.1s)&#xD;
+And the player has added "3" random "PREMATCH" "FOOTBALL" events to the Betslip&#xD;
+-&gt; done: SportBettingSteps.GivenThePlayerHasAddedRandomEventsToTheBetslip(3, "PREMATCH", "FOOTBALL") (3.9s)&#xD;
+When the player purchases an "ONLINE" sport "SIMPLE" ticket&#xD;
+-&gt; done: SportBettingSteps.WhenThePlayerPurchasesAnTicket("ONLINE", "SIMPLE") (6.9s)&#xD;
+Then the "ONLINE" sport "SIMPLE" ticket is purchased&#xD;
+-&gt; done: SportBettingSteps.ThenTheTicketIsPurchased("ONLINE", "SIMPLE") (0.1s)&#xD;
+And the player balance amount is subtracted by the ticket stake&#xD;
+-&gt; done: PlayerSteps.ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake() (0.0s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.7s)&#xD;
+When the player clicks on the page "CASINO"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("CASINO") (0.1s)&#xD;
+Then the "CASINO" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("CASINO") (0.1s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.9s)&#xD;
+When the player clicks on the page "GAMES"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("GAMES") (1.2s)&#xD;
+Then the "GAMES" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("GAMES") (0.1s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.9s)&#xD;
+When the player clicks on the page "HELP"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("HELP") (0.3s)&#xD;
+Then the "HELP" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("HELP") (0.0s)&#xD;
+&#xD;
+Given the player is on the page "LIVE"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("LIVE") (4.5s)&#xD;
+When the player clicks on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("SUPERBET") (1.1s)&#xD;
+Then the "SUPERBET" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("SUPERBET") (0.0s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.3s)&#xD;
+When the player clicks on the page "LIVE"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("LIVE") (1.3s)&#xD;
+Then the "LIVE" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("LIVE") (0.2s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.6s)&#xD;
+When the player clicks on the page "LOTTO"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("LOTTO") (0.9s)&#xD;
+Then the "LOTTO" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("LOTTO") (0.0s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (3.0s)&#xD;
+When the player clicks on the page "NEWS"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("NEWS") (3.4s)&#xD;
+Then the "NEWS" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("NEWS") (0.0s)&#xD;
+&#xD;
+Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (9.5s)&#xD;
+When the player clicks on the page "PLAYER ACCOUNT"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("PLAYER ACCOUNT") (0.4s)&#xD;
+Then the "PLAYER ACCOUNT" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("PLAYER ACCOUNT") (1.6s)&#xD;
+&#xD;
+Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (10.0s)&#xD;
+When the player clicks on the page "PLAYER HISTORY"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("PLAYER HISTORY") (0.4s)&#xD;
+Then the "PLAYER HISTORY" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("PLAYER HISTORY") (1.6s)&#xD;
+&#xD;
+Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (9.6s)&#xD;
+When the player clicks on the page "PLAYER TICKETS"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("PLAYER TICKETS") (0.4s)&#xD;
+Then the "PLAYER TICKETS" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("PLAYER TICKETS") (1.6s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.8s)&#xD;
+When the player clicks on the page "RESULTS"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("RESULTS") (0.4s)&#xD;
+Then the "RESULTS" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("RESULTS") (0.6s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.7s)&#xD;
+When the player clicks on the page "SHOPS"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("SHOPS") (0.2s)&#xD;
+Then the "SHOPS" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("SHOPS") (0.0s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.6s)&#xD;
+When the player clicks on the page "SPORT"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("SPORT") (0.1s)&#xD;
+Then the "SPORT" page is displayed&#xD;
+-&gt; error: Step 'the SPORT page is displayed' failed! Method WdFindElement can not find element with locator: By.CssSelector: .offer--prematch.&#xD;
+Method WdHighlight can not find and highlight element with locator: By.CssSelector: .offer--prematch.&#xD;
+Timed out after 60 seconds. (60.4s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (3.5s)&#xD;
+When the player clicks on the page "VIRTUAL"&#xD;
+-&gt; done: NavigationSteps.WhenThePlayerClicksOnThePage("VIRTUAL") (0.9s)&#xD;
+Then the "VIRTUAL" page is displayed&#xD;
+-&gt; done: NavigationSteps.ThenThePageIsDisplayed("VIRTUAL") (0.1s)&#xD;
+&#xD;
+Given the player is logged in&#xD;
+-&gt; done: PlayerSteps.GivenThePlayerIsLoggedIn() (8.9s)&#xD;
+When the player tries to logout&#xD;
+-&gt; done: PlayerSteps.WhenThePlayerTriesToLogout() (0.4s)&#xD;
+Then the player is logged out&#xD;
+-&gt; done: PlayerSteps.ThenThePlayerIsLoggedOut() (1.1s)&#xD;
+&#xD;
+Given the player is on the page "SUPERBET"&#xD;
+-&gt; done: NavigationSteps.GivenThePlayerIsOnThePage("SUPERBET") (2.9s)&#xD;
+When the player tries to log in with valid credentials&#xD;
+-&gt; done: PlayerSteps.WhenThePlayerTriesToLogInWithValidCredentials() (2.4s)&#xD;
+Then the player should be logged in&#xD;
+-&gt; done: PlayerSteps.ThenThePlayerShouldBeLoggedIn() (1.6s)&#xD;
+&#xD;
+NUnit Adapter 4.0.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

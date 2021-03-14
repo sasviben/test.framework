@@ -13,9 +13,7 @@ namespace UI.Objects
 {
     class SportBettingObject
     {
-
         private readonly IWebDriver _driver;
-        private readonly PlayerSessionObject _playerSessionObject;
         private const string URL_INPLAY = "LIVE";
         private const string SPORT_INPLAY = "INPLAY";
         private const string SPORT_PREMATCH = "PREMATCH";
@@ -23,7 +21,6 @@ namespace UI.Objects
         public SportBettingObject(IWebDriver webDriver)
         {
             _driver = webDriver;
-            _playerSessionObject = new PlayerSessionObject(_driver);
         }
 
 
@@ -104,7 +101,7 @@ namespace UI.Objects
             }
         }
 
-        public void PurchaseTicket()
+        public void PurchaseSportTicket()
         {
 
             var currentTime = DateTime.Now;
@@ -135,51 +132,10 @@ namespace UI.Objects
             PlayerProfileModel.BalanceAfterPurchase = CookieManager.GetPlayerBalance();
 
         }
-
-        public void SelectTicketOptions(string ticketSessionType, string ticketCombinationType)
-        {
-
-            if (Enum.TryParse(ticketSessionType, true, out BetslipType ticketTypeParsed) == false)
-                throw new ArgumentException($"String {ticketSessionType} can't be parsed to enum BetslipType!");
-
-            if (Enum.TryParse(ticketCombinationType, true, out BetslipType ticketCombinationTypeParsed) == false)
-                throw new ArgumentException($"String {ticketCombinationType} can't be parsed to enum BetslipType!");
-
-            if (ticketTypeParsed.Equals(BetslipType.ONLINE))
-            {
-                if (_playerSessionObject.IsThePlayerLoggedIn())
-                    _driver.WdFindElement(BetslipLOC.ButtonOnlineTicket).Click();
-            }
-            else if (ticketTypeParsed.Equals(BetslipType.AGENCY))
-                _driver.WdFindElement(BetslipLOC.ButtonAgencyTicket).Click();
-
-            if (ticketCombinationTypeParsed.Equals(BetslipType.SIMPLE))
-                _driver.WdFindElement(BetslipLOC.ButtonSimpleTicket).Click();
-            else if (ticketCombinationTypeParsed.Equals(BetslipType.SYSTEM))
-                _driver.WdFindElement(BetslipLOC.ButtonSystemTicket).Click();
-
-            BetslipModel.Stake = Common.GetRandomNumber(2, 20);
-
-            var ticketStakeField = _driver.WdFindElement(BetslipLOC.InputFieldStake);
-            ticketStakeField.Clear();
-            ticketStakeField.SendKeys(BetslipModel.Stake.ToString());
-
-        }
-
         #endregion
 
         #region Assertions
-        public bool IsBetslipEmpty()
-        {
-            var betslipEventCount = _driver.WdFindElement(BetslipLOC.EventsCount).WeGetAttributeValue(_driver, "innerText");
-            var betslipEventCountDouble = Common.GetDoubleValueRoundedTwoDecimal(betslipEventCount);
-
-            if (betslipEventCountDouble <= 0)
-                return false;
-            return true;
-
-        }
-
+        
         public void TicketWidgetWithCorrectDataIsDisplayed(string ticketSessionType, string ticketCombinationType)
         {
             if (Enum.TryParse(ticketSessionType, true, out BetslipType ticketSessionTypeParsed) == false)

@@ -42,3 +42,4 @@ if ! hiptest-publisher \
 then
 	echo "Unable to push test results, exiting!"
 fi
+environment=" " 

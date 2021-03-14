@@ -209,6 +209,11 @@ namespace UI.Helpers
             }
             catch { return false; }
         }
+        public static void JsWaitReadyStateComplete(this IWebDriver driver, double timeInSeconds = 10.00)
+        {
+            IWait<IWebDriver> wait = new OpenQA.Selenium.Support.UI.WebDriverWait(driver, TimeSpan.FromSeconds(timeInSeconds));
+            wait.Until(d => ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));
+        }
 
     }
 }

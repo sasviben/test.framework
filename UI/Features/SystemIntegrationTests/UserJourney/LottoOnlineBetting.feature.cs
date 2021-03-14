@@ -74,22 +74,18 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to place a Lotto simple ticket (uid:f8960b9d-411" +
-            "5-4884-a602-15cc1557ac27)")]
+        [NUnit.Framework.DescriptionAttribute("the online player should see the same data on the purchased simple lotto ticket a" +
+            "s on the Betslip (uid:f8960b9d-4115-4884-a602-15cc1557ac27)")]
         [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
         [NUnit.Framework.CategoryAttribute("regression")]
-        [NUnit.Framework.CategoryAttribute("acceptance")]
-        [NUnit.Framework.CategoryAttribute("smoke")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPlaceALottoSimpleTicketUidF8960B9D_4115_4884_A602_15Cc1557Ac27()
+        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedSimpleLottoTicketAsOnTheBetslipUidF8960B9D_4115_4884_A602_15Cc1557Ac27()
         {
             string[] tagsOfScenario = new string[] {
                     "RULES_automation_todo",
-                    "regression",
-                    "acceptance",
-                    "smoke"};
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to place a Lotto simple ticket (uid:f8960b9d-411" +
-                    "5-4884-a602-15cc1557ac27)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should see the same data on the purchased simple lotto ticket a" +
+                    "s on the Betslip (uid:f8960b9d-4115-4884-a602-15cc1557ac27)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -136,20 +132,18 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to place a Lotto system ticket (uid:eb8455b6-a31" +
-            "3-418e-86d4-3b2049b17168)")]
+        [NUnit.Framework.DescriptionAttribute("the online player should see the same data on the purchased system lotto ticket a" +
+            "s on the Betslip (uid:eb8455b6-a313-418e-86d4-3b2049b17168)")]
         [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
         [NUnit.Framework.CategoryAttribute("regression")]
-        [NUnit.Framework.CategoryAttribute("acceptance")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPlaceALottoSystemTicketUidEb8455B6_A313_418E_86D4_3B2049B17168()
+        public virtual void TheOnlinePlayerShouldSeeTheSameDataOnThePurchasedSystemLottoTicketAsOnTheBetslipUidEb8455B6_A313_418E_86D4_3B2049B17168()
         {
             string[] tagsOfScenario = new string[] {
                     "RULES_automation_todo",
-                    "regression",
-                    "acceptance"};
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to place a Lotto system ticket (uid:eb8455b6-a31" +
-                    "3-418e-86d4-3b2049b17168)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should see the same data on the purchased system lotto ticket a" +
+                    "s on the Betslip (uid:eb8455b6-a313-418e-86d4-3b2049b17168)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 15
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -174,7 +168,7 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
     testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 17
-    testRunner.And("the player has added \"1\" random \"LOTTO\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the player has added \"1\" Lotto selection to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
     testRunner.When("the player selects \"RANDOM\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -192,6 +186,119 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
     testRunner.And("the data on the \"DETAILS\" is the same as data on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 23
+    testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Lotto simple ticket (uid:b0afcf6e-" +
+            "f620-49a3-9e30-5dddc7895f39)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automated")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseALottoSimpleTicketUidB0Afcf6E_F620_49A3_9E30_5Dddc7895F39()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automated",
+                    "regression",
+                    "acceptance",
+                    "smoke"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Lotto simple ticket (uid:b0afcf6e-" +
+                    "f620-49a3-9e30-5dddc7895f39)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 26
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 27
+    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 28
+    testRunner.And("the player has added \"1\" Lotto selection to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 29
+    testRunner.When("the player purchases an \"ONLINE\" Lotto \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 30
+    testRunner.Then("the \"ONLINE\" Lotto \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 31
+    testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Lotto system ticket (uid:09583a25-" +
+            "4bb6-4ef8-8290-27899d29d103)")]
+        [NUnit.Framework.CategoryAttribute("RULES_automation_todo")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseALottoSystemTicketUid09583A25_4Bb6_4Ef8_8290_27899D29D103()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RULES_automation_todo",
+                    "regression",
+                    "acceptance"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Lotto system ticket (uid:09583a25-" +
+                    "4bb6-4ef8-8290-27899d29d103)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 34
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 35
+    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 36
+    testRunner.And("the player has added \"5\" Lotto selection to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+    testRunner.And("the player selects \"2\" combinations on the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 38
+    testRunner.When("the player purchases an \"ONLINE\" Lotto \"SYSTEM\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 39
+    testRunner.Then("the \"ONLINE\" Lotto \"SYSTEM\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 40
     testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
