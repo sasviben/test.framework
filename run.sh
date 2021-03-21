@@ -15,7 +15,13 @@ TEST_CONFIG="UI\Features\hiptest-publisher.conf" #konfiguracija koja omogućuje 
 TEST_ENVIRONMENT="Stage" #okolina test run-a
 #TEST_FILTER="regression"
 TEST_FILTER="TestCategory=RULES_automated" #scenariji koji sadrže tag koji odgovara navedenom filteru će biti izvršeni
-environment="Stage" #okolina na kojoj će se testovi izvršiti
+
+#$environment okolina na kojoj će se testovi izvršiti
+if [[ ! -d "$environment" ]]; then 
+    export environment="Stage"
+    echo 'export environment="Stage"' >> ~/.bashrc
+fi
+
 browser="Chrome" #internet preglednik u kojem će se izvršiti testovi
 # Fetch tests
 if ! hiptest-publisher \
@@ -42,4 +48,4 @@ if ! hiptest-publisher \
 then
 	echo "Unable to push test results, exiting!"
 fi
-environment=" " 
+environment=""
