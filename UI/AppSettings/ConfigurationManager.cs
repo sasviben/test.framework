@@ -2,6 +2,7 @@
 using System.IO;
 using Microsoft.Extensions.Configuration;
 using UI.AppSettings;
+using UI.Models;
 using static UI.Helpers.Enums;
 
 namespace UI.Configuration
@@ -10,13 +11,15 @@ namespace UI.Configuration
     {
         private readonly string _configPath = "/AppSettings";
         private readonly AppConfiguration _appConfig;
+        private readonly PlayerDetailsModel _playerCredentials;
         private string _configurationName;
         private ConfigOptions _configOptions;
 
-        public ConfigurationManager()
+        public ConfigurationManager(PlayerDetailsModel playerDetails)
         {
             _appConfig = new AppConfiguration();
             _configOptions = new ConfigOptions();
+            _playerCredentials = playerDetails;
         }
 
         public void LoadConfiguration(BoDi.IObjectContainer _objectContainer)
@@ -24,8 +27,8 @@ namespace UI.Configuration
 
             _appConfig.Initialize();
 
-            if(string.IsNullOrEmpty(_appConfig.ExecutionEnvironment))
-                _appConfig.ExecutionEnvironment = "Silent";
+            if (string.IsNullOrEmpty(_appConfig.ExecutionEnvironment))
+                _appConfig.ExecutionEnvironment = "Stage";
             _configurationName = GetConfiguration(_appConfig.ExecutionEnvironment);
 
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory() + _configPath).AddJsonFile(_configurationName);
@@ -41,7 +44,7 @@ namespace UI.Configuration
             _objectContainer.RegisterInstanceAs(_configOptions);
         }
 
-        public string GetConfiguration(string executionEnvironment)
+        private static string GetConfiguration(string executionEnvironment)
         {
             if (executionEnvironment == null)
                 throw new ArgumentException("Environment variable 'environment' is null! You should enter execution environment when running a tests. For example: Stage");
@@ -66,7 +69,7 @@ namespace UI.Configuration
 
             return configuration;
         }
-        
+
         public void SetUserCredentials(string userType)
         {
             foreach (var player in Settings.Configuration.PlayerCredentials)
@@ -76,13 +79,14 @@ namespace UI.Configuration
 
                 if (player.Username.ToUpper().Contains(userType.ToString()))
                 {
-                    Settings.PlayerUsername = player.Username;
-                    Settings.PlayerPassword = Settings.PlayerUsername + "123";
+                    _playerCredentials.PlayerUsername = player.Username;
+                    _playerCredentials.PlayerPassword = player.Username + "123";
                 }
             }
 
-            if (Settings.PlayerUsername == null)
+            if (_playerCredentials.PlayerUsername == null)
                 throw new ArgumentException($"Configuration doesn't contains user {userType}! Please check configuration.");
+
         }
     }
 }

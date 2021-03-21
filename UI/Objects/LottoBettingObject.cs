@@ -13,10 +13,14 @@ namespace UI.Objects
     class LottoBettingObject
     {
         private readonly IWebDriver _driver;
+        private readonly PlayerDetailsModel _playerBalance;
+        private readonly CookieManager _cookieManager;
 
-        public LottoBettingObject(IWebDriver webDriver)
+        public LottoBettingObject(IWebDriver webDriver, PlayerDetailsModel playerDetails)
         {
             _driver = webDriver;
+            _playerBalance = playerDetails;
+            _cookieManager = new CookieManager(playerDetails);
         }
 
         #region Actions
@@ -71,7 +75,7 @@ namespace UI.Objects
             if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 2))
                 throw new Exception($"Betslip contans error message: {_driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText")}");
 
-            PlayerProfileModel.BalanceAfterPurchase = CookieManager.GetPlayerBalance();
+            _playerBalance.BalanceAfterPurchase = _cookieManager.GetPlayerBalance();
 
         }
         #endregion

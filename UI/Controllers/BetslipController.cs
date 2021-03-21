@@ -10,10 +10,12 @@ namespace UI.Objects
     class BetslipController
     {
         private readonly IWebDriver _driver;
+        private readonly BetslipModel _betslipStake;
 
-        public BetslipController(IWebDriver webDriver)
+        public BetslipController(IWebDriver webDriver, BetslipModel betslipModel)
         {
             _driver = webDriver;
+            _betslipStake = betslipModel;
         }
 
         public bool IsBetslipEmpty()
@@ -48,10 +50,11 @@ namespace UI.Objects
                     _driver.WdFindElement(BetslipLOC.ButtonSystemTicket).Click();
             }
 
-            BetslipModel.Stake = Common.GetRandomNumber(2, 20);
+            _betslipStake.Stake = Common.GetRandomNumber(2, 20);
+            
             var ticketStakeField = _driver.WdFindElement(BetslipLOC.InputFieldStake);
             ticketStakeField.Clear();
-            ticketStakeField.SendKeys(BetslipModel.Stake.ToString());
+            ticketStakeField.SendKeys(_betslipStake.Stake.ToString());
 
         }
 

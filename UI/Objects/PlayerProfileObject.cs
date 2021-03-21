@@ -1,16 +1,17 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using UI.Models;
 
 namespace UI.Objects
 {
     class PlayerProfileObject
     {
-        private readonly IWebDriver _driver;
+        private readonly PlayerDetailsModel _playerBalance;
+        private readonly BetslipModel _betslipStake;
 
-        public PlayerProfileObject(IWebDriver webDriver)
+        public PlayerProfileObject(PlayerDetailsModel playerDetails, BetslipModel betslipModel)
         {
-            _driver = webDriver;
+            _playerBalance = playerDetails;
+            _betslipStake = betslipModel;
         }
 
         #region Actions
@@ -19,9 +20,9 @@ namespace UI.Objects
 
 
         #region Assertions
-        public void PlayerBalanceIsReducedByTheStake(double stake)
+        public void PlayerBalanceIsReducedByTheStake()
         {
-            Assert.AreEqual(expected: PlayerProfileModel.BalanceAfterLogin - stake, actual: PlayerProfileModel.BalanceAfterPurchase, $"Player balance after purchase is not reduced by the ticket stake.");
+            Assert.AreEqual(expected: _playerBalance.BalanceAfterLogin - _betslipStake.Stake, actual: _playerBalance.BalanceAfterPurchase, $"Player balance after purchase is not reduced by the ticket stake.");
 
         }
         #endregion

@@ -14,13 +14,17 @@ namespace UI.Objects
     class SportBettingObject
     {
         private readonly IWebDriver _driver;
+        private readonly PlayerDetailsModel _playerBalance;
+        private readonly CookieManager _cookieManager;
         private const string URL_INPLAY = "LIVE";
         private const string SPORT_INPLAY = "INPLAY";
         private const string SPORT_PREMATCH = "PREMATCH";
 
-        public SportBettingObject(IWebDriver webDriver)
+        public SportBettingObject(IWebDriver webDriver, PlayerDetailsModel playerDetails)
         {
             _driver = webDriver;
+            _playerBalance = playerDetails;
+            _cookieManager = new CookieManager(playerDetails);
         }
 
 
@@ -129,8 +133,8 @@ namespace UI.Objects
             if (_driver.WdIsElementVisible(BetslipLOC.ValidationMessage, 2))
                 throw new Exception($"Betslip contans error message: {_driver.WdFindElement(BetslipLOC.ValidationMessage).WeGetAttributeValue(_driver, "innerText")}");
 
-            PlayerProfileModel.BalanceAfterPurchase = CookieManager.GetPlayerBalance();
-
+            _playerBalance.BalanceAfterPurchase = _cookieManager.GetPlayerBalance();
+            
         }
         #endregion
 

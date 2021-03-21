@@ -36,5 +36,12 @@ namespace UI.Helpers
             var random = new Random();
             return (double)(random.Next(startNumber, endNumber));
         }
+        public static void Wait(int seconds)
+        {
+            var time = DateTime.Now;
+            do
+            {
+            } while (time.AddSeconds(seconds) > DateTime.Now);
+        }
     }
 }

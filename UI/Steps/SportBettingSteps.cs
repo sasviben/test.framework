@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using System;
 using TechTalk.SpecFlow;
+using UI.Models;
 using UI.Objects;
 
 namespace UI.Steps
@@ -17,12 +18,12 @@ namespace UI.Steps
         private readonly SportBettingObject _sportBettingObject;
         private readonly BetslipController _betslipController;
 
-        public SportBettingSteps(IWebDriver webDriver)
+        public SportBettingSteps(IWebDriver webDriver, PlayerDetailsModel playerDetails, BetslipModel betslipModel)
         {
             _driver = webDriver;
             _navigationObject = new NavigationObject(_driver);
-            _sportBettingObject = new SportBettingObject(_driver);
-            _betslipController = new BetslipController(_driver);
+            _sportBettingObject = new SportBettingObject(_driver, playerDetails);
+            _betslipController = new BetslipController(_driver, betslipModel);
         }
 
         #region Actions
