@@ -17,13 +17,17 @@ namespace UI.Steps
         private readonly PlayerSessionObject _playerSessionObject;
         private readonly NavigationObject _navigationObject;
         private readonly PlayerProfileObject _playerProfileObject;
+        private readonly PlayerDetailsModel _playerBalance;
+        private readonly CookieManager _cookieManager;
 
-        public PlayerSteps(IWebDriver webDriver)
+        public PlayerSteps(IWebDriver webDriver, PlayerDetailsModel playerDetails, BetslipModel betslipModel)
         {
             _driver = webDriver;
-            _playerSessionObject = new PlayerSessionObject(_driver);
+            _playerSessionObject = new PlayerSessionObject(_driver, playerDetails);
             _navigationObject = new NavigationObject(_driver);
-            _playerProfileObject = new PlayerProfileObject(_driver);
+            _playerProfileObject = new PlayerProfileObject(playerDetails, betslipModel);
+            _cookieManager = new CookieManager(playerDetails);
+            _playerBalance = playerDetails;
         }
 
 
@@ -50,7 +54,7 @@ namespace UI.Steps
                 _driver.WdFindElement(NavigationHeaderLOC.SuperbetLogo);
 
                 Assert.IsTrue(_playerSessionObject.IsThePlayerLoggedIn(), "Player login failed!");
-                PlayerProfileModel.BalanceAfterLogin = CookieManager.GetPlayerBalance();
+                _playerBalance.BalanceAfterLogin = _cookieManager.GetPlayerBalance();
 
                 if (_driver.WdIsElementVisible(PopUpModals.ButtonAcceptCookies, 2))
                     _driver.WdFindElement(PopUpModals.ButtonAcceptCookies).Click();
@@ -99,7 +103,7 @@ namespace UI.Steps
         [Then(@"the player balance amount is subtracted by the ticket stake")]
         public void ThenThePlayerBalanceAmountIsSubtractedByTheTicketStake()
         {
-            _playerProfileObject.PlayerBalanceIsReducedByTheStake(BetslipModel.Stake);
+            _playerProfileObject.PlayerBalanceIsReducedByTheStake();
         }
 
         #endregion

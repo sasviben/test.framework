@@ -4,14 +4,18 @@ using RestSharp;
 using Newtonsoft.Json;
 using UI.Backend.Models;
 using Newtonsoft.Json.Linq;
-using System;
+using UI.Models;
 
 namespace UI.Backend.Clients
 {
     class CookieManager
     {
-        private static string _cookieNameAndValue;
-        public static void SetCookieNameAndValue()
+        private readonly PlayerDetailsModel _playerDetails;
+        public CookieManager(PlayerDetailsModel playerDetails)
+        {
+            _playerDetails = playerDetails;
+        }
+        public void SetCookieNameAndValue()
         {
             var client = new RestClient(Settings.PlayerSessionAPI);
             var request = new RestRequest(Method.POST);
@@ -20,9 +24,10 @@ namespace UI.Backend.Clients
             var jObjectbody = new JObject
             {
                 { "clientSourceType", Settings.ClientSourceType },
-                { "password", Settings.PlayerPassword },
-                { "username", Settings.PlayerUsername }
+                { "password", _playerDetails.PlayerPassword },
+                { "username", _playerDetails.PlayerUsername }
             };
+            
 
             request.AddParameter("application/json", jObjectbody, ParameterType.RequestBody);
             request.Timeout = 30000;
@@ -33,18 +38,18 @@ namespace UI.Backend.Clients
 
             foreach (var cookie in response.Cookies)
             {
-                if (cookie.Name.Equals(Settings.Cookie))
-                    _cookieNameAndValue = $"{cookie.Name}={cookie.Value}";
+                if (cookie.Name.Equals(Settings.CookieName))
+                    _playerDetails.Cookie = $"{cookie.Name}={cookie.Value}";
             }
 
         }
 
-        public static double GetPlayerBalance()
+        public double GetPlayerBalance()
         {
             var client = new RestClient(Settings.PlayerBalanceAPI);
             var request = new RestRequest(Method.GET);
 
-            request.AddHeader("Cookie", _cookieNameAndValue);
+            request.AddHeader("Cookie", _playerDetails.Cookie);
 
             var response = client.Execute(request);
 

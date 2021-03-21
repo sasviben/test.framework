@@ -3,10 +3,9 @@ using OpenQA.Selenium;
 using System;
 using System.Linq;
 using TechTalk.SpecFlow;
-using UI.Backend.Clients;
 using UI.Configuration;
 using UI.Drivers;
-using web.test.app.hooks;
+using UI.Models;
 using static UI.Helpers.Enums;
 
 namespace UI.Hooks
@@ -17,15 +16,15 @@ namespace UI.Hooks
         private readonly IObjectContainer _objectContainer;
         private IWebDriver _driver;
         private readonly ScenarioContext _scenarioContext;
-        private readonly AppConfiguration _appConfiguration;
+        private readonly FeatureContext _featureContext;
         private readonly ConfigurationManager _configurationManager;
 
-        public ScenarioHooks(AppConfiguration appConfig, IObjectContainer objectContainer, ScenarioContext scenarioContext)
+        public ScenarioHooks(AppConfiguration appConfig, IObjectContainer objectContainer, ScenarioContext scenarioContext, FeatureContext featureContext, PlayerDetailsModel playerDetails)
         {
             _objectContainer = objectContainer;
-            _appConfiguration = appConfig;
             _scenarioContext = scenarioContext;
-            _configurationManager = new ConfigurationManager();
+            _featureContext = featureContext;
+            _configurationManager = new ConfigurationManager(playerDetails);
             _configurationManager.LoadConfiguration(_objectContainer);
         }
 
@@ -42,8 +41,7 @@ namespace UI.Hooks
                     {
                         var chromeDriver = new ChromeDriver();
                         _driver = chromeDriver.LoadChromeDriver();
-                        //_driver = chromeDriver.LoadRemoteChromeDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
-
+                        
                         break;
                     }
                 case BrowserType.FIREFOX:
@@ -51,7 +49,6 @@ namespace UI.Hooks
                         var firefoxDriver = new FirefoxDriver();
 
                         _driver = firefoxDriver.LoadFirefoxDriver();
-                        //_driver = firefoxDriver.LoadRemoteFirefoxDriver(new Uri(_appConfiguration.SeleniumHubUri), true);
                         break;
                     }
                 default:
@@ -67,16 +64,17 @@ namespace UI.Hooks
         public void BeforeScenario()
         {
             var scenarioTags = _scenarioContext.ScenarioInfo.Tags.ToList();
-
-            if (FeatureHooks.Feature.Equals("Sport Online Betting"))
+      
+            if (_featureContext.FeatureInfo.Title.Equals("Sport Online Betting"))
                 _configurationManager.SetUserCredentials(UserType.SPORT.ToString());
-            else if (FeatureHooks.Feature.Equals("Lotto Online Betting"))
+
+            else if (_featureContext.FeatureInfo.Title.Equals("Lotto Online Betting"))
                 _configurationManager.SetUserCredentials(UserType.LOTTO.ToString());
-            else if (FeatureHooks.Feature.Equals("Games Online Betting"))
+            else if (_featureContext.FeatureInfo.Title.Equals("Games Online Betting"))
                 _configurationManager.SetUserCredentials(UserType.GAMES.ToString());
-            else if (FeatureHooks.Feature.Equals("Player Session"))
+            else if (_featureContext.FeatureInfo.Title.Equals("Player Session"))
                 _configurationManager.SetUserCredentials(UserType.RETAIL_BETTING.ToString());
-            else if (FeatureHooks.Feature.Equals("Navigation"))
+            else if (_featureContext.FeatureInfo.Title.Equals("Navigation"))
             {
                 if (scenarioTags.Contains("online"))
                     _configurationManager.SetUserCredentials(UserType.SPORT.ToString());

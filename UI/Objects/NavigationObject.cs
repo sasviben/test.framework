@@ -10,7 +10,7 @@ namespace UI.Objects
 {
     class NavigationObject
     {
-        
+
         private readonly IWebDriver _driver;
         public NavigationObject(IWebDriver webdriver)
         {
@@ -18,7 +18,7 @@ namespace UI.Objects
         }
 
         #region Actions
-        
+
         public void NavigateToHomePage()
         {
             if (Enum.TryParse(Settings.Browser, true, out BrowserType browserType) == false)
@@ -29,10 +29,8 @@ namespace UI.Objects
             else
                 _driver.Navigate().GoToUrl(Settings.HomePageUrl);
 
-            _driver.WdFindElement(NavigationHeaderLOC.SuperbetLogo, 30);
-
         }
-        
+
         public void NavigateToMainPage(string pageName)
         {
             if (Enum.TryParse(pageName.Replace(" ", "_"), true, out PageType pageTypeParsed) == false)
@@ -42,78 +40,79 @@ namespace UI.Objects
             {
                 case PageType.SUPERBET:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.SuperbetLogo).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.SuperbetLogo, 20).Click();
                         break;
                     }
                 case PageType.SPORT:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Sport).Click();
+                        Common.Wait(5);
+                        _driver.WdFindElement(NavigationHeaderLOC.Sport, 20).Click();
                         break;
                     }
                 case PageType.LIVE:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Live).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.Live, 20).Click();
                         break;
                     }
                 case PageType.GAMES:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Games).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.Games, 20).Click();
                         break;
                     }
                 case PageType.CASINO:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Casino).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.Casino, 20).Click();
                         break;
                     }
                 case PageType.LOTTO:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Lotto).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.Lotto, 20).Click();
                         break;
                     }
                 case PageType.VIRTUAL:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Virtual).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.Virtual, 20).Click();
                         break;
                     }
                 case PageType.NEWS:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.News).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.News, 20).Click();
                         break;
                     }
                 case PageType.RESULTS:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Results).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.Results, 20).Click();
                         break;
                     }
                 case PageType.SHOPS:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Shops).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.Shops, 20).Click();
                         break;
                     }
                 case PageType.HELP:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Help).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.Help, 20).Click();
                         break;
                     }
                 case PageType.PLAYER_ACCOUNT:
                     {
                         _driver.WdMoveToElement(NavigationHeaderLOC.PlayerAccount);
 
-                        _driver.WdFindElement(PlayerMenuLOC.NavigationAccountOverview).Click();
+                        _driver.WdFindElement(PlayerMenuLOC.NavigationAccountOverview, 20).Click();
                         break;
                     }
                 case PageType.PLAYER_TICKETS:
                     {
                         _driver.WdMoveToElement(NavigationHeaderLOC.PlayerAccount);
 
-                        _driver.WdFindElement(PlayerMenuLOC.NavigationTickets).Click();
+                        _driver.WdFindElement(PlayerMenuLOC.NavigationTickets, 20).Click();
                         break;
                     }
                 case PageType.PLAYER_HISTORY:
                     {
                         _driver.WdMoveToElement(NavigationHeaderLOC.PlayerAccount);
 
-                        _driver.WdFindElement(PlayerMenuLOC.NavigationTransactionsHistory).Click();
+                        _driver.WdFindElement(PlayerMenuLOC.NavigationTransactionsHistory, 20).Click();
                         break;
                     }
             }
@@ -131,22 +130,22 @@ namespace UI.Objects
 
                 case SportBettingType.PREMATCH:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Sport).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.Sport, 20).Click();
                         break;
                     }
                 case SportBettingType.INPLAY:
                     {
-                        _driver.WdFindElement(NavigationHeaderLOC.Live).Click();
+                        _driver.WdFindElement(NavigationHeaderLOC.Live, 20).Click();
                         break;
                     }
                 case SportBettingType.SPECIAL:
                     {
-                        _driver.WdFindElement(SportOfferLOC.NavigationSpecial);
+                        _driver.WdFindElement(SportOfferLOC.NavigationSpecial, 20);
                         break;
                     }
             }
 
-            _driver.WaitUntilElementIsInvisible(NavigationHeaderLOC.Spinner, 20);
+            _driver.WaitUntilElementIsInvisible(NavigationHeaderLOC.Spinner);
 
         }
 
