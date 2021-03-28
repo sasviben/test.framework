@@ -10,9 +10,11 @@ namespace UI.Configuration
         public void Initialize()
         {
             ExecutionEnvironment = Environment.GetEnvironmentVariable("environment");
-            
+            Browser = Environment.GetEnvironmentVariable("browser");
+
             if (!string.IsNullOrEmpty(Browser))
                 Browser = Environment.GetEnvironmentVariable("browser");
+
         }
 
     }

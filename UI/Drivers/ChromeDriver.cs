@@ -1,7 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Remote;
-using System;
 using System.IO;
 using System.Reflection;
 
@@ -34,26 +32,26 @@ namespace UI.Drivers
                 throw new WebDriverException(we.Message);
             }
         }
-        public IWebDriver LoadRemoteChromeDriver(Uri remoteUri, bool headless = true)
-        {
-            try
-            {
-                var options = new ChromeOptions();
-                options.AddArgument("disable-extensions");
-                options.AddArgument("disable-popup-blocking");
-                options.AddArgument("start-maximized");
-                options.AddArgument("disable-dev-shm-usage");
-                if (headless == true)
-                    options.AddArgument("headless");
+        //public IWebDriver LoadRemoteChromeDriver(Uri remoteUri, bool headless = true)
+        //{
+        //    try
+        //    {
+        //        var options = new ChromeOptions();
+        //        options.AddArgument("disable-extensions");
+        //        options.AddArgument("disable-popup-blocking");
+        //        options.AddArgument("start-maximized");
+        //        options.AddArgument("disable-dev-shm-usage");
+        //        if (headless == true)
+        //            options.AddArgument("headless");
 
-                var driver = new RemoteWebDriver(remoteUri, options);
-                return driver;
-            }
-            catch (WebDriverException we)
-            {
-                throw new WebDriverException(we.Message);
-            }
+        //        var driver = new RemoteWebDriver(remoteUri, options);
+        //        return driver;
+        //    }
+        //    catch (WebDriverException we)
+        //    {
+        //        throw new WebDriverException(we.Message);
+        //    }
 
-        }
+        //}
     }
 }

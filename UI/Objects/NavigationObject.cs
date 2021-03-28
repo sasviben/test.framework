@@ -24,11 +24,10 @@ namespace UI.Objects
             if (Enum.TryParse(Settings.Browser, true, out BrowserType browserType) == false)
                 throw new ArgumentException($"String {Settings.Browser} can't be parsed to enum BrowserType!");
 
+            _driver.Navigate().GoToUrl(Settings.HomePageUrl);
+
             if (browserType.Equals(BrowserType.FIREFOX))
                 _driver.Navigate().GoToUrl(Settings.HomePageUrlFirefox);
-            else
-                _driver.Navigate().GoToUrl(Settings.HomePageUrl);
-
         }
 
         public void NavigateToMainPage(string pageName)

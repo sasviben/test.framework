@@ -22,7 +22,12 @@ if [[ ! -d "$environment" ]]; then
     echo 'export environment="Stage"' >> ~/.bashrc
 fi
 
-browser="Chrome" #internet preglednik u kojem će se izvršiti testovi
+#internet preglednik u kojem će se izvršiti testovi
+ if [[ ! -d "$browser" ]]; then 
+     export browser="Firefox"
+     echo 'export browser="Firefox"' >> ~/.bashrc
+ fi
+
 # Fetch tests
 if ! hiptest-publisher \
 	--config-file "$TEST_CONFIG" \

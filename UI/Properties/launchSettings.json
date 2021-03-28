@@ -1,7 +1,11 @@
 {
   "profiles": {
     "UI": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "environmentVariables": {
+        "environment": "Value",
+        "browser": "Value"
+      }
     }
   }
 }
