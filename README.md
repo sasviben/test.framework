@@ -28,3 +28,6 @@ $env:environment="QA"
 $env:TEST_FILTER="TestCategory=RULES_automated"
 hiptest-publisher --config-file "$TEST_CONFIG" --push UI/TestResults/TESTRESULTS.xml --test-run-id "$TEST_RUN_ID" --execution-environment "$TEST_ENVIRONMENT" --push-format mstest
 ```
+## Aplikaciju je moguće pokrenuti pomoću run.sh skripte
+Skripta će izvršiti sve gore navedene korake.
+Skripta sadrži varijable koje je prije pokretanja potrebno editirati sa željenim vrijednostima. 
