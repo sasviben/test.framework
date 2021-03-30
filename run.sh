@@ -32,7 +32,7 @@ fi
 if ! hiptest-publisher \
 	--config-file "$TEST_CONFIG" \
 	--test-run-id "$TEST_RUN_ID" \
-	--execution-environment "$TEST_ENVIRONMENT" } \
+	--execution-environment "$TEST_ENVIRONMENT" \
 	--only features
 then
 	echo "Unable to fetch tests, exiting!"
@@ -53,4 +53,3 @@ if ! hiptest-publisher \
 then
 	echo "Unable to push test results, exiting!"
 fi
-environment=""
