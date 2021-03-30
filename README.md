@@ -5,19 +5,26 @@ Aplikacija sadrži UI testove koji pokrivaju sistemsku i sistem integracijsku ra
 
 ### Aplikacija je više-platformska
 Napisana je u .NET 5 razvojnom okviru i kao takva se može isporučiti na bilo koju platformu (Widnows, Linux...).
-### Aplikacija je zapakirana u Docker kontejner
-Aplikacija se builda u docker kontejner te se kao takva lako može isporučiti na razne platforme. 
 ## Upute za instalaciju i pokretanje aplikacije
 ###### Integracija sa Cucumber Studiom
 Naredba koju je potrebno izvršiti kako bi se povukli testovi iz željenog test paketa:
 ```
-hiptest-publisher --config-file .\hiptest-publisher.conf --test-run-id {test run id} --only features
+$env:TEST_CONFIG="UI\Features\hiptest-publisher.conf"
+$env:TEST_RUN_ID="513396"
+$env:TEST_ENVIRONMENT="QA"
+hiptest-publisher --config-file "$TEST_CONFIG" --test-run-id "$TEST_RUN_ID" --execution-environment "$TEST_ENVIRONMENT" --only features
 ```
 Naredba koju je potrebno izvršiti kako bi se pokrenuli željeni testovi:
 ```
-$env:seleniumHubHost="localhost"
->> $env:seleniumHubPort="4446"
->> $env:browser="chrome"
->> $env:environment="Production"
->> dotnet test --configuration Release --filter 'TestCategory=regression' --logger "trx;LogFileName=TESTRESULTS.xml"
+$env:browser="chrome"
+$env:environment="QA"
+$env:TEST_FILTER="TestCategory=RULES_automated"
+dotnet test -c Debug --filter "$TEST_FILTER" --logger "trx;LogFileName=TESTRESULTS.xml"
+```
+Naredba koju je potrebno izvršiti kako bi se rezultati poslali u CucumberStudio:
+```
+$env:browser="chrome"
+$env:environment="QA"
+$env:TEST_FILTER="TestCategory=RULES_automated"
+hiptest-publisher --config-file "$TEST_CONFIG" --push UI/TestResults/TESTRESULTS.xml --test-run-id "$TEST_RUN_ID" --execution-environment "$TEST_ENVIRONMENT" --push-format mstest
 ```
