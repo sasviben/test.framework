@@ -1,31 +1,27 @@
-﻿#!/bin/bash
+﻿!/bin/bash
 #----TEST RUNS----
 # regression test run ID: 513396
-# acceptance test run ID: 514338
 # smoke test run ID: 514339
 #----EXECUTION ENVIRONMENT----
 # Silent
 # Stage
 # QA
 
-# dodati opis u word
 
-TEST_RUN_ID="513396" #test run-a id koji omogućuje aplikaciji da povuće test scenarije koje treba izvršiti
-TEST_CONFIG="UI\Features\hiptest-publisher.conf" #konfiguracija koja omogućuje komunikaciju između CucumberStudia i aplikacije
-TEST_ENVIRONMENT="Stage" #okolina test run-a
-#TEST_FILTER="regression"
-TEST_FILTER="TestCategory=RULES_automated" #scenariji koji sadrže tag koji odgovara navedenom filteru će biti izvršeni
+TEST_RUN_ID="513396"
+TEST_CONFIG="UI\Features\hiptest-publisher.conf"
+TEST_ENVIRONMENT="Silent"
+TEST_FILTER="TestCategory=smoke"
+environment="Silent"
+browser="Chrome"
 
-#$environment okolina na kojoj će se testovi izvršiti
 if [[ ! -d "$environment" ]]; then 
-    export environment="Stage"
-    echo 'export environment="Stage"' >> ~/.bashrc
+    export environment
 fi
 
 #internet preglednik u kojem će se izvršiti testovi
  if [[ ! -d "$browser" ]]; then 
-     export browser="Firefox"
-     echo 'export browser="Firefox"' >> ~/.bashrc
+     export browser
  fi
 
 # Fetch tests
@@ -39,7 +35,6 @@ then
 fi
 # Run tests
 dotnet test \
-	-c Debug \
     --filter "$TEST_FILTER" \
     --logger 'trx;LogFileName=TESTRESULTS.xml'
 
