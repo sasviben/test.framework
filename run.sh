@@ -11,7 +11,7 @@
 TEST_RUN_ID="513396"
 TEST_CONFIG="UI\Features\hiptest-publisher.conf"
 TEST_ENVIRONMENT="Silent"
-TEST_FILTER="TestCategory=smoke"
+TEST_FILTER="TestCategory=regression"
 environment="Silent"
 browser="Chrome"
 
