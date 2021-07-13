@@ -8,10 +8,10 @@
 # QA
 
 
-TEST_RUN_ID="513396"
+TEST_RUN_ID="514339"
 TEST_CONFIG="UI\Features\hiptest-publisher.conf"
 TEST_ENVIRONMENT="Silent"
-TEST_FILTER="TestCategory=regression"
+TEST_FILTER="TestCategory=smoke"
 environment="Silent"
 browser="Chrome"
 

@@ -16,9 +16,7 @@ namespace UI.Objects
             _playerCredentials = playerDetails;
         }
 
-
         #region Actions
-
         public void OpenLoginModal()
         {
             _driver.WdFindElement(NavigationHeaderLOC.ButtonLogin).Click();
@@ -45,7 +43,6 @@ namespace UI.Objects
             _driver.WdFindElement(PlayerMenuLOC.ButtonLogout).Click();
 
         }
-
         #endregion
 
         #region Assertions
@@ -60,7 +57,6 @@ namespace UI.Objects
             return _driver.WdFindElement(NavigationHeaderLOC.UserBar).Displayed;
 
         }
-
         #endregion
     }
 }
