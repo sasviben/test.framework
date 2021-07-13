@@ -13,7 +13,7 @@ TEST_CONFIG="UI\Features\hiptest-publisher.conf"
 TEST_ENVIRONMENT="Silent"
 TEST_FILTER="TestCategory=smoke"
 environment="Silent"
-browser="Chrome"
+browser="Firefox"
 
 if [[ ! -d "$environment" ]]; then 
     export environment

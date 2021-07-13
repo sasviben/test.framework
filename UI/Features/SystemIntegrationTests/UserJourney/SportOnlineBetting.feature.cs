@@ -74,20 +74,22 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Prematch simple ticket (uid:1358b0" +
-            "0e-c0ce-4fd9-8fa0-0c496626f5c6)")]
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Prematch simple ticket (uid:f2c6ff" +
+            "c7-1786-4a19-9e23-52cb52b13ec4)")]
         [NUnit.Framework.CategoryAttribute("RULES_automated")]
         [NUnit.Framework.CategoryAttribute("regression")]
         [NUnit.Framework.CategoryAttribute("acceptance")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAPrematchSimpleTicketUid1358B00E_C0Ce_4Fd9_8Fa0_0C496626F5C6()
+        [NUnit.Framework.CategoryAttribute("smoke")]
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAPrematchSimpleTicketUidF2C6Ffc7_1786_4A19_9E23_52Cb52B13Ec4()
         {
             string[] tagsOfScenario = new string[] {
                     "RULES_automated",
                     "regression",
-                    "acceptance"};
+                    "acceptance",
+                    "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Prematch simple ticket (uid:1358b0" +
-                    "0e-c0ce-4fd9-8fa0-0c496626f5c6)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Prematch simple ticket (uid:f2c6ff" +
+                    "c7-1786-4a19-9e23-52cb52b13ec4)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -121,60 +123,6 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
     testRunner.Then("the \"ONLINE\" sport \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 10
-    testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Inplay simple ticket (uid:6da48565" +
-            "-61fc-407a-8f86-5435fa3edc4a)")]
-        [NUnit.Framework.CategoryAttribute("RULES_automated")]
-        [NUnit.Framework.CategoryAttribute("regression")]
-        [NUnit.Framework.CategoryAttribute("acceptance")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseAInplaySimpleTicketUid6Da48565_61Fc_407A_8F86_5435Fa3Edc4A()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "RULES_automated",
-                    "regression",
-                    "acceptance"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Inplay simple ticket (uid:6da48565" +
-                    "-61fc-407a-8f86-5435fa3edc4a)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 14
-    testRunner.Given("the player is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 15
-    testRunner.And("the player has added \"1\" random \"INPLAY\" \"FOOTBALL\" events to the Betslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 16
-    testRunner.When("the player purchases an \"ONLINE\" sport \"SIMPLE\" ticket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 17
-    testRunner.Then("the \"ONLINE\" sport \"SIMPLE\" ticket is purchased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 18
     testRunner.And("the player balance amount is subtracted by the ticket stake", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
