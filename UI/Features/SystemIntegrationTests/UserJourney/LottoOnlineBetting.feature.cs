@@ -74,13 +74,13 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Lotto simple ticket (uid:7e0a4ea0-" +
-            "c1f2-4ef9-9c6d-5a8f66966cbf)")]
+        [NUnit.Framework.DescriptionAttribute("the online player should be able to purchase a Lotto simple ticket (uid:b0afcf6e-" +
+            "f620-49a3-9e30-5dddc7895f39)")]
         [NUnit.Framework.CategoryAttribute("RULES_automated")]
         [NUnit.Framework.CategoryAttribute("regression")]
         [NUnit.Framework.CategoryAttribute("acceptance")]
         [NUnit.Framework.CategoryAttribute("smoke")]
-        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseALottoSimpleTicketUid7E0A4Ea0_C1F2_4Ef9_9C6D_5A8F66966Cbf()
+        public virtual void TheOnlinePlayerShouldBeAbleToPurchaseALottoSimpleTicketUidB0Afcf6E_F620_49A3_9E30_5Dddc7895F39()
         {
             string[] tagsOfScenario = new string[] {
                     "RULES_automated",
@@ -88,8 +88,8 @@ namespace UI.Features.SystemIntegrationTests.UserJourney
                     "acceptance",
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Lotto simple ticket (uid:7e0a4ea0-" +
-                    "c1f2-4ef9-9c6d-5a8f66966cbf)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the online player should be able to purchase a Lotto simple ticket (uid:b0afcf6e-" +
+                    "f620-49a3-9e30-5dddc7895f39)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden

@@ -2,7 +2,7 @@ Feature: Lotto Online Betting
 
 
   @RULES_automated @regression @acceptance @smoke
-  Scenario: the online player should be able to purchase a Lotto simple ticket (uid:7e0a4ea0-c1f2-4ef9-9c6d-5a8f66966cbf)
+  Scenario: the online player should be able to purchase a Lotto simple ticket (uid:b0afcf6e-f620-49a3-9e30-5dddc7895f39)
     Given the player is logged in
     And the player has added "1" Lotto selection to the Betslip
     When the player purchases an "ONLINE" Lotto "SIMPLE" ticket
